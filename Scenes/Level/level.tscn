@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://v02upfldb2cj"]
+
+[ext_resource type="PackedScene" uid="uid://bwnmaok0huh34" path="res://Scenes/Player/player.tscn" id="1_od2qp"]
+[ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="2_su74p"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_od2qp")]
+position = Vector2(429, 244)
+
+[node name="Move_marker" parent="." instance=ExtResource("2_su74p")]
+position = Vector2(743, 238)
+
+[connection signal="area_entered" from="Move_marker" to="Player" method="_on_move_marker_area_entered"]
