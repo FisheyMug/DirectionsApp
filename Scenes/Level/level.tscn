@@ -11,4 +11,5 @@ position = Vector2(429, 244)
 [node name="Move_marker" parent="." instance=ExtResource("2_su74p")]
 position = Vector2(743, 238)
 
-[connection signal="area_entered" from="Move_marker" to="Player" method="_on_move_marker_area_entered"]
+[node name="Move_marker2" parent="." instance=ExtResource("2_su74p")]
+position = Vector2(742, 568)
