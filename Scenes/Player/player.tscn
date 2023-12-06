@@ -7,7 +7,7 @@
 size = Vector2(112, 123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npiri"]
-size = Vector2(119, 303)
+size = Vector2(119, 373.5)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ki7sc")
@@ -23,7 +23,7 @@ texture = ExtResource("1_q83im")
 position = Vector2(3, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="view"]
-position = Vector2(-2.5, 210)
+position = Vector2(-2.5, 245.25)
 shape = SubResource("RectangleShape2D_npiri")
 
 [connection signal="area_entered" from="view" to="." method="_on_view_area_entered"]

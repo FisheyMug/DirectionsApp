@@ -14,7 +14,6 @@ func _input(event):
 		rotate(-1.57)
 		moveable = false
 	if event.is_action_released("go_straight"):
-		print(moveable)
 		if moveable:
 			target = destination
 			moveable = false
