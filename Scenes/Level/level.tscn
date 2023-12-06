@@ -6,10 +6,19 @@
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_od2qp")]
-position = Vector2(429, 244)
+position = Vector2(83, 272)
 
 [node name="Move_marker" parent="." instance=ExtResource("2_su74p")]
-position = Vector2(743, 238)
+position = Vector2(344, 266)
 
 [node name="Move_marker2" parent="." instance=ExtResource("2_su74p")]
-position = Vector2(742, 568)
+position = Vector2(642, 266)
+
+[node name="Move_marker3" parent="." instance=ExtResource("2_su74p")]
+position = Vector2(945, 277)
+
+[node name="Move_marker4" parent="." instance=ExtResource("2_su74p")]
+position = Vector2(963, 559)
+
+[node name="Move_marker5" parent="." instance=ExtResource("2_su74p")]
+position = Vector2(942, 39)
