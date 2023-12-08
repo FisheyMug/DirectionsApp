@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://v02upfldb2cj"]
+[gd_scene load_steps=6 format=3 uid="uid://v02upfldb2cj"]
 
 [ext_resource type="PackedScene" uid="uid://bwnmaok0huh34" path="res://Scenes/Player/player.tscn" id="1_od2qp"]
 [ext_resource type="Texture2D" uid="uid://bnl7fr1v4ktc" path="res://Graphics/My town.png" id="1_y16hc"]
 [ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="2_su74p"]
 [ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="4_xvbuw"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_gklj6"]
+font_size = 36
+
 [node name="Level" type="Node2D"]
+position = Vector2(3, 8)
+scale = Vector2(0.786746, 0.946529)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(581, 335)
@@ -13,7 +18,7 @@ scale = Vector2(1.16697, 1.21423)
 texture = ExtResource("1_y16hc")
 
 [node name="Player" parent="." instance=ExtResource("1_od2qp")]
-position = Vector2(51, 318)
+position = Vector2(36, 46)
 scale = Vector2(0.5, 0.5)
 
 [node name="MoveMarkers" type="Node2D" parent="."]
@@ -30,7 +35,7 @@ position = Vector2(411, 180)
 position = Vector2(414, 319)
 
 [node name="Move_marker3" parent="MoveMarkers/Road" instance=ExtResource("2_su74p")]
-position = Vector2(585, 323)
+position = Vector2(585, 319)
 
 [node name="Move_marker4" parent="MoveMarkers/Road" instance=ExtResource("2_su74p")]
 position = Vector2(746, 317)
@@ -146,3 +151,47 @@ position = Vector2(576, 482)
 
 [node name="Park" parent="locations" instance=ExtResource("4_xvbuw")]
 position = Vector2(226, 476)
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(1292.67, 601.144)
+
+[node name="Go_Straight" type="Button" parent="Buttons"]
+offset_left = -58.4686
+offset_top = -85.5758
+offset_right = 36.5314
+offset_bottom = -54.5758
+scale = Vector2(1.57164, 1.8993)
+action_mode = 0
+text = "Go Straight"
+
+[node name="Turn_Left" type="Button" parent="Buttons"]
+offset_left = -132.19
+offset_top = -14.7909
+offset_right = -53.19
+offset_bottom = 16.2091
+scale = Vector2(1.82502, 1.89317)
+text = "Turn Left"
+
+[node name="Turn_Right" type="Button" parent="Buttons"]
+offset_left = 13.9817
+offset_top = -15.8474
+offset_right = 102.982
+offset_bottom = 15.1526
+scale = Vector2(1.66126, 1.94301)
+text = "Turn Right"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 927.0
+offset_top = 47.0
+offset_right = 1146.0
+offset_bottom = 237.0
+text = "Where is the hospital?"
+label_settings = SubResource("LabelSettings_gklj6")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Buttons/Go_Straight" to="Player" method="_on_go_straight_pressed"]
+[connection signal="pressed" from="Buttons/Turn_Left" to="Player" method="_on_turn_left_pressed"]
+[connection signal="pressed" from="Buttons/Turn_Right" to="Player" method="_on_turn_right_pressed"]
