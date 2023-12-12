@@ -4,12 +4,10 @@ var mouse_hover: bool = false
 signal set_goal(goal)
 
 func _on_body_entered(_body):
-	print("You have entered the " + self.name)
 	if self.name == Globals.goal:
 		print("Congrats, you win!")
 		Globals.win = true
 	elif self.name != Globals.goal:
-		print("reset")
 		Globals.reset = true
 
 

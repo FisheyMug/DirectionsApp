@@ -6,7 +6,6 @@ var can_move_forward: bool = false
 var destination: Vector2
 var faceing: int = 0
 var animationToPlay = "WalkDown"
-var player_moving : bool = false
 
 func rotation(input):
 	if input == "right":
@@ -35,35 +34,35 @@ func rotation(input):
 		animationToPlay = "Walk_right"
 
 func _input(event):
-	if event.is_action_released("turn_right") and !player_moving:
+	if event.is_action_released("turn_right") and !Globals.player_moving:
 		$view.rotate(1.57)
 		rotation("right")
 		can_move_forward = false
-	if event.is_action_released("turn_left") and !player_moving:
+	if event.is_action_released("turn_left") and !Globals.player_moving:
 		$view.rotate(-1.57)
 		rotation("left")
 		can_move_forward = false
 	if event.is_action_released("go_straight"):
-		if can_move_forward and !player_moving:
+		Globals.reset = false
+		if can_move_forward and !Globals.player_moving:
 			target = destination
 			velocity = position.direction_to(target) * speed
 			$AnimationPlayer.play(animationToPlay)
-			player_moving = true
+			Globals.player_moving = true
 			
 
 func _on_view_area_entered(area):
 	destination = area.position
 	can_move_forward = true
 
-	
 
 func _physics_process(_delta):
-	if position.distance_to(target) > 10:
+	if position.distance_to(target) > 10 and !Globals.reset:
 		move_and_slide()
 
 func _on_body_collision_area_entered(_area):
 	$AnimationPlayer.stop()
-	player_moving = false
+	Globals.player_moving = false
 	can_move_forward = true
 
 

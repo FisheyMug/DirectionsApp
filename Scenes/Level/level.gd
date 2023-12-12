@@ -29,7 +29,7 @@ func select_random_goal():
 	$Sentence/Label.text = "Where is the " + current_goal + "?"
 
 func select_random_start_location():
-	start_position = road_markers[randi() % road_markers.size() + 1].position
+	start_position = road_markers[randi() % road_markers.size() - 1].position
 	$Player.position = start_position
 	
 
@@ -41,9 +41,12 @@ func check_win():
 			$Timers/WinMessage.start()
 			start_timer = false
 			Globals.win = false
+	if Globals.reset == true:
+		$Player.position = start_position
+		
+
 
 func _on_win_message_timeout():
-	print("Timer is working")
 	get_tree().reload_current_scene()
 
 func _process(_delta):

@@ -18,7 +18,7 @@ shadow_size = 25
 shadow_color = Color(0.0117647, 0.0117647, 0.0117647, 0.298039)
 
 [node name="Level" type="Node2D"]
-position = Vector2(3, 8)
+position = Vector2(7, 4)
 scale = Vector2(0.786746, 0.946529)
 script = ExtResource("1_qv64o")
 
@@ -143,46 +143,47 @@ position = Vector2(576, 482)
 position = Vector2(226, 476)
 
 [node name="Buttons" type="Node2D" parent="."]
-position = Vector2(1292.67, 601.144)
+position = Vector2(1305.38, 567.336)
 
 [node name="Go_Straight" type="Button" parent="Buttons"]
-offset_left = -58.4686
-offset_top = -85.5758
-offset_right = 36.5314
-offset_bottom = -54.5758
+offset_left = 16.5205
+offset_top = -283.14
+offset_right = 130.521
+offset_bottom = -241.14
 scale = Vector2(1.57164, 1.8993)
 action_mode = 0
 text = "Go Straight"
 
 [node name="Turn_Left" type="Button" parent="Buttons"]
-offset_left = -132.19
-offset_top = -14.7909
-offset_right = -53.19
-offset_bottom = 16.2091
-scale = Vector2(1.82502, 1.89317)
+offset_left = -85.1641
+offset_top = -147.909
+offset_right = -6.16404
+offset_bottom = -116.909
+scale = Vector2(2.1887, 2.47223)
 text = "Turn Left"
 
 [node name="Turn_Right" type="Button" parent="Buttons"]
-offset_left = 13.9817
-offset_top = -15.8474
-offset_right = 102.982
-offset_bottom = 15.1526
-scale = Vector2(1.66126, 1.94301)
+offset_left = 133.458
+offset_top = -150.022
+offset_right = 222.458
+offset_bottom = -119.022
+scale = Vector2(2.03337, 2.48828)
 text = "Turn Right"
 
 [node name="Sentence" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="Sentence"]
-offset_left = 927.0
-offset_top = 47.0
-offset_right = 1201.0
-offset_bottom = 237.0
+offset_left = 976.0
+offset_top = 24.0
+offset_right = 1250.0
+offset_bottom = 214.0
 text = "Where is the hospital?"
 label_settings = SubResource("LabelSettings_gklj6")
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="WinMessage" type="Label" parent="Sentence"]
+visible = false
 offset_left = 93.0
 offset_top = 138.0
 offset_right = 893.0
