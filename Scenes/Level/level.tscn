@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://v02upfldb2cj"]
+[gd_scene load_steps=8 format=3 uid="uid://v02upfldb2cj"]
 
 [ext_resource type="PackedScene" uid="uid://bwnmaok0huh34" path="res://Scenes/Player/player.tscn" id="1_od2qp"]
+[ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_qv64o"]
 [ext_resource type="Texture2D" uid="uid://bnl7fr1v4ktc" path="res://Graphics/My town.png" id="1_y16hc"]
 [ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="2_su74p"]
 [ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="4_xvbuw"]
@@ -8,9 +9,18 @@
 [sub_resource type="LabelSettings" id="LabelSettings_gklj6"]
 font_size = 36
 
+[sub_resource type="LabelSettings" id="LabelSettings_bar5a"]
+line_spacing = 10.0
+font_size = 100
+font_color = Color(1, 0.227451, 0.203922, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 25
+shadow_color = Color(0.0117647, 0.0117647, 0.0117647, 0.298039)
+
 [node name="Level" type="Node2D"]
 position = Vector2(3, 8)
 scale = Vector2(0.786746, 0.946529)
+script = ExtResource("1_qv64o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(581, 335)
@@ -112,35 +122,15 @@ position = Vector2(409, 481)
 [node name="Move_marker28" parent="MoveMarkers/Road" instance=ExtResource("2_su74p")]
 position = Vector2(737, 485)
 
-[node name="LocationEntrance" type="Node2D" parent="MoveMarkers"]
-
-[node name="SchoolEntrance" parent="MoveMarkers/LocationEntrance" instance=ExtResource("2_su74p")]
-position = Vector2(229, 181)
-
-[node name="PostOfficeEntrance" parent="MoveMarkers/LocationEntrance" instance=ExtResource("2_su74p")]
-position = Vector2(578, 180)
-
-[node name="PoliceEntrance" parent="MoveMarkers/LocationEntrance" instance=ExtResource("2_su74p")]
-position = Vector2(932, 184)
-
-[node name="ParkEntrance" parent="MoveMarkers/LocationEntrance" instance=ExtResource("2_su74p")]
-position = Vector2(226, 473)
-
-[node name="SuperMarketEntrance" parent="MoveMarkers/LocationEntrance" instance=ExtResource("2_su74p")]
-position = Vector2(576, 482)
-
-[node name="HospitalEntrance" parent="MoveMarkers/LocationEntrance" instance=ExtResource("2_su74p")]
-position = Vector2(933, 486)
-
 [node name="locations" type="Node2D" parent="."]
 
 [node name="School" parent="locations" instance=ExtResource("4_xvbuw")]
 position = Vector2(232, 180)
 
-[node name="PostOffice" parent="locations" instance=ExtResource("4_xvbuw")]
+[node name="Post Office" parent="locations" instance=ExtResource("4_xvbuw")]
 position = Vector2(580, 183)
 
-[node name="PoliceStation" parent="locations" instance=ExtResource("4_xvbuw")]
+[node name="Police Station" parent="locations" instance=ExtResource("4_xvbuw")]
 position = Vector2(930, 182)
 
 [node name="Hospital" parent="locations" instance=ExtResource("4_xvbuw")]
@@ -180,18 +170,35 @@ offset_bottom = 15.1526
 scale = Vector2(1.66126, 1.94301)
 text = "Turn Right"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Sentence" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="Sentence"]
 offset_left = 927.0
 offset_top = 47.0
-offset_right = 1146.0
+offset_right = 1201.0
 offset_bottom = 237.0
 text = "Where is the hospital?"
 label_settings = SubResource("LabelSettings_gklj6")
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[node name="WinMessage" type="Label" parent="Sentence"]
+offset_left = 93.0
+offset_top = 138.0
+offset_right = 893.0
+offset_bottom = 422.0
+text = "Congratulations!
+You Made It!"
+label_settings = SubResource("LabelSettings_bar5a")
+horizontal_alignment = 1
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="WinMessage" type="Timer" parent="Timers"]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="pressed" from="Buttons/Go_Straight" to="Player" method="_on_go_straight_pressed"]
 [connection signal="pressed" from="Buttons/Turn_Left" to="Player" method="_on_turn_left_pressed"]
 [connection signal="pressed" from="Buttons/Turn_Right" to="Player" method="_on_turn_right_pressed"]
+[connection signal="timeout" from="Timers/WinMessage" to="." method="_on_win_message_timeout"]

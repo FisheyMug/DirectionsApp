@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 200
 var target = destination
-var moveable: bool = false
+var can_move_forward: bool = false
 var destination: Vector2
 var faceing: int = 0
 var animationToPlay = "WalkDown"
@@ -35,18 +35,17 @@ func rotation(input):
 		animationToPlay = "Walk_right"
 
 func _input(event):
-	if event.is_action_released("turn_right"):
+	if event.is_action_released("turn_right") and !player_moving:
 		$view.rotate(1.57)
 		rotation("right")
-		moveable = false
-	if event.is_action_released("turn_left"):
+		can_move_forward = false
+	if event.is_action_released("turn_left") and !player_moving:
 		$view.rotate(-1.57)
 		rotation("left")
-		moveable = false
+		can_move_forward = false
 	if event.is_action_released("go_straight"):
-		if moveable:
+		if can_move_forward and !player_moving:
 			target = destination
-			moveable = false
 			velocity = position.direction_to(target) * speed
 			$AnimationPlayer.play(animationToPlay)
 			player_moving = true
@@ -54,10 +53,8 @@ func _input(event):
 
 func _on_view_area_entered(area):
 	destination = area.position
-	moveable = true
+	can_move_forward = true
 
-func _on_view_area_exited(_area):
-	player_moving = false
 	
 
 func _physics_process(_delta):
@@ -66,7 +63,8 @@ func _physics_process(_delta):
 
 func _on_body_collision_area_entered(_area):
 	$AnimationPlayer.stop()
-
+	player_moving = false
+	can_move_forward = true
 
 
 #region Buttons
