@@ -5,6 +5,7 @@ var target = destination
 var can_move_forward: bool = false
 var destination: Vector2
 var faceing: int = 0
+#small change
 var animationToPlay = "WalkDown"
 
 func rotation(input):
