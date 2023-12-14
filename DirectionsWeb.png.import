@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5jykgoe21txu"
-path="res://.godot/imported/DirectionsWeb.icon.png-c859659da4d9d53baee7e052749f05f1.ctex"
+uid="uid://cgb55b00o5uht"
+path="res://.godot/imported/DirectionsWeb.png-62b87a3276186c25c9e1b9850557a2b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DirectionsWeb.icon.png"
-dest_files=["res://.godot/imported/DirectionsWeb.icon.png-c859659da4d9d53baee7e052749f05f1.ctex"]
+source_file="res://DirectionsWebExport/DirectionsWeb.png"
+dest_files=["res://.godot/imported/DirectionsWeb.png-62b87a3276186c25c9e1b9850557a2b3.ctex"]
 
 [params]
 
