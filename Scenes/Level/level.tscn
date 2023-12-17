@@ -19,7 +19,7 @@ shadow_color = Color(0.0117647, 0.0117647, 0.0117647, 0.298039)
 
 [node name="Level" type="Node2D"]
 position = Vector2(7, 4)
-scale = Vector2(0.786746, 0.946529)
+scale = Vector2(1.17066, 1.60167)
 script = ExtResource("1_qv64o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -173,21 +173,22 @@ text = "Turn Right"
 [node name="Sentence" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="Sentence"]
-offset_left = 976.0
-offset_top = 24.0
-offset_right = 1250.0
-offset_bottom = 214.0
+offset_left = 1384.0
+offset_top = 19.0
+offset_right = 1658.0
+offset_bottom = 209.0
+scale = Vector2(1.8916, 2.17179)
 text = "Where is the hospital?"
 label_settings = SubResource("LabelSettings_gklj6")
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="WinMessage" type="Label" parent="Sentence"]
-visible = false
 offset_left = 93.0
 offset_top = 138.0
 offset_right = 893.0
 offset_bottom = 422.0
+scale = Vector2(2.16544, 2.55708)
 text = "Congratulations!
 You Made It!"
 label_settings = SubResource("LabelSettings_bar5a")

@@ -8,6 +8,7 @@ var start_timer: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_viewport().size = DisplayServer.screen_get_size()
 	for node in $locations.get_children():
 		locations.append(node)
 	for node in $MoveMarkers/Road.get_children():
