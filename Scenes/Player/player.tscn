@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://bwnmaok0huh34"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_ki7sc"]
-[ext_resource type="Texture2D" uid="uid://ccte74clt88ff" path="res://Graphics/CharachterSprite.png" id="2_dbbyu"]
+[ext_resource type="Texture2D" uid="uid://6x3ghy3e2l5n" path="res://Graphics/CharachterSprite.png" id="2_dbbyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npiri"]
-size = Vector2(119, 373.5)
+size = Vector2(87, 136.5)
 
 [sub_resource type="Animation" id="Animation_ui2ar"]
 length = 0.001
@@ -99,7 +99,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tqev"]
-size = Vector2(112, 123)
+size = Vector2(35, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikurr"]
 size = Vector2(44, 43)
@@ -117,7 +117,7 @@ vframes = 4
 position = Vector2(3, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="view"]
-position = Vector2(-2.5, 245.25)
+position = Vector2(-4.5, 220.75)
 shape = SubResource("RectangleShape2D_npiri")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -126,7 +126,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_7tqev")
 
 [node name="BodyCollision" type="Area2D" parent="."]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3 uid="uid://v02upfldb2cj"]
+
+[ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_iesg3"]
+[ext_resource type="PackedScene" uid="uid://bwnmaok0huh34" path="res://Scenes/Player/player.tscn" id="2_006r0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gklj6"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_bar5a"]
+line_spacing = 10.0
+font_size = 100
+font_color = Color(1, 0.227451, 0.203922, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 25
+shadow_color = Color(0.0117647, 0.0117647, 0.0117647, 0.298039)
+
+[node name="Where is the Post Office" type="Node2D"]
+position = Vector2(7, 4)
+scale = Vector2(1.17066, 1.60167)
+script = ExtResource("1_iesg3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(429.311, 237.671)
+scale = Vector2(0.844586, 0.844586)
+
+[node name="Player" parent="." instance=ExtResource("2_006r0")]
+position = Vector2(36, 46)
+scale = Vector2(0.5, 0.5)
+
+[node name="MoveMarkers" type="Node2D" parent="."]
+
+[node name="locations" type="Node2D" parent="."]
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(919.14, 527.574)
+scale = Vector2(0.733459, 0.857145)
+
+[node name="Go_Straight" type="Button" parent="Buttons"]
+offset_left = 16.5205
+offset_top = -283.14
+offset_right = 130.521
+offset_bottom = -241.14
+scale = Vector2(1.57164, 1.8993)
+action_mode = 0
+text = "Go Straight"
+
+[node name="Turn_Left" type="Button" parent="Buttons"]
+offset_left = -85.1641
+offset_top = -147.909
+offset_right = -6.16404
+offset_bottom = -116.909
+scale = Vector2(2.1887, 2.47223)
+text = "Turn Left"
+
+[node name="Turn_Right" type="Button" parent="Buttons"]
+offset_left = 133.458
+offset_top = -150.022
+offset_right = 222.458
+offset_bottom = -119.022
+scale = Vector2(2.03337, 2.48828)
+text = "Turn Right"
+
+[node name="Sentence" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Sentence"]
+offset_left = 1018.0
+offset_top = 117.0
+offset_right = 1292.0
+offset_bottom = 237.0
+scale = Vector2(1.20146, 2.04508)
+text = "Enter Sentence"
+label_settings = SubResource("LabelSettings_gklj6")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="WinMessage" type="Label" parent="Sentence"]
+visible = false
+offset_left = 153.0
+offset_top = 234.0
+offset_right = 953.0
+offset_bottom = 518.0
+text = "Congratulations!
+You Made It!"
+label_settings = SubResource("LabelSettings_bar5a")
+horizontal_alignment = 1
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="WinMessage" type="Timer" parent="Timers"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="Buttons/Go_Straight" to="Player" method="_on_go_straight_pressed"]
+[connection signal="pressed" from="Buttons/Turn_Left" to="Player" method="_on_turn_left_pressed"]
+[connection signal="pressed" from="Buttons/Turn_Right" to="Player" method="_on_turn_right_pressed"]
+[connection signal="timeout" from="Timers/WinMessage" to="." method="_on_win_message_timeout"]

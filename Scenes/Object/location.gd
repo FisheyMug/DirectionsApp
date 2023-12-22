@@ -15,11 +15,12 @@ func _on_body_entered(_body):
 
 func _on_mouse_entered():
 	mouse_hover = true
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 
 
 func _on_mouse_exited():
 	mouse_hover = false
-
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 func _on_input_event(_viewport, event, _shape_idx):
 		if event.is_action_released("click") and mouse_hover:

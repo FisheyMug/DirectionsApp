@@ -1,4 +1,5 @@
 extends Node2D
+class_name Base_Level
 
 var current_goal = Globals.goal
 var locations = []
@@ -8,10 +9,10 @@ var start_timer: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_viewport().size = DisplayServer.screen_get_size()
+	#get_viewport().size = DisplayServer.screen_get_size()
 	for node in $locations.get_children():
 		locations.append(node)
-	for node in $MoveMarkers/Road.get_children():
+	for node in $MoveMarkers.get_children():
 		road_markers.append(node)
 	select_random_goal()
 	select_random_start_location()

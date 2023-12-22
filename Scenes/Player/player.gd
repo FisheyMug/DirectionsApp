@@ -35,6 +35,8 @@ func rotation(input):
 		animationToPlay = "Walk_right"
 
 func _input(event):
+	if event.is_action_pressed("Menu"):
+		get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
 	if event.is_action_released("turn_right") and !Globals.player_moving:
 		$view.rotate(1.57)
 		rotation("right")
@@ -64,8 +66,8 @@ func _physics_process(_delta):
 func _on_body_collision_area_entered(_area):
 	$AnimationPlayer.stop()
 	Globals.player_moving = false
-	can_move_forward = true
-
+	#can_move_forward = true
+	
 
 #region Buttons
 
@@ -87,3 +89,7 @@ func _on_turn_right_pressed():
 	turn_right.action = "turn_right"
 	Input.parse_input_event(turn_right)
 #endregion
+
+
+func _on_view_area_exited(_area):
+	can_move_forward = false

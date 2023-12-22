@@ -1,0 +1,124 @@
+[gd_scene load_steps=6 format=3 uid="uid://k27ffs36i1rc"]
+
+[ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_iglq0"]
+[ext_resource type="Texture2D" uid="uid://bnl7fr1v4ktc" path="res://Graphics/My town.png" id="2_3eeci"]
+[ext_resource type="Script" path="res://Scenes/Level/city_og.gd" id="2_ttxof"]
+[ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="3_b4n51"]
+[ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="4_snd2n"]
+
+[node name="City OG" instance=ExtResource("1_iglq0")]
+script = ExtResource("2_ttxof")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_3eeci")
+
+[node name="Player" parent="." index="1"]
+position = Vector2(38.4399, 41.207)
+
+[node name="MoveMarker" parent="MoveMarkers" index="0" instance=ExtResource("3_b4n51")]
+position = Vector2(38.4399, 41.8313)
+
+[node name="MoveMarker2" parent="MoveMarkers" index="1" instance=ExtResource("3_b4n51")]
+position = Vector2(175.115, 33.7148)
+
+[node name="MoveMarker3" parent="MoveMarkers" index="2" instance=ExtResource("3_b4n51")]
+position = Vector2(307.519, 36.8366)
+
+[node name="MoveMarker4" parent="MoveMarkers" index="3" instance=ExtResource("3_b4n51")]
+position = Vector2(419.422, 33.7148)
+
+[node name="MoveMarker5" parent="MoveMarkers" index="4" instance=ExtResource("3_b4n51")]
+position = Vector2(544.992, 36.8366)
+
+[node name="MoveMarker6" parent="MoveMarkers" index="5" instance=ExtResource("3_b4n51")]
+position = Vector2(679.958, 33.7148)
+
+[node name="MoveMarker7" parent="MoveMarkers" index="6" instance=ExtResource("3_b4n51")]
+position = Vector2(819.196, 38.7096)
+
+[node name="MoveMarker8" parent="MoveMarkers" index="7" instance=ExtResource("3_b4n51")]
+position = Vector2(816.633, 126.743)
+
+[node name="MoveMarker9" parent="MoveMarkers" index="8" instance=ExtResource("3_b4n51")]
+position = Vector2(819.196, 225.39)
+
+[node name="MoveMarker10" parent="MoveMarkers" index="9" instance=ExtResource("3_b4n51")]
+position = Vector2(826.03, 324.037)
+
+[node name="MoveMarker11" parent="MoveMarkers" index="10" instance=ExtResource("3_b4n51")]
+position = Vector2(819.196, 437.668)
+
+[node name="MoveMarker12" parent="MoveMarkers" index="11" instance=ExtResource("3_b4n51")]
+position = Vector2(682.521, 440.79)
+
+[node name="MoveMarker13" parent="MoveMarkers" index="12" instance=ExtResource("3_b4n51")]
+position = Vector2(543.283, 438.917)
+
+[node name="MoveMarker14" parent="MoveMarkers" index="13" instance=ExtResource("3_b4n51")]
+position = Vector2(422.838, 438.917)
+
+[node name="MoveMarker15" parent="MoveMarkers" index="14" instance=ExtResource("3_b4n51")]
+position = Vector2(309.227, 438.917)
+
+[node name="MoveMarker16" parent="MoveMarkers" index="15" instance=ExtResource("3_b4n51")]
+position = Vector2(176.823, 442.039)
+
+[node name="MoveMarker17" parent="MoveMarkers" index="16" instance=ExtResource("3_b4n51")]
+position = Vector2(41.8567, 442.039)
+
+[node name="MoveMarker18" parent="MoveMarkers" index="17" instance=ExtResource("3_b4n51")]
+position = Vector2(37.5856, 340.27)
+
+[node name="MoveMarker19" parent="MoveMarkers" index="18" instance=ExtResource("3_b4n51")]
+position = Vector2(40.1483, 228.511)
+
+[node name="MoveMarker20" parent="MoveMarkers" index="19" instance=ExtResource("3_b4n51")]
+position = Vector2(33.3145, 124.87)
+
+[node name="MoveMarker21" parent="MoveMarkers" index="20" instance=ExtResource("3_b4n51")]
+position = Vector2(304.956, 129.864)
+
+[node name="MoveMarker22" parent="MoveMarkers" index="21" instance=ExtResource("3_b4n51")]
+position = Vector2(539.866, 124.87)
+
+[node name="MoveMarker23" parent="MoveMarkers" index="22" instance=ExtResource("3_b4n51")]
+position = Vector2(544.138, 224.765)
+
+[node name="MoveMarker24" parent="MoveMarkers" index="23" instance=ExtResource("3_b4n51")]
+position = Vector2(539.866, 344.64)
+
+[node name="MoveMarker25" parent="MoveMarkers" index="24" instance=ExtResource("3_b4n51")]
+position = Vector2(309.227, 344.64)
+
+[node name="MoveMarker26" parent="MoveMarkers" index="25" instance=ExtResource("3_b4n51")]
+position = Vector2(306.665, 224.765)
+
+[node name="MoveMarker27" parent="MoveMarkers" index="26" instance=ExtResource("3_b4n51")]
+position = Vector2(171.698, 229.76)
+
+[node name="MoveMarker28" parent="MoveMarkers" index="27" instance=ExtResource("3_b4n51")]
+position = Vector2(424.547, 222.892)
+
+[node name="MoveMarker29" parent="MoveMarkers" index="28" instance=ExtResource("3_b4n51")]
+position = Vector2(675.687, 229.76)
+
+[node name="Police Station" parent="locations" index="0" instance=ExtResource("4_snd2n")]
+position = Vector2(684.229, 134.859)
+
+[node name="Hospital" parent="locations" index="1" instance=ExtResource("4_snd2n")]
+position = Vector2(679.958, 331.529)
+
+[node name="Post Office" parent="locations" index="2" instance=ExtResource("4_snd2n")]
+position = Vector2(419.422, 136.732)
+
+[node name="Supermarket" parent="locations" index="3" instance=ExtResource("4_snd2n")]
+position = Vector2(424.547, 333.402)
+
+[node name="School" parent="locations" index="4" instance=ExtResource("4_snd2n")]
+position = Vector2(173.406, 131.738)
+
+[node name="Park" parent="locations" index="5" instance=ExtResource("4_snd2n")]
+position = Vector2(169.135, 331.529)
+
+[node name="Label" parent="Sentence" index="0"]
+text = "Where is the Hospital?"

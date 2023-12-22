@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://bitcq75fj31qe"]
+
+[ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_h2weo"]
+[ext_resource type="Script" path="res://Scenes/Level/og_school_directions.gd" id="2_fi65g"]
+[ext_resource type="Texture2D" uid="uid://d53wmvqf1tdi" path="res://Graphics/modified_school.png" id="2_g8peg"]
+[ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="3_66s78"]
+[ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="4_law7x"]
+
+[node name="Og School Directions" instance=ExtResource("1_h2weo")]
+script = ExtResource("2_fi65g")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(425.401, 239.75)
+scale = Vector2(0.623905, 0.623905)
+texture = ExtResource("2_g8peg")
+
+[node name="MoveMarker" parent="MoveMarkers" index="0" instance=ExtResource("3_66s78")]
+position = Vector2(523.636, 467.637)
+
+[node name="MoveMarker2" parent="MoveMarkers" index="1" instance=ExtResource("3_66s78")]
+position = Vector2(523.636, 377.731)
+
+[node name="MoveMarker3" parent="MoveMarkers" index="2" instance=ExtResource("3_66s78")]
+position = Vector2(520.219, 275.338)
+
+[node name="MoveMarker4" parent="MoveMarkers" index="3" instance=ExtResource("3_66s78")]
+position = Vector2(538.158, 181.061)
+
+[node name="MoveMarker5" parent="MoveMarkers" index="4" instance=ExtResource("3_66s78")]
+position = Vector2(634.685, 178.564)
+
+[node name="MoveMarker6" parent="MoveMarkers" index="5" instance=ExtResource("3_66s78")]
+position = Vector2(752.567, 178.564)
+
+[node name="MoveMarker7" parent="MoveMarkers" index="6" instance=ExtResource("3_66s78")]
+position = Vector2(443.34, 178.564)
+
+[node name="MoveMarker8" parent="MoveMarkers" index="7" instance=ExtResource("3_66s78")]
+position = Vector2(332.291, 177.939)
+
+[node name="MoveMarker9" parent="MoveMarkers" index="8" instance=ExtResource("3_66s78")]
+position = Vector2(242.598, 176.691)
+
+[node name="MoveMarker10" parent="MoveMarkers" index="9" instance=ExtResource("3_66s78")]
+position = Vector2(123.862, 176.691)
+
+[node name="school office" parent="locations" index="0" instance=ExtResource("4_law7x")]
+position = Vector2(421.13, 387.72)
+
+[node name="teachers office" parent="locations" index="1" instance=ExtResource("4_law7x")]
+position = Vector2(634.685, 383.974)
+
+[node name="school principals office" parent="locations" index="2" instance=ExtResource("4_law7x")]
+position = Vector2(621.871, 267.845)
+
+[node name="library" parent="locations" index="3" instance=ExtResource("4_law7x")]
+position = Vector2(727.795, 267.845)
+
+[node name="music room" parent="locations" index="4" instance=ExtResource("4_law7x")]
+position = Vector2(740.608, 84.287)
+
+[node name="cooking room" parent="locations" index="5" instance=ExtResource("4_law7x")]
+position = Vector2(626.997, 84.287)
+
+[node name="science room" parent="locations" index="6" instance=ExtResource("4_law7x")]
+position = Vector2(525.345, 43.08)
+
+[node name="lunchroom" parent="locations" index="7" instance=ExtResource("4_law7x")]
+position = Vector2(422.838, 83.0383)
+
+[node name="classroom" parent="locations" index="8" instance=ExtResource("4_law7x")]
+position = Vector2(316.915, 78.6679)
+
+[node name="Gym" parent="locations" index="9" instance=ExtResource("4_law7x")]
+position = Vector2(211.846, 77.4192)
+
+[node name="Playground" parent="locations" index="10" instance=ExtResource("4_law7x")]
+position = Vector2(-11.9591, 171.071)
+
+[node name="arts and crafts room" parent="locations" index="11" instance=ExtResource("4_law7x")]
+position = Vector2(429.672, 269.094)
+
+[node name="computer room" parent="locations" index="12" instance=ExtResource("4_law7x")]
+position = Vector2(326.312, 266.597)
+
+[node name="school nurses office" parent="locations" index="13" instance=ExtResource("4_law7x")]
+position = Vector2(218.68, 269.094)
