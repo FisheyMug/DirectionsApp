@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmel7nbwqi6mo"]
+[gd_scene load_steps=14 format=3 uid="uid://dmel7nbwqi6mo"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_7udo8"]
 [ext_resource type="Script" path="res://Scenes/Level/this_is_my_favourite_place.gd" id="2_iwky2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cf38caegytnkg" path="res://Graphics/Better interior tileset/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="4_fiabo"]
 [ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="4_ks0ua"]
 [ext_resource type="Texture2D" uid="uid://4d2vss72xex6" path="res://Graphics/MySprites/Gym.png" id="6_gti5f"]
+[ext_resource type="Texture2D" uid="uid://02423g6l02aw" path="res://Graphics/MySprites/UI/Sprite-0003.png" id="9_x1t7y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cc0o8"]
 texture = ExtResource("3_4l3mi")
@@ -1775,5 +1776,18 @@ rotation = -1.56249
 [node name="Arts and Crafts Room" parent="locations" index="13" instance=ExtResource("4_ks0ua")]
 position = Vector2(800.403, 81.7896)
 
+[node name="Go_Straight" parent="Buttons" index="0"]
+offset_left = -29.1166
+offset_top = -363.473
+offset_right = 478.883
+offset_bottom = -105.473
+scale = Vector2(0.523017, 0.449273)
+text = ""
+icon = ExtResource("9_x1t7y")
+
 [node name="Label" parent="Sentence" index="0"]
+offset_left = 1012.0
+offset_top = 21.0
+offset_right = 1286.0
+offset_bottom = 141.0
 text = "My favorite place is the "
