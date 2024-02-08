@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://02423g6l02aw"
-path="res://.godot/imported/Sprite-0003.png-58c63b5cddb46a717e60ff0e27220cc6.ctex"
+path="res://.godot/imported/Go Straight.png-a31eac379c63334dcfca96f71c5a48b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/MySprites/UI/Sprite-0003.png"
-dest_files=["res://.godot/imported/Sprite-0003.png-58c63b5cddb46a717e60ff0e27220cc6.ctex"]
+source_file="res://Graphics/MySprites/UI/Go Straight.png"
+dest_files=["res://.godot/imported/Go Straight.png-a31eac379c63334dcfca96f71c5a48b9.ctex"]
 
 [params]
 

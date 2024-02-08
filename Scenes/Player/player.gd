@@ -52,6 +52,7 @@ func _input(event):
 			velocity = position.direction_to(target) * speed
 			$AnimationPlayer.play(animationToPlay)
 			Globals.player_moving = true
+			print(target)
 			
 
 func _on_view_area_entered(area):

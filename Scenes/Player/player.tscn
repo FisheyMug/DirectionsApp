@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://6x3ghy3e2l5n" path="res://Graphics/CharachterSprite.png" id="2_dbbyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npiri"]
-size = Vector2(87, 136.5)
+size = Vector2(87, 154)
 
 [sub_resource type="Animation" id="Animation_ui2ar"]
 length = 0.001
@@ -117,7 +117,7 @@ vframes = 4
 position = Vector2(3, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="view"]
-position = Vector2(-4.5, 220.75)
+position = Vector2(-4.5, 212)
 shape = SubResource("RectangleShape2D_npiri")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

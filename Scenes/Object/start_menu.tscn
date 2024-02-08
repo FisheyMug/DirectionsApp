@@ -2,59 +2,57 @@
 
 [ext_resource type="Script" path="res://StartMenu.gd" id="1_7nuov"]
 [ext_resource type="Texture2D" uid="uid://bnl7fr1v4ktc" path="res://Graphics/My town.png" id="2_j1fyd"]
+[ext_resource type="Texture2D" uid="uid://ch1y2pmxxj3t6" path="res://Graphics/MySprites/UI/MainMenu.png" id="2_j3mrw"]
 [ext_resource type="Texture2D" uid="uid://d53wmvqf1tdi" path="res://Graphics/modified_school.png" id="3_dxyho"]
 [ext_resource type="Texture2D" uid="uid://crxv58iaecy5a" path="res://Graphics/My Fav Place.png" id="4_1eqbw"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_jwgxi"]
-font_size = 60
 
 [node name="StartMenu" type="Node2D"]
 script = ExtResource("1_7nuov")
 
-[node name="OgCity" type="Button" parent="."]
-offset_left = 197.0
-offset_top = 9.0
-offset_right = 1199.0
-offset_bottom = 676.0
-scale = Vector2(0.431719, 0.541372)
-theme_override_font_sizes/font_size = 40
-text = "Where is the Post Office?"
-icon = ExtResource("2_j1fyd")
-icon_alignment = 1
-vertical_icon_alignment = 0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.00185, 0.992453)
 
-[node name="OgSchool" type="Button" parent="."]
-offset_left = 91.0
-offset_top = 384.0
-offset_right = 1465.0
-offset_bottom = 1270.0
-scale = Vector2(0.32928, 0.420747)
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 1366.0
+offset_bottom = 768.0
+texture = ExtResource("2_j3mrw")
+
+[node name="OgSchool" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 843.0
+offset_top = 489.0
+offset_right = 2217.0
+offset_bottom = 1375.0
+scale = Vector2(0.331296, 0.249276)
 theme_override_font_sizes/font_size = 40
 text = "This is my Favourite Place"
 icon = ExtResource("3_dxyho")
 icon_alignment = 1
 vertical_icon_alignment = 0
 
-[node name="New School" type="Button" parent="."]
-offset_left = 741.0
-offset_top = 295.0
-offset_right = 2117.0
-offset_bottom = 1088.0
-scale = Vector2(0.346592, 0.549345)
-theme_override_font_sizes/font_size = 40
-text = "School 2.0"
-icon = ExtResource("4_1eqbw")
-icon_alignment = 1
-vertical_icon_alignment = 0
+[node name="NewSchool" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 839.45
+offset_top = 92.6996
+offset_right = 2207.45
+offset_bottom = 767.7
+scale = Vector2(0.336024, 0.481512)
+texture_normal = ExtResource("4_1eqbw")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 729.0
-offset_top = 140.0
-offset_right = 1316.0
-offset_bottom = 223.0
-text = "Click a level to start!"
-label_settings = SubResource("LabelSettings_jwgxi")
+[node name="OgCity" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 231.573
+offset_top = 492.718
+offset_right = 1225.57
+offset_bottom = 1041.72
+scale = Vector2(0.460294, 0.39166)
+texture_normal = ExtResource("2_j1fyd")
 
-[connection signal="pressed" from="OgCity" to="." method="_on_og_city_pressed"]
-[connection signal="pressed" from="OgSchool" to="." method="_on_og_school_pressed"]
-[connection signal="pressed" from="New School" to="." method="_on_new_school_pressed"]
+[connection signal="pressed" from="Control/OgSchool" to="." method="_on_og_school_pressed"]
+[connection signal="pressed" from="Control/NewSchool" to="." method="_on_new_school_pressed"]
+[connection signal="pressed" from="Control/OgCity" to="." method="_on_og_city_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmel7nbwqi6mo"]
+[gd_scene load_steps=16 format=3 uid="uid://dmel7nbwqi6mo"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_7udo8"]
 [ext_resource type="Script" path="res://Scenes/Level/this_is_my_favourite_place.gd" id="2_iwky2"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cf38caegytnkg" path="res://Graphics/Better interior tileset/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="4_fiabo"]
 [ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="4_ks0ua"]
 [ext_resource type="Texture2D" uid="uid://4d2vss72xex6" path="res://Graphics/MySprites/Gym.png" id="6_gti5f"]
-[ext_resource type="Texture2D" uid="uid://02423g6l02aw" path="res://Graphics/MySprites/UI/Sprite-0003.png" id="9_x1t7y"]
+[ext_resource type="Texture2D" uid="uid://02423g6l02aw" path="res://Graphics/MySprites/UI/Go Straight.png" id="9_x1t7y"]
+[ext_resource type="Texture2D" uid="uid://3s4ckldhthpp" path="res://Graphics/MySprites/UI/TurnLeft.png" id="10_54jmc"]
+[ext_resource type="Texture2D" uid="uid://cs4545ou8gkns" path="res://Graphics/MySprites/UI/TurnRight.png" id="11_yxb75"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cc0o8"]
 texture = ExtResource("3_4l3mi")
@@ -1691,7 +1693,7 @@ position = Vector2(80.2966, 371.487)
 scale = Vector2(2.30662, 1.20719)
 texture = ExtResource("6_gti5f")
 
-[node name="Player" parent="." index="2"]
+[node name="Player" parent="." index="3"]
 position = Vector2(373.294, 405.826)
 
 [node name="MoveMarker" parent="MoveMarkers" index="0" instance=ExtResource("3_e5q6e")]
@@ -1727,63 +1729,81 @@ position = Vector2(253.703, 115.504)
 [node name="MoveMarker10" parent="MoveMarkers" index="10" instance=ExtResource("3_e5q6e")]
 position = Vector2(122.153, 117.377)
 
-[node name="Gym" parent="locations" index="0" instance=ExtResource("4_ks0ua")]
-position = Vector2(64.0664, 374.609)
-
-[node name="School Office" parent="locations" index="1" instance=ExtResource("4_ks0ua")]
+[node name="School Office" parent="locations" index="0" instance=ExtResource("4_ks0ua")]
 position = Vector2(765.38, 298.439)
 
-[node name="Restroom" parent="locations" index="2" instance=ExtResource("4_ks0ua")]
+[node name="Restroom" parent="locations" index="1" instance=ExtResource("4_ks0ua")]
 position = Vector2(769.651, 407.699)
 
-[node name="Cooking Room" parent="locations" index="3" instance=ExtResource("4_ks0ua")]
+[node name="Cooking Room" parent="locations" index="2" instance=ExtResource("4_ks0ua")]
 position = Vector2(89.693, 219.146)
 
-[node name="Teachers Office" parent="locations" index="4" instance=ExtResource("4_ks0ua")]
+[node name="Teachers Office" parent="locations" index="3" instance=ExtResource("4_ks0ua")]
 position = Vector2(252.849, 317.793)
 
-[node name="School Principal\'s Office" parent="locations" index="5" instance=ExtResource("4_ks0ua")]
+[node name="School Principal\'s Office" parent="locations" index="4" instance=ExtResource("4_ks0ua")]
 position = Vector2(473.237, 317.793)
 rotation = 1.57622
 
-[node name="Lunch Room" parent="locations" index="6" instance=ExtResource("4_ks0ua")]
+[node name="Lunch Room" parent="locations" index="5" instance=ExtResource("4_ks0ua")]
 position = Vector2(251.14, 206.035)
 rotation = -1.57436
 
-[node name="School Nurse\'s Office" parent="locations" index="7" instance=ExtResource("4_ks0ua")]
+[node name="School Nurse\'s Office" parent="locations" index="6" instance=ExtResource("4_ks0ua")]
 position = Vector2(780.756, 190.426)
 
-[node name="Library" parent="locations" index="8" instance=ExtResource("4_ks0ua")]
+[node name="Library" parent="locations" index="7" instance=ExtResource("4_ks0ua")]
 position = Vector2(552.68, 27.4713)
 rotation = -1.57463
 
-[node name="Music Room" parent="locations" index="9" instance=ExtResource("4_ks0ua")]
+[node name="Music Room" parent="locations" index="8" instance=ExtResource("4_ks0ua")]
 position = Vector2(240.036, 32.4661)
 rotation = 1.57644
 
-[node name="Computer Room" parent="locations" index="10" instance=ExtResource("4_ks0ua")]
+[node name="Computer Room" parent="locations" index="9" instance=ExtResource("4_ks0ua")]
 position = Vector2(86.2761, 29.9687)
 rotation = 1.57068
 
-[node name="Science Room" parent="locations" index="11" instance=ExtResource("4_ks0ua")]
+[node name="Science Room" parent="locations" index="10" instance=ExtResource("4_ks0ua")]
 position = Vector2(403.191, 29.9687)
 rotation = 1.57386
 
-[node name="Classroom" parent="locations" index="12" instance=ExtResource("4_ks0ua")]
+[node name="Classroom" parent="locations" index="11" instance=ExtResource("4_ks0ua")]
 position = Vector2(495.447, 207.284)
 rotation = -1.56249
 
-[node name="Arts and Crafts Room" parent="locations" index="13" instance=ExtResource("4_ks0ua")]
+[node name="Arts and Crafts Room" parent="locations" index="12" instance=ExtResource("4_ks0ua")]
 position = Vector2(800.403, 81.7896)
 
+[node name="Gym" parent="locations" index="13" instance=ExtResource("4_ks0ua")]
+position = Vector2(86.2761, 398.334)
+
 [node name="Go_Straight" parent="Buttons" index="0"]
-offset_left = -29.1166
-offset_top = -363.473
-offset_right = 478.883
-offset_bottom = -105.473
+offset_left = -16.3057
+offset_top = -385.326
+offset_right = 491.694
+offset_bottom = -127.326
 scale = Vector2(0.523017, 0.449273)
 text = ""
 icon = ExtResource("9_x1t7y")
+
+[node name="Turn_Left" parent="Buttons" index="1"]
+offset_left = -118.794
+offset_top = -238.188
+offset_right = 389.206
+offset_bottom = 19.8121
+scale = Vector2(0.426411, 0.323718)
+text = ""
+icon = ExtResource("10_54jmc")
+
+[node name="Turn_Right" parent="Buttons" index="2"]
+offset_left = 107.147
+offset_top = -238.188
+offset_right = 615.147
+offset_bottom = 19.8121
+scale = Vector2(0.436486, 0.323109)
+text = ""
+icon = ExtResource("11_yxb75")
 
 [node name="Label" parent="Sentence" index="0"]
 offset_left = 1012.0

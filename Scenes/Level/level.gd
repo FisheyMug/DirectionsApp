@@ -38,8 +38,9 @@ func select_random_start_location():
 func check_win():
 	if Globals.win == true:
 		start_timer = true
-		$Sentence/WinMessage.show()
-		if start_timer == true:
+		
+		if start_timer == true and !Globals.player_moving:
+			$Sentence/WinMessage.show()
 			$Timers/WinMessage.start()
 			start_timer = false
 			Globals.win = false
