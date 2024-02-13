@@ -5,6 +5,8 @@ var target = destination
 var can_move_forward: bool = false
 var destination: Vector2
 var faceing: int = 0
+var shortest_distance = INF
+
 #small change
 var animationToPlay = "WalkDown"
 
@@ -57,12 +59,21 @@ func _input(event):
 
 func _on_view_area_entered(area):
 	destination = area.position
+	shortest_distance = INF
 	can_move_forward = true
 
 
 func _physics_process(_delta):
 	if position.distance_to(target) > 10 and !Globals.reset:
 		move_and_slide()
+	if $view.get_overlapping_areas().size() > 0:
+		can_move_forward = true
+		for element in $view.get_overlapping_areas():
+			var distance = position.distance_to(element.position)
+			if distance < shortest_distance and destination !=element.position:
+				shortest_distance = distance
+				destination = element.position
+				print(destination)
 
 func _on_body_collision_area_entered(_area):
 	$AnimationPlayer.stop()
@@ -94,3 +105,5 @@ func _on_turn_right_pressed():
 
 func _on_view_area_exited(_area):
 	can_move_forward = false
+	shortest_distance = INF
+	

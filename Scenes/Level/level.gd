@@ -26,7 +26,7 @@ func globals_goal_changed():
 		$Sentence/Label.text = "Where is the _____?"
 
 func select_random_goal():
-	current_goal = locations[randi() % 6].name
+	current_goal = locations[randi() % locations.size()].name
 	Globals.goal = current_goal
 	$Sentence/Label.text = "Where is the " + current_goal + "?"
 

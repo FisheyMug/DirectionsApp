@@ -11,3 +11,4 @@ func globals_goal_changed():
 		print(current_goal)
 		Globals.changing = false
 		$Sentence/Label.text = "This is my favorite place"
+

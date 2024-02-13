@@ -1,7 +1,7 @@
 extends Base_Level
 
 func select_random_goal():
-	current_goal = locations[randi() % 6].name
+	current_goal = locations[randi() % locations.size()].name
 	Globals.goal = current_goal
 	$Sentence/Label.text = "My favorite place is the " + current_goal
 	
