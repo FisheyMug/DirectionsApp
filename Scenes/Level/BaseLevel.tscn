@@ -2,28 +2,25 @@
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_iesg3"]
 [ext_resource type="PackedScene" uid="uid://bwnmaok0huh34" path="res://Scenes/Player/player.tscn" id="2_006r0"]
-[ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/Sprite-0001.png" id="2_x6cfs"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_gklj6"]
-font_size = 30
-font_color = Color(0.145098, 0.145098, 0.145098, 1)
+[ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_x6cfs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bar5a"]
 line_spacing = 10.0
-font_size = 100
+font_size = 150
 font_color = Color(1, 0.227451, 0.203922, 1)
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 25
 shadow_color = Color(0.0117647, 0.0117647, 0.0117647, 0.298039)
 
+[sub_resource type="LabelSettings" id="LabelSettings_gklj6"]
+font_size = 50
+font_color = Color(0.145098, 0.145098, 0.145098, 1)
+
 [node name="BaseLevel" type="Node2D"]
-position = Vector2(7, 4)
-scale = Vector2(1.17066, 1.60167)
 script = ExtResource("1_iesg3")
 
-[node name="paper" type="Sprite2D" parent="."]
-position = Vector2(576.598, 236.004)
-scale = Vector2(0.861905, 0.628713)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(683, 384)
 texture = ExtResource("2_x6cfs")
 
 [node name="map" type="Sprite2D" parent="."]
@@ -32,64 +29,10 @@ scale = Vector2(0.844586, 0.844586)
 
 [node name="Player" parent="." instance=ExtResource("2_006r0")]
 position = Vector2(36, 46)
-scale = Vector2(0.5, 0.5)
 
 [node name="MoveMarkers" type="Node2D" parent="."]
 
 [node name="locations" type="Node2D" parent="."]
-
-[node name="Buttons" type="Node2D" parent="."]
-position = Vector2(919.14, 527.574)
-scale = Vector2(0.733459, 0.857145)
-
-[node name="Go_Straight" type="Button" parent="Buttons"]
-offset_left = 16.5205
-offset_top = -283.14
-offset_right = 130.521
-offset_bottom = -241.14
-scale = Vector2(1.57164, 1.8993)
-action_mode = 0
-text = "Go Straight"
-
-[node name="Turn_Left" type="Button" parent="Buttons"]
-offset_left = -85.1641
-offset_top = -147.909
-offset_right = -6.16404
-offset_bottom = -116.909
-scale = Vector2(2.1887, 2.47223)
-text = "Turn Left"
-
-[node name="Turn_Right" type="Button" parent="Buttons"]
-offset_left = 133.458
-offset_top = -150.022
-offset_right = 222.458
-offset_bottom = -119.022
-scale = Vector2(2.03337, 2.48828)
-text = "Turn Right"
-
-[node name="Sentence" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="Sentence"]
-offset_left = 1018.0
-offset_top = 117.0
-offset_right = 1292.0
-offset_bottom = 237.0
-scale = Vector2(1.20146, 2.04508)
-text = "Enter Sentence"
-label_settings = SubResource("LabelSettings_gklj6")
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="WinMessage" type="Label" parent="Sentence"]
-visible = false
-offset_left = 153.0
-offset_top = 234.0
-offset_right = 953.0
-offset_bottom = 518.0
-text = "Congratulations!
-You Made It!"
-label_settings = SubResource("LabelSettings_bar5a")
-horizontal_alignment = 1
 
 [node name="Timers" type="Node2D" parent="."]
 
@@ -97,7 +40,96 @@ horizontal_alignment = 1
 wait_time = 3.0
 one_shot = true
 
-[connection signal="pressed" from="Buttons/Go_Straight" to="Player" method="_on_go_straight_pressed"]
-[connection signal="pressed" from="Buttons/Turn_Left" to="Player" method="_on_turn_left_pressed"]
-[connection signal="pressed" from="Buttons/Turn_Right" to="Player" method="_on_turn_right_pressed"]
+[node name="WinMessage" type="Label" parent="."]
+visible = false
+offset_left = 99.0
+offset_top = 133.0
+offset_right = 1301.0
+offset_bottom = 605.0
+text = "Congratulations!
+You Made It!"
+label_settings = SubResource("LabelSettings_bar5a")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 966.0
+offset_top = 27.0
+offset_right = 1348.0
+offset_bottom = 759.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.0
+offset_top = 30.0
+offset_right = 203.0
+offset_bottom = 171.0
+grow_horizontal = 2
+
+[node name="Sentence Container" type="CenterContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Sentence Container"]
+custom_minimum_size = Vector2(310, 0)
+layout_mode = 2
+text = "Enter Sentence"
+label_settings = SubResource("LabelSettings_gklj6")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -225.0
+offset_right = 204.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 15
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Go_Straight" type="Button" parent="Control/VBoxContainer2/CenterContainer2"]
+custom_minimum_size = Vector2(195, 85)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+action_mode = 0
+text = "Go Straight"
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/VBoxContainer2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control/VBoxContainer2/CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="Turn_Left" type="Button" parent="Control/VBoxContainer2/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(170, 85)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Turn Left"
+
+[node name="Turn_Right" type="Button" parent="Control/VBoxContainer2/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(170, 85)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Turn Right"
+
 [connection signal="timeout" from="Timers/WinMessage" to="." method="_on_win_message_timeout"]
+[connection signal="pressed" from="Control/VBoxContainer2/CenterContainer2/Go_Straight" to="Player" method="_on_go_straight_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer2/CenterContainer/GridContainer/Turn_Left" to="Player" method="_on_turn_left_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer2/CenterContainer/GridContainer/Turn_Right" to="Player" method="_on_turn_right_pressed"]

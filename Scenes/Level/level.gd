@@ -16,19 +16,19 @@ func _ready():
 		road_markers.append(node)
 	select_random_goal()
 	select_random_start_location()
-	$Sentence/WinMessage.hide()
+	$WinMessage.hide()
 
 func globals_goal_changed():
 	if Globals.changing:
 		current_goal = Globals.goal	
 		print(current_goal)
 		Globals.changing = false
-		$Sentence/Label.text = "Where is the _____?"
+		$"Control/VBoxContainer/Sentence Container/Label".text = "Where is the _____?"
 
 func select_random_goal():
 	current_goal = locations[randi() % locations.size()].name
 	Globals.goal = current_goal
-	$Sentence/Label.text = "Where is the " + current_goal + "?"
+	$"Control/VBoxContainer/Sentence Container/Label".text = "Where is the " + current_goal + "?"
 
 func select_random_start_location():
 	start_position = road_markers[randi() % road_markers.size() - 1].position
@@ -40,7 +40,7 @@ func check_win():
 		start_timer = true
 		
 		if start_timer == true and !Globals.player_moving:
-			$Sentence/WinMessage.show()
+			$WinMessage.show()
 			$Timers/WinMessage.start()
 			start_timer = false
 			Globals.win = false

@@ -10,115 +10,114 @@
 script = ExtResource("2_ttxof")
 
 [node name="map" parent="." index="1"]
+position = Vector2(496, 388)
+scale = Vector2(0.969819, 1.33698)
 texture = ExtResource("2_3eeci")
 
 [node name="Player" parent="." index="2"]
 position = Vector2(38.4399, 41.207)
 
 [node name="MoveMarker" parent="MoveMarkers" index="0" instance=ExtResource("3_b4n51")]
-position = Vector2(38.4399, 41.8313)
+position = Vector2(46, 65)
 
 [node name="MoveMarker2" parent="MoveMarkers" index="1" instance=ExtResource("3_b4n51")]
-position = Vector2(175.115, 33.7148)
+position = Vector2(191, 68)
 
 [node name="MoveMarker3" parent="MoveMarkers" index="2" instance=ExtResource("3_b4n51")]
-position = Vector2(307.519, 36.8366)
+position = Vector2(356, 64)
 
 [node name="MoveMarker4" parent="MoveMarkers" index="3" instance=ExtResource("3_b4n51")]
-position = Vector2(419.422, 33.7148)
+position = Vector2(491, 68)
 
 [node name="MoveMarker5" parent="MoveMarkers" index="4" instance=ExtResource("3_b4n51")]
-position = Vector2(544.992, 36.8366)
+position = Vector2(623, 71)
 
 [node name="MoveMarker6" parent="MoveMarkers" index="5" instance=ExtResource("3_b4n51")]
-position = Vector2(679.958, 33.7148)
+position = Vector2(796, 63)
 
 [node name="MoveMarker7" parent="MoveMarkers" index="6" instance=ExtResource("3_b4n51")]
-position = Vector2(819.196, 38.7096)
+position = Vector2(946, 68)
 
 [node name="MoveMarker8" parent="MoveMarkers" index="7" instance=ExtResource("3_b4n51")]
-position = Vector2(816.633, 126.743)
+position = Vector2(940, 220)
 
 [node name="MoveMarker9" parent="MoveMarkers" index="8" instance=ExtResource("3_b4n51")]
-position = Vector2(819.196, 225.39)
+position = Vector2(940, 372)
 
 [node name="MoveMarker10" parent="MoveMarkers" index="9" instance=ExtResource("3_b4n51")]
-position = Vector2(826.03, 324.037)
+position = Vector2(949, 549)
 
 [node name="MoveMarker11" parent="MoveMarkers" index="10" instance=ExtResource("3_b4n51")]
-position = Vector2(819.196, 437.668)
+position = Vector2(940, 703)
 
 [node name="MoveMarker12" parent="MoveMarkers" index="11" instance=ExtResource("3_b4n51")]
-position = Vector2(682.521, 440.79)
+position = Vector2(793, 704)
 
 [node name="MoveMarker13" parent="MoveMarkers" index="12" instance=ExtResource("3_b4n51")]
-position = Vector2(543.283, 438.917)
+position = Vector2(636, 703)
 
 [node name="MoveMarker14" parent="MoveMarkers" index="13" instance=ExtResource("3_b4n51")]
-position = Vector2(422.838, 438.917)
+position = Vector2(491, 704)
 
 [node name="MoveMarker15" parent="MoveMarkers" index="14" instance=ExtResource("3_b4n51")]
-position = Vector2(309.227, 438.917)
+position = Vector2(354, 704)
 
 [node name="MoveMarker16" parent="MoveMarkers" index="15" instance=ExtResource("3_b4n51")]
-position = Vector2(176.823, 442.039)
+position = Vector2(200, 709)
 
 [node name="MoveMarker17" parent="MoveMarkers" index="16" instance=ExtResource("3_b4n51")]
-position = Vector2(41.8567, 442.039)
+position = Vector2(58, 702)
 
 [node name="MoveMarker18" parent="MoveMarkers" index="17" instance=ExtResource("3_b4n51")]
-position = Vector2(37.5856, 340.27)
+position = Vector2(45, 531)
 
 [node name="MoveMarker19" parent="MoveMarkers" index="18" instance=ExtResource("3_b4n51")]
-position = Vector2(38.4399, 227.887)
+position = Vector2(51, 367)
 
 [node name="MoveMarker20" parent="MoveMarkers" index="19" instance=ExtResource("3_b4n51")]
-position = Vector2(33.3145, 124.87)
+position = Vector2(48, 219)
 
 [node name="MoveMarker21" parent="MoveMarkers" index="20" instance=ExtResource("3_b4n51")]
-position = Vector2(304.956, 129.864)
+position = Vector2(360, 228)
 
 [node name="MoveMarker22" parent="MoveMarkers" index="21" instance=ExtResource("3_b4n51")]
-position = Vector2(539.866, 124.87)
+position = Vector2(624, 223)
 
 [node name="MoveMarker23" parent="MoveMarkers" index="22" instance=ExtResource("3_b4n51")]
-position = Vector2(544.138, 224.765)
+position = Vector2(626, 371)
 
 [node name="MoveMarker24" parent="MoveMarkers" index="23" instance=ExtResource("3_b4n51")]
-position = Vector2(539.866, 344.64)
+position = Vector2(627, 542)
 
 [node name="MoveMarker25" parent="MoveMarkers" index="24" instance=ExtResource("3_b4n51")]
-position = Vector2(309.227, 344.64)
+position = Vector2(356, 544)
 
 [node name="MoveMarker26" parent="MoveMarkers" index="25" instance=ExtResource("3_b4n51")]
-position = Vector2(306.665, 224.765)
+position = Vector2(488, 367)
 
 [node name="MoveMarker27" parent="MoveMarkers" index="26" instance=ExtResource("3_b4n51")]
-position = Vector2(171.698, 229.76)
+position = Vector2(202, 372)
 
 [node name="MoveMarker28" parent="MoveMarkers" index="27" instance=ExtResource("3_b4n51")]
-position = Vector2(424.547, 222.892)
+position = Vector2(350, 365)
 
 [node name="MoveMarker29" parent="MoveMarkers" index="28" instance=ExtResource("3_b4n51")]
-position = Vector2(675.687, 229.76)
+position = Vector2(782, 367)
 
 [node name="Police Station" parent="locations" index="0" instance=ExtResource("4_snd2n")]
-position = Vector2(684.229, 134.859)
+position = Vector2(792, 239)
 
 [node name="Hospital" parent="locations" index="1" instance=ExtResource("4_snd2n")]
-position = Vector2(679.958, 331.529)
+position = Vector2(779, 550)
 
 [node name="Post Office" parent="locations" index="2" instance=ExtResource("4_snd2n")]
-position = Vector2(419.422, 136.732)
+position = Vector2(492, 224)
 
 [node name="Supermarket" parent="locations" index="3" instance=ExtResource("4_snd2n")]
-position = Vector2(424.547, 333.402)
+position = Vector2(498, 542)
 
 [node name="School" parent="locations" index="4" instance=ExtResource("4_snd2n")]
-position = Vector2(173.406, 131.738)
+position = Vector2(211, 223)
 
 [node name="Park" parent="locations" index="5" instance=ExtResource("4_snd2n")]
-position = Vector2(169.135, 331.529)
-
-[node name="Label" parent="Sentence" index="0"]
-text = "Where is the Hospital?"
+position = Vector2(208, 536)
