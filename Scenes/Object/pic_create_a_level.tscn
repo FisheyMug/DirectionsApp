@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d01bedihw8m7t"]
+
+[ext_resource type="Script" path="res://Scenes/Object/Pic_Create-a-Level.gd" id="1_ysicd"]
+
+[node name="Pic_Create-a-Level" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_ysicd")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

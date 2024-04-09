@@ -24,8 +24,6 @@ position = Vector2(683, 384)
 texture = ExtResource("2_x6cfs")
 
 [node name="map" type="Sprite2D" parent="."]
-position = Vector2(429.311, 237.671)
-scale = Vector2(0.844586, 0.844586)
 
 [node name="Player" parent="." instance=ExtResource("2_006r0")]
 position = Vector2(36, 46)
@@ -42,6 +40,7 @@ one_shot = true
 
 [node name="WinMessage" type="Label" parent="."]
 visible = false
+z_index = 1
 offset_left = 99.0
 offset_top = 133.0
 offset_right = 1301.0
@@ -128,6 +127,14 @@ custom_minimum_size = Vector2(170, 85)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Turn Right"
+
+[node name="Left Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 979.0
+offset_bottom = 756.0
 
 [connection signal="timeout" from="Timers/WinMessage" to="." method="_on_win_message_timeout"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer2/Go_Straight" to="Player" method="_on_go_straight_pressed"]

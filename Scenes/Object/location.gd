@@ -5,7 +5,6 @@ signal set_goal(goal)
 
 func _on_body_entered(_body):
 	if self.name == Globals.goal:
-		print("Congrats, you win!")
 		Globals.win = true
 	elif self.name != Globals.goal:
 		Globals.reset = true

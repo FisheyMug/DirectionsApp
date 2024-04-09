@@ -1,16 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://b27wsx4vp6bol"]
+[gd_scene load_steps=21 format=3 uid="uid://b27wsx4vp6bol"]
 
+[ext_resource type="Script" path="res://Scenes/Level/create_a_level.gd" id="1_c4j5u"]
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_mojmm"]
-[ext_resource type="Texture2D" uid="uid://mih7y6boqm85" path="res://Graphics/MySprites/City2.0/School.png" id="2_hivi2"]
+[ext_resource type="Texture2D" uid="uid://gydek451unbl" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="2_tycgg"]
+[ext_resource type="Texture2D" uid="uid://mih7y6boqm85" path="res://Graphics/MySprites/City2.0/School.png" id="4_er70v"]
+[ext_resource type="Texture2D" uid="uid://bap2eeaf248i5" path="res://Graphics/MySprites/City2.0/Hospital.png" id="5_dxe0t"]
+[ext_resource type="Texture2D" uid="uid://doyqfsdrf7yc1" path="res://Graphics/MySprites/City2.0/PostOffice.png" id="6_2yg4p"]
+[ext_resource type="Texture2D" uid="uid://bd3bsfxg1s036" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="6_dp23y"]
+[ext_resource type="Script" path="res://Scenes/Object/Draggable.gd" id="6_ignpu"]
+[ext_resource type="Texture2D" uid="uid://vxnm805cpfqa" path="res://Graphics/MySprites/City2.0/Supermarket.png" id="8_4jxp7"]
+[ext_resource type="Script" path="res://Scenes/Object/Hospital.gd" id="8_jyrf1"]
+[ext_resource type="Script" path="res://Scenes/Object/PostOffice.gd" id="10_8kk1r"]
+[ext_resource type="Script" path="res://Scenes/Object/School.gd" id="12_daeoa"]
+[ext_resource type="Script" path="res://Scenes/Object/Park.gd" id="14_alc6t"]
+[ext_resource type="Script" path="res://Scenes/Object/Supermarket.gd" id="14_ircid"]
+[ext_resource type="Texture2D" uid="uid://c36vg45x7vsyh" path="res://Graphics/MySprites/City2.0/Park1.png" id="14_thvyl"]
+[ext_resource type="Script" path="res://Scenes/Object/mmButton.gd" id="16_koqqs"]
+[ext_resource type="Texture2D" uid="uid://dymdcycfv5nhu" path="res://Graphics/MySprites/UI/MoveMarkerImage.png" id="16_yjipw"]
+[ext_resource type="Texture2D" uid="uid://b35slfix1wgp1" path="res://Graphics/MySprites/UI/LocationBox.png" id="18_b1ady"]
+[ext_resource type="Script" path="res://Scenes/Object/UserLocation.gd" id="18_gsfwd"]
+[ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="18_ip8dr"]
 
 [node name="Create-a-Level" type="Node2D"]
+script = ExtResource("1_c4j5u")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(683, 384)
 texture = ExtResource("1_mojmm")
-
-[node name="Map" type="Sprite2D" parent="."]
-position = Vector2(489, 359)
 
 [node name="RightPanel" type="Control" parent="."]
 layout_mode = 3
@@ -21,12 +37,19 @@ offset_right = 1347.0
 offset_bottom = 752.0
 
 [node name="CenterContainer" type="CenterContainer" parent="RightPanel"]
-layout_mode = 0
-offset_right = 391.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -11.0
+offset_right = 17.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TabContainer" type="TabContainer" parent="RightPanel/CenterContainer"]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(350, 760)
 layout_mode = 2
 current_tab = 0
 
@@ -34,24 +57,132 @@ current_tab = 0
 custom_minimum_size = Vector2(300, 700)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Map"]
+[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/TabContainer/Map"]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Map/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Load Pic" type="Button" parent="RightPanel/CenterContainer/TabContainer/Map/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load your Own Map!"
+
+[node name="blankmapButton" type="TextureButton" parent="RightPanel/CenterContainer/TabContainer/Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(310, 200)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_tycgg")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Locations" type="ScrollContainer" parent="RightPanel/CenterContainer/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Locations"]
+[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/TabContainer/Locations"]
 layout_mode = 2
+theme_override_constants/margin_left = 95
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="School" type="Sprite2D" parent="RightPanel/CenterContainer/TabContainer/Locations/VBoxContainer"]
-position = Vector2(148, 75)
-texture = ExtResource("2_hivi2")
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Locations/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Police Station" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture = ExtResource("6_dp23y")
+stretch_mode = 3
+script = ExtResource("6_ignpu")
+
+[node name="Hospital" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("5_dxe0t")
+script = ExtResource("8_jyrf1")
+
+[node name="Post Office" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("6_2yg4p")
+script = ExtResource("10_8kk1r")
+
+[node name="School" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("4_er70v")
+script = ExtResource("12_daeoa")
+
+[node name="Supermarket" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("8_4jxp7")
+script = ExtResource("14_ircid")
+
+[node name="Park" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("14_thvyl")
+script = ExtResource("14_alc6t")
 
 [node name="Markers" type="ScrollContainer" parent="RightPanel/CenterContainer/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Markers"]
+[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/TabContainer/Markers"]
 layout_mode = 2
+theme_override_constants/margin_left = 47
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 47
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Markers/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Start Level"
+
+[node name="mm" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+texture = ExtResource("16_yjipw")
+script = ExtResource("16_koqqs")
+
+[node name="UserLocation" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+texture = ExtResource("18_b1ady")
+script = ExtResource("18_gsfwd")
+
+[node name="Left Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 15.0
+offset_top = 12.0
+offset_right = 975.0
+offset_bottom = 753.0
+script = ExtResource("18_ip8dr")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 4
+size = Vector2i(392, 300)
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+
+[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Map/MarginContainer/VBoxContainer/Load Pic" to="." method="_on_load_pic_pressed"]
+[connection signal="button_up" from="RightPanel/CenterContainer/TabContainer/Map/MarginContainer/VBoxContainer/blankmapButton" to="." method="_on_blankmap_button_button_up"]
+[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

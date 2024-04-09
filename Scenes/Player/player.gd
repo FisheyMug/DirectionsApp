@@ -54,7 +54,6 @@ func _input(event):
 			velocity = position.direction_to(target) * speed
 			$AnimationPlayer.play(animationToPlay)
 			Globals.player_moving = true
-			print(target)
 			
 
 func _on_view_area_entered(area):
@@ -73,7 +72,6 @@ func _physics_process(_delta):
 			if distance < shortest_distance and destination !=element.position:
 				shortest_distance = distance
 				destination = element.position
-				print(destination)
 
 func _on_body_collision_area_entered(_area):
 	$AnimationPlayer.stop()

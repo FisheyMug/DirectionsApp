@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid="uid://tcwlbfvb4c0o"]
+
+[ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_qcjh3"]
+[ext_resource type="Texture2D" uid="uid://gydek451unbl" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="2_di2pr"]
+[ext_resource type="Script" path="res://Scenes/Level/BlankCity01.gd" id="2_ma0y2"]
+[ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="3_ds6b5"]
+[ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="5_m3wou"]
+
+[node name="BlankCity01" instance=ExtResource("1_qcjh3")]
+script = ExtResource("2_ma0y2")
+
+[node name="Background" parent="." index="0"]
+visible = false
+
+[node name="map" parent="." index="1"]
+position = Vector2(492.776, 381.916)
+scale = Vector2(0.972282, 1.37007)
+texture = ExtResource("2_di2pr")
+
+[node name="Player" parent="." index="2"]
+visible = false
+
+[node name="MoveMarker" parent="MoveMarkers" index="0" instance=ExtResource("3_ds6b5")]
+position = Vector2(47, 54)
+
+[node name="MoveMarker2" parent="MoveMarkers" index="1" instance=ExtResource("3_ds6b5")]
+position = Vector2(187, 54)
+
+[node name="MoveMarker3" parent="MoveMarkers" index="2" instance=ExtResource("3_ds6b5")]
+position = Vector2(44, 357)
+
+[node name="MoveMarker4" parent="MoveMarkers" index="3" instance=ExtResource("3_ds6b5")]
+position = Vector2(348, 53)
+
+[node name="MoveMarker5" parent="MoveMarkers" index="4" instance=ExtResource("3_ds6b5")]
+position = Vector2(491, 52)
+
+[node name="MoveMarker6" parent="MoveMarkers" index="5" instance=ExtResource("3_ds6b5")]
+position = Vector2(616, 55)
+
+[node name="MoveMarker7" parent="MoveMarkers" index="6" instance=ExtResource("3_ds6b5")]
+position = Vector2(770, 53)
+
+[node name="MoveMarker8" parent="MoveMarkers" index="7" instance=ExtResource("3_ds6b5")]
+position = Vector2(943, 50)
+
+[node name="MoveMarker9" parent="MoveMarkers" index="8" instance=ExtResource("3_ds6b5")]
+position = Vector2(40, 203)
+
+[node name="MoveMarker10" parent="MoveMarkers" index="9" instance=ExtResource("3_ds6b5")]
+position = Vector2(192, 366)
+
+[node name="MoveMarker11" parent="MoveMarkers" index="10" instance=ExtResource("3_ds6b5")]
+position = Vector2(351, 188)
+
+[node name="MoveMarker12" parent="MoveMarkers" index="11" instance=ExtResource("3_ds6b5")]
+position = Vector2(625, 198)
+
+[node name="MoveMarker13" parent="MoveMarkers" index="12" instance=ExtResource("3_ds6b5")]
+position = Vector2(941, 201)
+
+[node name="MoveMarker14" parent="MoveMarkers" index="13" instance=ExtResource("3_ds6b5")]
+position = Vector2(478, 370)
+
+[node name="MoveMarker15" parent="MoveMarkers" index="14" instance=ExtResource("3_ds6b5")]
+position = Vector2(626, 364)
+
+[node name="MoveMarker16" parent="MoveMarkers" index="15" instance=ExtResource("3_ds6b5")]
+position = Vector2(785, 367)
+
+[node name="MoveMarker17" parent="MoveMarkers" index="16" instance=ExtResource("3_ds6b5")]
+position = Vector2(939, 361)
+
+[node name="MoveMarker18" parent="MoveMarkers" index="17" instance=ExtResource("3_ds6b5")]
+position = Vector2(349, 360)
+
+[node name="MoveMarker19" parent="MoveMarkers" index="18" instance=ExtResource("3_ds6b5")]
+position = Vector2(44, 538)
+
+[node name="MoveMarker20" parent="MoveMarkers" index="19" instance=ExtResource("3_ds6b5")]
+position = Vector2(349, 534)
+
+[node name="MoveMarker21" parent="MoveMarkers" index="20" instance=ExtResource("3_ds6b5")]
+position = Vector2(624, 535)
+
+[node name="MoveMarker22" parent="MoveMarkers" index="21" instance=ExtResource("3_ds6b5")]
+position = Vector2(950, 538)
+
+[node name="MoveMarker23" parent="MoveMarkers" index="22" instance=ExtResource("3_ds6b5")]
+position = Vector2(40, 720)
+
+[node name="MoveMarker24" parent="MoveMarkers" index="23" instance=ExtResource("3_ds6b5")]
+position = Vector2(194, 719)
+
+[node name="MoveMarker25" parent="MoveMarkers" index="24" instance=ExtResource("3_ds6b5")]
+position = Vector2(344, 710)
+
+[node name="MoveMarker26" parent="MoveMarkers" index="25" instance=ExtResource("3_ds6b5")]
+position = Vector2(478, 710)
+
+[node name="MoveMarker27" parent="MoveMarkers" index="26" instance=ExtResource("3_ds6b5")]
+position = Vector2(622, 714)
+
+[node name="MoveMarker28" parent="MoveMarkers" index="27" instance=ExtResource("3_ds6b5")]
+position = Vector2(766, 713)
+
+[node name="MoveMarker29" parent="MoveMarkers" index="28" instance=ExtResource("3_ds6b5")]
+position = Vector2(939, 713)
+
+[node name="Control" parent="." index="7"]
+visible = false
+
+[node name="Left Panel" parent="." index="8"]
+script = ExtResource("5_m3wou")

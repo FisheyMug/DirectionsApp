@@ -8,6 +8,5 @@ func select_random_goal():
 func globals_goal_changed():
 	if Globals.changing:
 		current_goal = Globals.goal	
-		print(current_goal)
 		Globals.changing = false
 		$"Control/VBoxContainer/Sentence Container/Label".text = "This is my favorite place."

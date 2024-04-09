@@ -10,6 +10,9 @@ var start_timer: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#get_viewport().size = DisplayServer.screen_get_size()
+	#$Background.show()
+	#$Player.show()
+	#$Control.show()
 	for node in $locations.get_children():
 		locations.append(node)
 	for node in $MoveMarkers.get_children():
@@ -21,18 +24,19 @@ func _ready():
 func globals_goal_changed():
 	if Globals.changing:
 		current_goal = Globals.goal	
-		print(current_goal)
 		Globals.changing = false
 		$"Control/VBoxContainer/Sentence Container/Label".text = "Where is the _____?"
 
 func select_random_goal():
-	current_goal = locations[randi() % locations.size()].name
-	Globals.goal = current_goal
-	$"Control/VBoxContainer/Sentence Container/Label".text = "Where is the " + current_goal + "?"
+	if locations.size() > 0: 
+		current_goal = locations[randi() % locations.size()].name
+		Globals.goal = current_goal
+		$"Control/VBoxContainer/Sentence Container/Label".text = "Where is the " + current_goal + "?"
 
 func select_random_start_location():
-	start_position = road_markers[randi() % road_markers.size() - 1].position
-	$Player.position = start_position
+	if road_markers.size() > 0:
+		start_position = road_markers[randi() % road_markers.size() - 1].position
+		$Player.position = start_position
 	
 
 func check_win():

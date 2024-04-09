@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbasa44r81fqr"]
+
+[ext_resource type="Texture2D" uid="uid://b35slfix1wgp1" path="res://Graphics/MySprites/UI/LocationBox.png" id="1_jr61s"]
+[ext_resource type="Script" path="res://Scenes/Object/UserLocation.gd" id="1_tf31i"]
+
+[node name="UserLocation" type="TextureRect"]
+self_modulate = Color(1, 1, 1, 0.415686)
+offset_right = 67.0
+offset_bottom = 67.0
+texture = ExtResource("1_jr61s")
+script = ExtResource("1_tf31i")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 67.0
+offset_right = 147.0
+offset_bottom = 98.0
+text = "Name of Location"
+
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

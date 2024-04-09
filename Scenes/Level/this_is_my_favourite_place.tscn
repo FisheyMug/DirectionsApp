@@ -1779,6 +1779,3 @@ scale = Vector2(0.6, 0.6)
 
 [node name="Gym" parent="locations" index="13" instance=ExtResource("4_ks0ua")]
 position = Vector2(120, 653)
-
-[node name="WinMessage" parent="." index="7"]
-visible = false
