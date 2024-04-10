@@ -53,6 +53,16 @@ offset_bottom = 1041.72
 scale = Vector2(0.460294, 0.39166)
 texture_normal = ExtResource("2_j1fyd")
 
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 75.8597
+offset_top = 336.54
+offset_right = 665.86
+offset_bottom = 454.54
+theme_override_font_sizes/font_size = 80
+text = "Create-A-Level!"
+
 [connection signal="pressed" from="Control/OgSchool" to="." method="_on_og_school_pressed"]
 [connection signal="pressed" from="Control/NewSchool" to="." method="_on_new_school_pressed"]
 [connection signal="pressed" from="Control/OgCity" to="." method="_on_og_city_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
