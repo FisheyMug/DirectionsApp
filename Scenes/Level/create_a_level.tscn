@@ -182,7 +182,15 @@ dialog_hide_on_ok = true
 file_mode = 0
 access = 2
 
+[node name="Esc button" type="Button" parent="."]
+offset_left = 1331.0
+offset_top = 3.0
+offset_right = 1349.0
+offset_bottom = 34.0
+text = "X"
+
 [connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Map/MarginContainer/VBoxContainer/Load Pic" to="." method="_on_load_pic_pressed"]
 [connection signal="button_up" from="RightPanel/CenterContainer/TabContainer/Map/MarginContainer/VBoxContainer/blankmapButton" to="." method="_on_blankmap_button_button_up"]
 [connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="Esc button" to="." method="_on_esc_button_pressed"]

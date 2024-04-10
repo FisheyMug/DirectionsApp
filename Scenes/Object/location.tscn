@@ -6,6 +6,7 @@
 size = Vector2(98.5, 104)
 
 [node name="location" type="Area2D"]
+position = Vector2(52, 54)
 script = ExtResource("1_q701y")
 
 [node name="Entrance" type="CollisionShape2D" parent="."]

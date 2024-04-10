@@ -7,16 +7,26 @@
 self_modulate = Color(1, 1, 1, 0.415686)
 offset_right = 67.0
 offset_bottom = 67.0
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 texture = ExtResource("1_jr61s")
 script = ExtResource("1_tf31i")
 
 [node name="LineEdit" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 67.0
-offset_right = 147.0
-offset_bottom = 98.0
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.5
+offset_top = -31.0
+offset_right = 72.5
+grow_horizontal = 2
+grow_vertical = 0
 text = "Name of Location"
 
-[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]

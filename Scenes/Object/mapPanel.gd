@@ -14,6 +14,8 @@ func _drop_data(_at_position, data):
 		var userLocation = preload("res://Scenes/Object/user_location.tscn")
 		var uL = userLocation.instantiate()		
 		uL.position = _at_position
+		for node in uL.get_children():
+			node.show()
 		$".".add_child(uL)
 	elif  "MoveMarker" in data.name:
 		var texture = preload("res://Scenes/Object/move_m_image.tscn")

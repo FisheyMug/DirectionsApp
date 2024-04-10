@@ -136,7 +136,16 @@ offset_top = 7.0
 offset_right = 979.0
 offset_bottom = 756.0
 
+[node name="Button" type="Button" parent="."]
+offset_left = 1327.0
+offset_top = 10.0
+offset_right = 1352.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 27
+text = "X"
+
 [connection signal="timeout" from="Timers/WinMessage" to="." method="_on_win_message_timeout"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer2/Go_Straight" to="Player" method="_on_go_straight_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer/GridContainer/Turn_Left" to="Player" method="_on_turn_left_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer/GridContainer/Turn_Right" to="Player" method="_on_turn_right_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -27,7 +27,6 @@ func _on_button_pressed():
 		#for each texture rect instantiate a location, add it to the location node, and set its owner
 		if c.name == "Left Panel":
 			for a in c.get_children():
-				print(a)
 				if "MoveMarker" in a.name:
 					var m = preload("res://Scenes/Object/move_marker.tscn")
 					var mmInstance = m.instantiate()
@@ -54,8 +53,6 @@ func _on_button_pressed():
 		for a in c.get_children():
 			if a.name == "view":
 				a.set_owner(c)
-			elif c.name == "Left Panel":
-				a.hide()
 			else:
 				a.set_owner(finished_level)
 	
@@ -74,7 +71,6 @@ func _on_load_pic_pressed():
 	if $"Left Panel".get_children().size() == 0:
 		$"Left Panel".add_child(instance)
 		Player_map = instance.get_child(1)
-		print(Player_map)
 	$FileDialog.popup()
 
 
@@ -90,3 +86,14 @@ func _on_file_dialog_file_selected(path):
 	Player_map.scale.y = $"Left Panel".size.y / image_texture.get_height()
 	#add image to the level
 	Player_map.texture = image_texture
+
+func _input(event):
+	if event.is_action_pressed("Menu"):
+		get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
+
+func _on_esc_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
+
+func _process(delta):
+	if $"Left Panel".get_children().size() > 0:
+		$"Esc button".hide()
