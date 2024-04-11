@@ -10,6 +10,7 @@ func _ready():
 	levelScene = PackedScene.new()
 	blankCity = preload("res://Scenes/Level/BlankCity01.tscn")
 	PlayerImageLevel = preload("res://Scenes/Level/player_image_level.tscn")
+	get_tree().get_root().files_dropped.connect(_on_files_dropped)
 
 func _on_blankmap_button_button_up():
 	var instance = blankCity.instantiate()
@@ -58,8 +59,8 @@ func _on_button_pressed():
 	
 	levelScene.pack(finished_level)
 	Globals.GameStarted = true
-	ResourceSaver.save(levelScene, "res://Player_Created.tscn")
-	get_tree().change_scene_to_file.bind("res://Player_Created.tscn").call_deferred()
+	ResourceSaver.save(levelScene, "user://Player_Created.tscn")
+	get_tree().change_scene_to_file.bind("user://Player_Created.tscn").call_deferred()
 	
 
 
@@ -97,3 +98,24 @@ func _on_esc_button_pressed():
 func _process(delta):
 	if $"Left Panel".get_children().size() > 0:
 		$"Esc button".hide()
+
+func _on_files_dropped(files):
+		
+	var path = files[0]
+	
+	var image =Image.new()
+	image.load(path)
+	
+	var texture = ImageTexture.new()
+	texture.set_image(image)
+	
+	var instance = PlayerImageLevel.instantiate()
+	#check if an instance exists so we dont add mulitple
+	if $"Left Panel".get_children().size() == 0:
+		$"Left Panel".add_child(instance)
+		Player_map = instance.get_child(1)
+		
+	Player_map.scale.x = $"Left Panel".size.x / texture.get_width()
+	Player_map.scale.y = $"Left Panel".size.y / texture.get_height()
+	#add image to the level
+	Player_map.texture = texture
