@@ -52,6 +52,7 @@ grow_vertical = 2
 custom_minimum_size = Vector2(350, 760)
 layout_mode = 2
 current_tab = 0
+tab_focus_mode = 0
 
 [node name="Map" type="ScrollContainer" parent="RightPanel/CenterContainer/TabContainer"]
 custom_minimum_size = Vector2(300, 700)
@@ -101,7 +102,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 texture = ExtResource("6_dp23y")
-stretch_mode = 3
 script = ExtResource("6_ignpu")
 
 [node name="Hospital" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/MarginContainer/VBoxContainer"]
@@ -161,6 +161,7 @@ script = ExtResource("16_koqqs")
 [node name="UserLocation" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture = ExtResource("18_b1ady")
 script = ExtResource("18_gsfwd")
 

@@ -13,7 +13,6 @@ func _ready():
 func globals_goal_changed():
 	if Globals.changing:
 		current_goal = Globals.goal	
-		print(current_goal)
 		Globals.changing = false
 		$"Control/VBoxContainer/Sentence Container/Label".text = "Where is the _____?"
 

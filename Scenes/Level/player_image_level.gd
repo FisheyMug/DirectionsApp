@@ -2,6 +2,7 @@ extends Base_Level
 
 
 func _ready():
+	print(Globals.GameStarted)
 	for node in $locations.get_children():
 			locations.append(node)
 	for node in $MoveMarkers.get_children():

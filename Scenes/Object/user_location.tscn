@@ -5,9 +5,8 @@
 
 [node name="UserLocation" type="TextureRect"]
 self_modulate = Color(1, 1, 1, 0.415686)
-offset_right = 67.0
-offset_bottom = 67.0
-size_flags_vertical = 4
+offset_right = 68.0
+offset_bottom = 68.0
 mouse_default_cursor_shape = 2
 texture = ExtResource("1_jr61s")
 script = ExtResource("1_tf31i")

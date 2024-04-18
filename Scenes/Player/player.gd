@@ -38,6 +38,7 @@ func rotation(input):
 
 func _input(event):
 	if event.is_action_pressed("Menu"):
+		Globals.GameStarted = false
 		get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
 	if event.is_action_released("turn_right") and !Globals.player_moving:
 		$view.rotate(1.57)

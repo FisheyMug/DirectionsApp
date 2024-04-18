@@ -1,6 +1,6 @@
 extends TextureRect
 
-var location
+var location = "user"
 signal set_goal(goal)
 var was_dropped = false
 
@@ -8,12 +8,15 @@ var was_dropped = false
 func _get_drag_data(_at_position):
 	if !Globals.GameStarted:
 		was_dropped = true
-		var preview =  TextureRect.new()
-		preview.texture = self.texture
-		preview.set_name(self.name)
-		#preview.scale = Vector2(1.8, 2.3)
-		set_drag_preview(preview)
-		return preview 
+		var userLocation = preload("res://Scenes/Object/user_location.tscn")
+		var uL = userLocation.instantiate()		
+		uL.position = _at_position
+		uL.texture = self.texture
+		uL.set_name("UserLocation")
+		uL.size.x = Globals.selected_x_length
+		uL.size.y = Globals.selected_y_length
+		set_drag_preview(uL)
+		return uL 
 
 
 
@@ -23,7 +26,11 @@ func _on_line_edit_text_submitted(new_text):
 
 
 func _on_gui_input(event):
-	if event.is_action_released("click"):
+	if event.is_action_released("click") and Globals.GameStarted:
 		Globals.changing = true
 		Globals.goal = self.name
 		set_goal.emit(Globals.goal)
+	
+	if !Globals.GameStarted:
+		Globals.selected = self
+		

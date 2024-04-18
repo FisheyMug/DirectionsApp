@@ -39,7 +39,12 @@ func _on_button_pressed():
 					var l = preload("res://Scenes/Object/location.tscn")
 					var instance = l.instantiate()
 					instance.set_name(a.name)
-					instance.position = a.position + 0.5 * a.size*2
+					instance.get_child(0).get_shape().size.x = a.size.x - 20
+					instance.get_child(0).get_shape().size.y = a.size.y -20
+					if a.location == "user":
+						instance.position = a.position + 0.5 * a.size
+					else:
+						instance.position = a.position + 0.5 * a.size#*2
 					Ls.add_child(instance)
 					instance.set_owner(finished_level)
 		#Player needs to be unhidden and the owner not set to the level/map
@@ -60,6 +65,7 @@ func _on_button_pressed():
 	levelScene.pack(finished_level)
 	Globals.GameStarted = true
 	ResourceSaver.save(levelScene, "user://Player_Created.tscn")
+	ResourceSaver.save(levelScene, "res://Player_Created.tscn")
 	get_tree().change_scene_to_file.bind("user://Player_Created.tscn").call_deferred()
 	
 
@@ -93,9 +99,10 @@ func _input(event):
 		get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
 
 func _on_esc_button_pressed():
+	Globals.GameStarted = false
 	get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
 
-func _process(delta):
+func _process(_delta):
 	if $"Left Panel".get_children().size() > 0:
 		$"Esc button".hide()
 

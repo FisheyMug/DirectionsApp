@@ -3,9 +3,11 @@
 [ext_resource type="Script" path="res://Scenes/Object/Pic_Create-a-Level.gd" id="1_ysicd"]
 
 [node name="Pic_Create-a-Level" type="TextureRect"]
+custom_minimum_size = Vector2(10, 10)
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_default_cursor_shape = 2
+expand_mode = 1
 script = ExtResource("1_ysicd")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
