@@ -136,7 +136,7 @@ offset_top = 7.0
 offset_right = 979.0
 offset_bottom = 756.0
 
-[node name="Button" type="Button" parent="."]
+[node name="menu" type="Button" parent="."]
 offset_left = 1327.0
 offset_top = 10.0
 offset_right = 1352.0
@@ -148,4 +148,4 @@ text = "X"
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer2/Go_Straight" to="Player" method="_on_go_straight_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer/GridContainer/Turn_Left" to="Player" method="_on_turn_left_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer/GridContainer/Turn_Right" to="Player" method="_on_turn_right_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_button_pressed"]

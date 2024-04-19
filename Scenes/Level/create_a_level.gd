@@ -39,8 +39,8 @@ func _on_button_pressed():
 					var l = preload("res://Scenes/Object/location.tscn")
 					var instance = l.instantiate()
 					instance.set_name(a.name)
-					instance.get_child(0).get_shape().size.x = a.size.x - 0.2 * a.size.x
-					instance.get_child(0).get_shape().size.y = a.size.y - 0.2 * a.size.y
+					instance.get_child(0).get_shape().size.x = a.size.x - 0.3 * a.size.x
+					instance.get_child(0).get_shape().size.y = a.size.y - 0.3 * a.size.y
 					#if a.location == "user":
 					instance.position = a.position + 0.3 * a.size*2
 					#else:

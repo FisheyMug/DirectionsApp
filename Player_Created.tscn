@@ -1,15 +1,22 @@
-[gd_scene load_steps=13 format=3 uid="uid://bft1cg0iultu2"]
+[gd_scene load_steps=20 format=3]
 
-[ext_resource type="Script" path="res://Scenes/Level/BlankCity01.gd" id="1_c2e5e"]
-[ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_6dbft"]
-[ext_resource type="Texture2D" uid="uid://gydek451unbl" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="3_ca6ij"]
-[ext_resource type="PackedScene" uid="uid://bwnmaok0huh34" path="res://Scenes/Player/player.tscn" id="4_ebpfk"]
-[ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="6_w1nut"]
-[ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="8_08q40"]
-[ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="10_vvak2"]
-[ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="11_yi0hp"]
-[ext_resource type="Texture2D" uid="uid://bap2eeaf248i5" path="res://Graphics/MySprites/City2.0/Hospital.png" id="12_45du5"]
-[ext_resource type="PackedScene" uid="uid://bbasa44r81fqr" path="res://Scenes/Object/user_location.tscn" id="14_grkvn"]
+[ext_resource type="Script" path="res://Scenes/Level/BlankCity01.gd" id="1_st4he"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_uooce"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="3_6t445"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/player.tscn" id="4_wkgm7"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="5_jb071"]
+[ext_resource type="PackedScene" path="res://Scenes/Object/move_marker.tscn" id="6_dsalp"]
+[ext_resource type="Script" path="res://Scenes/Object/move_marker.gd" id="7_oa8ju"]
+[ext_resource type="PackedScene" path="res://Scenes/Object/location.tscn" id="8_faufo"]
+[ext_resource type="Script" path="res://Scenes/Object/location.gd" id="9_tbuxy"]
+[ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="10_mjovy"]
+[ext_resource type="PackedScene" path="res://Scenes/Object/pic_create_a_level.tscn" id="11_86xuu"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/PostOffice.png" id="12_apa0t"]
+[ext_resource type="Script" path="res://Scenes/Object/Pic_Create-a-Level.gd" id="13_1ng4c"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/School.png" id="14_pjeme"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Hospital.png" id="15_b12nl"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Park1.png" id="16_qoo6t"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Supermarket.png" id="17_f0lk5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bar5a"]
 line_spacing = 10.0
@@ -24,119 +31,162 @@ font_size = 50
 font_color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [node name="BlankCity01" type="Node2D"]
-script = ExtResource("1_c2e5e")
+script = ExtResource("1_st4he")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(683, 384)
-texture = ExtResource("2_6dbft")
+texture = ExtResource("2_uooce")
 
 [node name="map" type="Sprite2D" parent="."]
 position = Vector2(492.776, 381.916)
 scale = Vector2(0.972282, 1.37007)
-texture = ExtResource("3_ca6ij")
+texture = ExtResource("3_6t445")
 
-[node name="Player" parent="." instance=ExtResource("4_ebpfk")]
-position = Vector2(491, 52)
+[node name="Player" type="CharacterBody2D" parent="." instance=ExtResource("4_wkgm7")]
+position = Vector2(624, 535)
+rotation = Callable()
+script = ExtResource("5_jb071")
+speed = 200
 
 [node name="MoveMarkers" type="Node2D" parent="."]
 
-[node name="MoveMarker" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(47, 54)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker2" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker2" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(187, 54)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker3" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker3" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(44, 357)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker4" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker4" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(348, 53)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker5" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker5" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(491, 52)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker6" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker6" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(616, 55)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker7" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker7" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(770, 53)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker8" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker8" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(943, 50)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker9" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker9" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(40, 203)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker10" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker10" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(192, 366)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker11" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker11" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(351, 188)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker12" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker12" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(625, 198)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker13" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker13" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(941, 201)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker14" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker14" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(478, 370)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker15" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker15" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(626, 364)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker16" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker16" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(785, 367)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker17" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker17" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(939, 361)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker18" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker18" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(349, 360)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker19" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker19" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(44, 538)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker20" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker20" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(349, 534)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker21" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker21" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(624, 535)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker22" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker22" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(950, 538)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker23" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker23" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(40, 720)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker24" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker24" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(194, 719)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker25" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker25" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(344, 710)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker26" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker26" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(478, 710)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker27" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker27" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(622, 714)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker28" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker28" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(766, 713)
+script = ExtResource("7_oa8ju")
 
-[node name="MoveMarker29" parent="MoveMarkers" instance=ExtResource("6_w1nut")]
+[node name="MoveMarker29" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_dsalp")]
 position = Vector2(939, 713)
+script = ExtResource("7_oa8ju")
 
 [node name="locations" type="Node2D" parent="."]
 
-[node name="Hospital" parent="locations" instance=ExtResource("8_08q40")]
-position = Vector2(773.394, 207.883)
+[node name="Post Office" type="Area2D" parent="locations" instance=ExtResource("8_faufo")]
+position = Vector2(739.456, 537.372)
+script = ExtResource("9_tbuxy")
 
-[node name="Station" parent="locations" instance=ExtResource("8_08q40")]
-position = Vector2(763.697, 493.763)
+[node name="School" type="Area2D" parent="locations" instance=ExtResource("8_faufo")]
+position = Vector2(754.001, 199.404)
+script = ExtResource("9_tbuxy")
 
-[node name="Pakr" parent="locations" instance=ExtResource("8_08q40")]
-position = Vector2(117.177, 146.558)
+[node name="Hospital" type="Area2D" parent="locations" instance=ExtResource("8_faufo")]
+position = Vector2(489.77, 221.208)
+script = ExtResource("9_tbuxy")
+
+[node name="Park" type="Area2D" parent="locations" instance=ExtResource("8_faufo")]
+position = Vector2(494.618, 548.274)
+script = ExtResource("9_tbuxy")
+
+[node name="Supermarket" type="Area2D" parent="locations" instance=ExtResource("8_faufo")]
+position = Vector2(204.934, 204.249)
+script = ExtResource("9_tbuxy")
 
 [node name="Timers" type="Node2D" parent="."]
 
@@ -241,30 +291,67 @@ offset_left = 14.0
 offset_top = 7.0
 offset_right = 979.0
 offset_bottom = 756.0
-script = ExtResource("10_vvak2")
+script = ExtResource("10_mjovy")
 
-[node name="Hospital" parent="Left Panel" instance=ExtResource("11_yi0hp")]
+[node name="Post Office" type="TextureRect" parent="Left Panel" instance=ExtResource("11_86xuu")]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 0
-offset_left = 653.394
-offset_top = 117.883
-offset_right = 853.394
-offset_bottom = 267.883
-texture = ExtResource("12_45du5")
+offset_left = 619.456
+offset_top = 447.372
+offset_right = 819.456
+offset_bottom = 597.372
+mouse_default_cursor_shape = 2
+texture = ExtResource("12_apa0t")
+expand_mode = 1
+script = ExtResource("13_1ng4c")
 
-[node name="Station" parent="Left Panel" instance=ExtResource("14_grkvn")]
+[node name="School" type="TextureRect" parent="Left Panel" instance=ExtResource("11_86xuu")]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 0
-offset_left = 643.697
-offset_top = 403.763
-offset_right = 843.697
-offset_bottom = 553.763
+offset_left = 634.001
+offset_top = 109.404
+offset_right = 834.001
+offset_bottom = 259.404
+mouse_default_cursor_shape = 2
+texture = ExtResource("14_pjeme")
+expand_mode = 1
+script = ExtResource("13_1ng4c")
 
-[node name="Pakr" parent="Left Panel" instance=ExtResource("14_grkvn")]
-self_modulate = Color(1, 1, 0, 1)
+[node name="Hospital" type="TextureRect" parent="Left Panel" instance=ExtResource("11_86xuu")]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 0
-offset_left = 69.1774
-offset_top = 104.558
-offset_right = 149.177
-offset_bottom = 174.558
+offset_left = 369.77
+offset_top = 131.208
+offset_right = 569.77
+offset_bottom = 281.208
+mouse_default_cursor_shape = 2
+texture = ExtResource("15_b12nl")
+expand_mode = 1
+script = ExtResource("13_1ng4c")
+
+[node name="Park" type="TextureRect" parent="Left Panel" instance=ExtResource("11_86xuu")]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 374.618
+offset_top = 458.274
+offset_right = 574.618
+offset_bottom = 608.274
+mouse_default_cursor_shape = 2
+texture = ExtResource("16_qoo6t")
+expand_mode = 1
+script = ExtResource("13_1ng4c")
+
+[node name="Supermarket" type="TextureRect" parent="Left Panel" instance=ExtResource("11_86xuu")]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 84.9343
+offset_top = 114.249
+offset_right = 284.934
+offset_bottom = 264.249
+mouse_default_cursor_shape = 2
+texture = ExtResource("17_f0lk5")
+expand_mode = 1
+script = ExtResource("13_1ng4c")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 1327.0
@@ -274,8 +361,33 @@ offset_bottom = 55.0
 theme_override_font_sizes/font_size = 27
 text = "X"
 
+[connection signal="body_entered" from="locations/Post Office" to="locations/Post Office" method="_on_body_entered"]
+[connection signal="input_event" from="locations/Post Office" to="locations/Post Office" method="_on_input_event"]
+[connection signal="mouse_entered" from="locations/Post Office" to="locations/Post Office" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="locations/Post Office" to="locations/Post Office" method="_on_mouse_exited"]
+[connection signal="body_entered" from="locations/School" to="locations/School" method="_on_body_entered"]
+[connection signal="input_event" from="locations/School" to="locations/School" method="_on_input_event"]
+[connection signal="mouse_entered" from="locations/School" to="locations/School" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="locations/School" to="locations/School" method="_on_mouse_exited"]
+[connection signal="body_entered" from="locations/Hospital" to="locations/Hospital" method="_on_body_entered"]
+[connection signal="input_event" from="locations/Hospital" to="locations/Hospital" method="_on_input_event"]
+[connection signal="mouse_entered" from="locations/Hospital" to="locations/Hospital" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="locations/Hospital" to="locations/Hospital" method="_on_mouse_exited"]
+[connection signal="body_entered" from="locations/Park" to="locations/Park" method="_on_body_entered"]
+[connection signal="input_event" from="locations/Park" to="locations/Park" method="_on_input_event"]
+[connection signal="mouse_entered" from="locations/Park" to="locations/Park" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="locations/Park" to="locations/Park" method="_on_mouse_exited"]
+[connection signal="body_entered" from="locations/Supermarket" to="locations/Supermarket" method="_on_body_entered"]
+[connection signal="input_event" from="locations/Supermarket" to="locations/Supermarket" method="_on_input_event"]
+[connection signal="mouse_entered" from="locations/Supermarket" to="locations/Supermarket" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="locations/Supermarket" to="locations/Supermarket" method="_on_mouse_exited"]
 [connection signal="timeout" from="Timers/WinMessage" to="." method="_on_win_message_timeout"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer2/Go_Straight" to="Player" method="_on_go_straight_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer/GridContainer/Turn_Left" to="Player" method="_on_turn_left_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer/GridContainer/Turn_Right" to="Player" method="_on_turn_right_pressed"]
+[connection signal="gui_input" from="Left Panel/Post Office" to="Left Panel/Post Office" method="_on_gui_input"]
+[connection signal="gui_input" from="Left Panel/School" to="Left Panel/School" method="_on_gui_input"]
+[connection signal="gui_input" from="Left Panel/Hospital" to="Left Panel/Hospital" method="_on_gui_input"]
+[connection signal="gui_input" from="Left Panel/Park" to="Left Panel/Park" method="_on_gui_input"]
+[connection signal="gui_input" from="Left Panel/Supermarket" to="Left Panel/Supermarket" method="_on_gui_input"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

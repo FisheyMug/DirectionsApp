@@ -37,21 +37,27 @@ alignment = 1
 
 [node name="Creat-A-Level" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
+tooltip_text = "Create your own map!"
 theme_override_font_sizes/font_size = 80
 text = "Create-A-Level!"
 
 [node name="City" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
+tooltip_text = "Where is the post office?
+Some default city maps."
 theme_override_font_sizes/font_size = 80
 text = "City Maps"
 
 [node name="School" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
+tooltip_text = "This is my favourite place.
+Some default school maps."
 theme_override_font_sizes/font_size = 80
 text = "School Maps"
 
 [node name="Player Made" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
+tooltip_text = "The last player made level."
 theme_override_font_sizes/font_size = 80
 text = "Player Made"
 
