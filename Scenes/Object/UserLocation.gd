@@ -31,6 +31,10 @@ func _on_gui_input(event):
 		Globals.goal = self.name
 		set_goal.emit(Globals.goal)
 	
-	if !Globals.GameStarted:
-		Globals.selected = self
-		
+	if event.is_action_released("click") and !Globals.GameStarted:
+			Globals.selected = self
+			self_modulate = Color(1, 1, 0, 1)	
+
+func _process(_delta):
+	if Globals.selected != self:
+		self_modulate = Color(1, 1, 1, 1)	

@@ -1,68 +1,61 @@
-[gd_scene load_steps=6 format=3 uid="uid://stf0sm0rs72r"]
+[gd_scene load_steps=3 format=3 uid="uid://stf0sm0rs72r"]
 
 [ext_resource type="Script" path="res://StartMenu.gd" id="1_7nuov"]
-[ext_resource type="Texture2D" uid="uid://bnl7fr1v4ktc" path="res://Graphics/My town.png" id="2_j1fyd"]
-[ext_resource type="Texture2D" uid="uid://ch1y2pmxxj3t6" path="res://Graphics/MySprites/UI/MainMenu.png" id="2_j3mrw"]
-[ext_resource type="Texture2D" uid="uid://d53wmvqf1tdi" path="res://Graphics/modified_school.png" id="3_dxyho"]
-[ext_resource type="Texture2D" uid="uid://crxv58iaecy5a" path="res://Graphics/My Fav Place.png" id="4_1eqbw"]
+[ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_jf7i4"]
 
 [node name="StartMenu" type="Node2D"]
 script = ExtResource("1_7nuov")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.00185, 0.992453)
+metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="Background" type="TextureRect" parent="Control"]
 layout_mode = 0
 offset_right = 1366.0
 offset_bottom = 768.0
-texture = ExtResource("2_j3mrw")
+texture = ExtResource("2_jf7i4")
 
-[node name="OgSchool" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 843.0
-offset_top = 489.0
-offset_right = 2217.0
-offset_bottom = 1375.0
-scale = Vector2(0.331296, 0.249276)
-theme_override_font_sizes/font_size = 40
-text = "This is my Favourite Place"
-icon = ExtResource("3_dxyho")
-icon_alignment = 1
-vertical_icon_alignment = 0
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+offset_right = 1364.0
+offset_bottom = 767.0
 
-[node name="NewSchool" type="TextureButton" parent="Control"]
-layout_mode = 0
-offset_left = 839.45
-offset_top = 92.6996
-offset_right = 2207.45
-offset_bottom = 767.7
-scale = Vector2(0.336024, 0.481512)
-texture_normal = ExtResource("4_1eqbw")
+[node name="CenterContainer" type="CenterContainer" parent="Control/MarginContainer"]
+layout_mode = 2
 
-[node name="OgCity" type="TextureButton" parent="Control"]
-layout_mode = 0
-offset_left = 231.573
-offset_top = 492.718
-offset_right = 1225.57
-offset_bottom = 1041.72
-scale = Vector2(0.460294, 0.39166)
-texture_normal = ExtResource("2_j1fyd")
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
 
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 75.8597
-offset_top = 336.54
-offset_right = 665.86
-offset_bottom = 454.54
+[node name="Creat-A-Level" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "Create-A-Level!"
 
-[connection signal="pressed" from="Control/OgSchool" to="." method="_on_og_school_pressed"]
-[connection signal="pressed" from="Control/NewSchool" to="." method="_on_new_school_pressed"]
-[connection signal="pressed" from="Control/OgCity" to="." method="_on_og_city_pressed"]
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[node name="City" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "City Maps"
+
+[node name="School" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "School Maps"
+
+[node name="Player Made" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Player Made"
+
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/Creat-A-Level" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/City" to="." method="_on_city_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/School" to="." method="_on_school_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/Player Made" to="." method="_on_player_made_pressed"]

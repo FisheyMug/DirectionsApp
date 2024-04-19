@@ -9,9 +9,10 @@ func _on_gui_input(event):
 		Globals.changing = true
 		Globals.goal = self.name
 		set_goal.emit(Globals.goal)
-	
-	if !Globals.GameStarted:
-		Globals.selected = self
+
+	if event.is_action_released("click") and !Globals.GameStarted:
+			Globals.selected = self
+			self_modulate = Color(1, 1, 0, 1)	
 
 func _get_drag_data(_at_position):
 	if !Globals.GameStarted:
@@ -24,3 +25,7 @@ func _get_drag_data(_at_position):
 		preview.size.y = Globals.selected_y_length
 		set_drag_preview(preview)
 		return preview 
+
+func _process(_delta):
+	if Globals.selected != self:
+		self_modulate = Color(1, 1, 1, 1)	
