@@ -4,6 +4,8 @@ var movemarkerCounter = 0
 var mouse_hover: bool = false
 signal set_goal(goal)
 
+var player;
+
 func _can_drop_data(_at_position, _data):
 	return true
 	
@@ -48,7 +50,7 @@ func _drop_data(_at_position, data):
 
 func _input(event):
 	var increment = 10
-	if !Globals.GameStarted and Globals.selected != null:
+	if !Globals.GameStarted and Globals.selected != null and !player.visible:
 		if event.is_action_released("go_straight"):
 			Globals.selected.size.y += increment
 			Globals.selected_y_length = Globals.selected.size.y 

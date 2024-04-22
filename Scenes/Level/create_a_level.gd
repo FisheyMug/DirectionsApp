@@ -126,3 +126,28 @@ func _on_files_dropped(files):
 	Player_map.scale.y = $"Left Panel".size.y / texture.get_height()
 	#add image to the level
 	Player_map.texture = texture
+
+
+
+
+func _on_texture_button_pressed():
+	if $"Left Panel".get_children().size() > 0:
+		var player = $"Left Panel".get_child(0).get_child(2)
+		if !player.visible:
+			player.show()
+		else:
+			player.hide()
+
+
+func _on_smaller_pressed():
+	if $"Left Panel".get_children().size() > 0:
+		var player = $"Left Panel".get_child(0).get_child(2)
+		if player.visible:
+			player.scale -= Vector2(0.1, 0.1)
+
+
+func _on_bigger_pressed():
+	if $"Left Panel".get_children().size() > 0:
+		var player = $"Left Panel".get_child(0).get_child(2)
+		if player.visible:
+			player.scale += Vector2(0.1, 0.1)
