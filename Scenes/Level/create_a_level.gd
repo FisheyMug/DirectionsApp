@@ -15,8 +15,8 @@ func _ready():
 func _on_blankmap_button_button_up():
 	var instance = blankCity.instantiate()
 	$"Left Panel".add_child(instance)
-	$RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer/mm.hide()
-	$RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer/UserLocation.hide()
+	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.hide()
+	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/UserLocation.hide()
 
 
 func _on_button_pressed():
@@ -45,7 +45,7 @@ func _on_button_pressed():
 					instance.set_name(a.name)
 					#get the location scale to match the pictures scale! - not the size!
 					instance.scale = a.scale
-					instance.position = a.position + 0.5 * a.size*2
+					instance.position = a.position + 0.5 * a.size * a.scale
 
 					Ls.add_child(instance)
 					instance.set_owner(finished_level)
@@ -130,8 +130,8 @@ func _on_files_dropped(files):
 		Player_map.scale.y = $"Left Panel".size.y / texture.get_height()
 		#add image to the level
 		Player_map.texture = texture
-	$RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer/mm.show()
-	$RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer/UserLocation.show()
+	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/UserLocation.show()
+	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.show()
 
 
 

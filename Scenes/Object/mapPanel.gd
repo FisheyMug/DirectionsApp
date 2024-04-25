@@ -18,6 +18,7 @@ func _drop_data(_at_position, data):
 		uL.position = _at_position
 		uL.size.x = Globals.selected_x_length
 		uL.size.y = Globals.selected_y_length
+		uL.scale = Globals.selected_size
 		for node in uL.get_children():
 			node.show()
 		$".".add_child(uL)
