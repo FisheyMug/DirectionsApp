@@ -15,6 +15,8 @@ func _ready():
 func _on_blankmap_button_button_up():
 	var instance = blankCity.instantiate()
 	$"Left Panel".add_child(instance)
+	$RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer/mm.hide()
+	$RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer/UserLocation.hide()
 
 
 func _on_button_pressed():
@@ -33,18 +35,18 @@ func _on_button_pressed():
 					var mmInstance = m.instantiate()
 					mmInstance.set_name(a.name)
 					mmInstance.position = a.position + 0.5 * a.size*2
+					mmInstance.get_child(0).get_shape().size = a.size - 0.15 * a.size
+					#mmInstance.position.x += 5
 					Mmarker.add_child(mmInstance)
 					mmInstance.set_owner(finished_level)
 				else: 
 					var l = preload("res://Scenes/Object/location.tscn")
 					var instance = l.instantiate()
 					instance.set_name(a.name)
-					instance.get_child(0).get_shape().size.x = a.size.x - 0.3 * a.size.x
-					instance.get_child(0).get_shape().size.y = a.size.y - 0.3 * a.size.y
-					#if a.location == "user":
-					instance.position = a.position + 0.3 * a.size*2
-					#else:
-					#	instance.position = a.position + 0.5 * a.size#*2
+					#get the location scale to match the pictures scale! - not the size!
+					instance.scale = a.scale
+					instance.position = a.position + 0.5 * a.size*2
+
 					Ls.add_child(instance)
 					instance.set_owner(finished_level)
 		#Player needs to be unhidden and the owner not set to the level/map
@@ -117,16 +119,19 @@ func _on_files_dropped(files):
 	texture.set_image(image)
 	
 	var instance = PlayerImageLevel.instantiate()
+	
 	#check if an instance exists so we dont add mulitple
 	if $"Left Panel".get_children().size() == 0:
 		$"Left Panel".add_child(instance)
 		Player_map = instance.get_child(1)
-		
-	Player_map.scale.x = $"Left Panel".size.x / texture.get_width()
-	Player_map.scale.y = $"Left Panel".size.y / texture.get_height()
-	#add image to the level
-	Player_map.texture = texture
-
+	
+	if Player_map != null:	
+		Player_map.scale.x = $"Left Panel".size.x / texture.get_width()
+		Player_map.scale.y = $"Left Panel".size.y / texture.get_height()
+		#add image to the level
+		Player_map.texture = texture
+	$RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer/mm.show()
+	$RightPanel/CenterContainer/TabContainer/Markers/MarginContainer/VBoxContainer/UserLocation.show()
 
 
 
@@ -151,3 +156,19 @@ func _on_bigger_pressed():
 		var player = $"Left Panel".get_child(0).get_child(2)
 		if player.visible:
 			player.scale += Vector2(0.1, 0.1)
+
+
+func _on_location_smaller_pressed():
+	var increment = 0.1
+	if !Globals.GameStarted and Globals.selected != null:
+		if Globals.selected.scale > Vector2(0.1, 0.1):
+			Globals.selected.scale -= Vector2(increment, increment)
+			Globals.selected_size = Globals.selected.scale
+
+
+func _on_location_bigger_pressed():
+	var increment = 0.1
+	if !Globals.GameStarted and Globals.selected != null:
+		if Globals.selected.scale < Vector2(3, 3):
+			Globals.selected.scale += Vector2(increment, increment)
+			Globals.selected_size = Globals.selected.scale

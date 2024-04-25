@@ -23,6 +23,7 @@ func _get_drag_data(_at_position):
 		#preview.scale = Vector2(1.8, 2.3)
 		preview.size.x = Globals.selected_x_length
 		preview.size.y = Globals.selected_y_length
+		preview.scale = Globals.selected_size
 		set_drag_preview(preview)
 		return preview 
 

@@ -15,6 +15,7 @@ func _get_drag_data(_at_position):
 		uL.set_name("UserLocation")
 		uL.size.x = Globals.selected_x_length
 		uL.size.y = Globals.selected_y_length
+		uL.scale = Globals.selected_size
 		set_drag_preview(uL)
 		return uL 
 

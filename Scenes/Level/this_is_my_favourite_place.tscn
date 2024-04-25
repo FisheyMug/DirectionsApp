@@ -1735,7 +1735,7 @@ position = Vector2(939, 489)
 position = Vector2(931, 653)
 
 [node name="Cooking Room" parent="locations" index="2" instance=ExtResource("4_ks0ua")]
-position = Vector2(102, 378)
+position = Vector2(132, 420)
 
 [node name="Teachers Office" parent="locations" index="3" instance=ExtResource("4_ks0ua")]
 position = Vector2(289, 556)
@@ -1747,8 +1747,9 @@ rotation = 1.57622
 scale = Vector2(0.5, 0.5)
 
 [node name="Lunch Room" parent="locations" index="5" instance=ExtResource("4_ks0ua")]
-position = Vector2(306, 342)
+position = Vector2(282, 379)
 rotation = -1.57436
+scale = Vector2(0.448961, 1.43307)
 
 [node name="School Nurse\'s Office" parent="locations" index="6" instance=ExtResource("4_ks0ua")]
 position = Vector2(935, 308)
@@ -1771,8 +1772,9 @@ position = Vector2(454, 55)
 rotation = 1.57386
 
 [node name="Classroom" parent="locations" index="11" instance=ExtResource("4_ks0ua")]
-position = Vector2(534, 349)
+position = Vector2(620, 378)
 rotation = -1.56249
+scale = Vector2(0.399117, 0.559767)
 
 [node name="Arts and Crafts Room" parent="locations" index="12" instance=ExtResource("4_ks0ua")]
 position = Vector2(928, 181)
@@ -1789,78 +1791,91 @@ offset_right = 163.0
 offset_bottom = 115.0
 
 [node name="Cooking Room" parent="Left Panel" index="1" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = -2.0
 offset_top = 268.0
 offset_right = 163.0
 offset_bottom = 446.0
 
 [node name="Lunch Room" parent="Left Panel" index="2" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 184.0
 offset_top = 262.0
 offset_right = 383.0
 offset_bottom = 391.0
 
 [node name="Music Room" parent="Left Panel" index="3" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 181.0
 offset_top = 6.0
 offset_right = 370.0
 offset_bottom = 117.0
 
 [node name="Classroom" parent="Left Panel" index="4" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 406.0
 offset_top = 264.0
 offset_right = 635.0
 offset_bottom = 387.0
 
 [node name="Science Room" parent="Left Panel" index="5" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 391.0
 offset_top = 2.0
 offset_right = 556.0
 offset_bottom = 118.0
 
 [node name="Library" parent="Left Panel" index="6" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 578.0
 offset_top = 5.0
 offset_right = 823.0
 offset_bottom = 118.0
 
 [node name="Arts and Crafts Room" parent="Left Panel" index="7" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 838.0
 offset_top = 8.0
 offset_right = 957.0
 offset_bottom = 218.0
 
 [node name="School Nurse\'s Office" parent="Left Panel" index="8" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 843.0
 offset_top = 233.0
 offset_right = 954.0
 offset_bottom = 367.0
 
 [node name="School Office" parent="Left Panel" index="9" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 841.0
 offset_top = 383.0
 offset_right = 960.0
 offset_bottom = 549.0
 
 [node name="Restroom" parent="Left Panel" index="10" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 838.0
 offset_top = 569.0
 offset_right = 963.0
 offset_bottom = 710.0
 
 [node name="School Principal\'s Office" parent="Left Panel" index="11" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 445.0
 offset_top = 406.0
 offset_right = 635.0
 offset_bottom = 580.0
 
 [node name="Teachers Office" parent="Left Panel" index="12" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 179.0
 offset_top = 413.0
 offset_right = 427.0
 offset_bottom = 578.0
 
 [node name="Gym" parent="Left Panel" index="13" instance=ExtResource("9_f87uk")]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 496.0
 offset_right = 156.0

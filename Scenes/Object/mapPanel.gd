@@ -33,33 +33,23 @@ func _drop_data(_at_position, data):
 		$".".add_child(mm)
 		movemarkerCounter += 1
 	else:
-		var texture = preload("res://Scenes/Object/pic_create_a_level.tscn")
-		var pic = texture.instantiate()
-		#instance.set_name(data.name)
-		
-		pic.position = _at_position
-		pic.name = data.name
-		pic.texture = data.texture
-		#pic.scale = Vector2(1.8, 2.3)
-		pic.size.x = Globals.selected_x_length
-		pic.size.y = Globals.selected_y_length
-		$".".add_child(pic)
+		var exists = false
+		for pics in self.get_children():
+			if pics.name in data.name:
+				exists = true
+		if !exists:
+			var texture = preload("res://Scenes/Object/pic_create_a_level.tscn")
+			var pic = texture.instantiate()
+			#instance.set_name(data.name)
+			
+			pic.position = _at_position
+			pic.name = data.name
+			pic.texture = data.texture
+			#pic.scale = Vector2(1.8, 2.3)
+			pic.size.x = Globals.selected_x_length
+			pic.size.y = Globals.selected_y_length
+			pic.scale = Globals.selected_size
+			$".".add_child(pic)
 	
 	#instance.position = pic.position + 0.5 * pic.size*2
 	#$"../locations".add_child(instance)
-
-func _input(event):
-	var increment = 10
-	if !Globals.GameStarted and Globals.selected != null and !player.visible:
-		if event.is_action_released("go_straight"):
-			Globals.selected.size.y += increment
-			Globals.selected_y_length = Globals.selected.size.y 
-		if event.is_action_pressed("down"):
-			Globals.selected.size.y -= increment
-			Globals.selected_y_length = Globals.selected.size.y 
-		if event.is_action_pressed("turn_right"):
-			Globals.selected.size.x += increment
-			Globals.selected_x_length = Globals.selected.size.x 
-		if event.is_action_pressed("turn_left"):
-			Globals.selected.size.x -= increment
-			Globals.selected_x_length = Globals.selected.size.x 

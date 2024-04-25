@@ -5,8 +5,8 @@
 
 [node name="MoveM_Image" type="TextureRect"]
 self_modulate = Color(1, 1, 1, 0.501961)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 15.0
+offset_bottom = 15.0
 mouse_default_cursor_shape = 2
 texture = ExtResource("1_yc7pq")
 script = ExtResource("2_qbp0r")

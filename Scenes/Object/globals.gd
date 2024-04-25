@@ -9,3 +9,4 @@ var GameStarted = false
 var selected
 var selected_x_length = 200
 var selected_y_length = 150
+var selected_size = Vector2(1, 1)

@@ -1,21 +1,19 @@
-[gd_scene load_steps=19 format=3]
+[gd_scene load_steps=17 format=3]
 
-[ext_resource type="Script" path="res://Scenes/Level/BlankCity01.gd" id="1_ht38x"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_kqig1"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="3_sggue"]
-[ext_resource type="PackedScene" path="res://Scenes/Player/player.tscn" id="4_a5431"]
-[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="5_obbcr"]
-[ext_resource type="PackedScene" path="res://Scenes/Object/move_marker.tscn" id="6_eost3"]
-[ext_resource type="Script" path="res://Scenes/Object/move_marker.gd" id="7_l61tl"]
-[ext_resource type="PackedScene" path="res://Scenes/Object/location.tscn" id="8_y1vur"]
-[ext_resource type="Script" path="res://Scenes/Object/location.gd" id="9_25wwl"]
-[ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="10_suqxh"]
-[ext_resource type="PackedScene" path="res://Scenes/Object/pic_create_a_level.tscn" id="11_qc6m5"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="12_voemj"]
-[ext_resource type="Script" path="res://Scenes/Object/Pic_Create-a-Level.gd" id="13_drghm"]
-[ext_resource type="PackedScene" path="res://Scenes/Object/user_location.tscn" id="14_5lchq"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/UI/LocationBox.png" id="15_j4qsb"]
-[ext_resource type="Script" path="res://Scenes/Object/UserLocation.gd" id="16_k6glu"]
+[ext_resource type="Script" path="res://Scenes/Level/BlankCity01.gd" id="1_6xfb7"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_pxiko"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="3_jbpgn"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/player.tscn" id="4_u4uv6"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="5_4apwg"]
+[ext_resource type="PackedScene" path="res://Scenes/Object/move_marker.tscn" id="6_yf1cj"]
+[ext_resource type="Script" path="res://Scenes/Object/move_marker.gd" id="7_yuusg"]
+[ext_resource type="PackedScene" path="res://Scenes/Object/location.tscn" id="8_xkn2f"]
+[ext_resource type="Script" path="res://Scenes/Object/location.gd" id="9_2vj21"]
+[ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="10_vkrgi"]
+[ext_resource type="PackedScene" path="res://Scenes/Object/pic_create_a_level.tscn" id="11_3fg5c"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="12_j045h"]
+[ext_resource type="Script" path="res://Scenes/Object/Pic_Create-a-Level.gd" id="13_edb50"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/School.png" id="14_arvqt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bar5a"]
 line_spacing = 10.0
@@ -30,151 +28,150 @@ font_size = 50
 font_color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [node name="BlankCity01" type="Node2D"]
-script = ExtResource("1_ht38x")
+script = ExtResource("1_6xfb7")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(683, 384)
-texture = ExtResource("2_kqig1")
+texture = ExtResource("2_pxiko")
 
 [node name="map" type="Sprite2D" parent="."]
 position = Vector2(492.776, 381.916)
 scale = Vector2(0.972282, 1.37007)
-texture = ExtResource("3_sggue")
+texture = ExtResource("3_jbpgn")
 
-[node name="Player" type="CharacterBody2D" parent="." instance=ExtResource("4_a5431")]
-position = Vector2(625, 198)
+[node name="Player" type="CharacterBody2D" parent="." instance=ExtResource("4_u4uv6")]
+position = Vector2(622, 714)
 rotation = Callable()
-scale = Vector2(0.7, 0.7)
-script = ExtResource("5_obbcr")
+script = ExtResource("5_4apwg")
 speed = 200
 
 [node name="MoveMarkers" type="Node2D" parent="."]
 
-[node name="MoveMarker" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(47, 54)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker2" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker2" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(187, 54)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker3" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker3" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(44, 357)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker4" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker4" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(348, 53)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker5" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker5" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(491, 52)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker6" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker6" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(616, 55)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker7" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker7" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(770, 53)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker8" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker8" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(943, 50)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker9" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker9" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(40, 203)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker10" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker10" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(192, 366)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker11" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker11" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(351, 188)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker12" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker12" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(625, 198)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker13" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker13" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(941, 201)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker14" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker14" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(478, 370)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker15" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker15" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(626, 364)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker16" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker16" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(785, 367)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker17" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker17" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(939, 361)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker18" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker18" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(349, 360)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker19" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker19" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(44, 538)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker20" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker20" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(349, 534)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker21" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker21" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(624, 535)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker22" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker22" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(950, 538)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker23" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker23" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(40, 720)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker24" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker24" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(194, 719)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker25" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker25" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(344, 710)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker26" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker26" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(478, 710)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker27" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker27" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(622, 714)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker28" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker28" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(766, 713)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
-[node name="MoveMarker29" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_eost3")]
+[node name="MoveMarker29" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_yf1cj")]
 position = Vector2(939, 713)
-script = ExtResource("7_l61tl")
+script = ExtResource("7_yuusg")
 
 [node name="locations" type="Node2D" parent="."]
 
-[node name="Police Station" type="Area2D" parent="locations" instance=ExtResource("8_y1vur")]
-position = Vector2(792.787, 218.785)
-script = ExtResource("9_25wwl")
+[node name="Police Station" type="Area2D" parent="locations" instance=ExtResource("8_xkn2f")]
+position = Vector2(573.406, 269.095)
+script = ExtResource("9_2vj21")
 
-[node name="UserLocation" type="Area2D" parent="locations" instance=ExtResource("8_y1vur")]
-position = Vector2(783.09, 542.218)
-script = ExtResource("9_25wwl")
+[node name="School" type="Area2D" parent="locations" instance=ExtResource("8_xkn2f")]
+position = Vector2(882.484, 590.104)
+script = ExtResource("9_2vj21")
 
 [node name="Timers" type="Node2D" parent="."]
 
@@ -279,29 +276,31 @@ offset_left = 14.0
 offset_top = 7.0
 offset_right = 979.0
 offset_bottom = 756.0
-script = ExtResource("10_suqxh")
+script = ExtResource("10_vkrgi")
 
-[node name="Police Station" type="TextureRect" parent="Left Panel" instance=ExtResource("11_qc6m5")]
+[node name="Police Station" type="TextureRect" parent="Left Panel" instance=ExtResource("11_3fg5c")]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 0
-offset_left = 672.787
-offset_top = 128.785
-offset_right = 872.787
-offset_bottom = 278.785
+offset_left = 373.406
+offset_top = 119.095
+offset_right = 573.406
+offset_bottom = 269.095
 mouse_default_cursor_shape = 2
-texture = ExtResource("12_voemj")
+texture = ExtResource("12_j045h")
 expand_mode = 1
-script = ExtResource("13_drghm")
+script = ExtResource("13_edb50")
 
-[node name="UserLocation" type="TextureRect" parent="Left Panel" instance=ExtResource("14_5lchq")]
+[node name="School" type="TextureRect" parent="Left Panel" instance=ExtResource("11_3fg5c")]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 0
-offset_left = 663.09
-offset_top = 452.218
-offset_right = 863.09
-offset_bottom = 602.218
+offset_left = 682.484
+offset_top = 440.104
+offset_right = 882.484
+offset_bottom = 590.104
 mouse_default_cursor_shape = 2
-texture = ExtResource("15_j4qsb")
-script = ExtResource("16_k6glu")
+texture = ExtResource("14_arvqt")
+expand_mode = 1
+script = ExtResource("13_edb50")
 
 [node name="menu" type="Button" parent="."]
 offset_left = 1327.0
@@ -315,14 +314,14 @@ text = "X"
 [connection signal="input_event" from="locations/Police Station" to="locations/Police Station" method="_on_input_event"]
 [connection signal="mouse_entered" from="locations/Police Station" to="locations/Police Station" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="locations/Police Station" to="locations/Police Station" method="_on_mouse_exited"]
-[connection signal="body_entered" from="locations/UserLocation" to="locations/UserLocation" method="_on_body_entered"]
-[connection signal="input_event" from="locations/UserLocation" to="locations/UserLocation" method="_on_input_event"]
-[connection signal="mouse_entered" from="locations/UserLocation" to="locations/UserLocation" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="locations/UserLocation" to="locations/UserLocation" method="_on_mouse_exited"]
+[connection signal="body_entered" from="locations/School" to="locations/School" method="_on_body_entered"]
+[connection signal="input_event" from="locations/School" to="locations/School" method="_on_input_event"]
+[connection signal="mouse_entered" from="locations/School" to="locations/School" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="locations/School" to="locations/School" method="_on_mouse_exited"]
 [connection signal="timeout" from="Timers/WinMessage" to="." method="_on_win_message_timeout"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer2/Go_Straight" to="Player" method="_on_go_straight_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer/GridContainer/Turn_Left" to="Player" method="_on_turn_left_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer2/CenterContainer/GridContainer/Turn_Right" to="Player" method="_on_turn_right_pressed"]
 [connection signal="gui_input" from="Left Panel/Police Station" to="Left Panel/Police Station" method="_on_gui_input"]
-[connection signal="gui_input" from="Left Panel/UserLocation" to="Left Panel/UserLocation" method="_on_gui_input"]
+[connection signal="gui_input" from="Left Panel/School" to="Left Panel/School" method="_on_gui_input"]
 [connection signal="pressed" from="menu" to="." method="_on_button_pressed"]

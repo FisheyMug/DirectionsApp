@@ -8,4 +8,5 @@
 script = ExtResource("1_ddm8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -1)
 shape = SubResource("RectangleShape2D_847bo")
