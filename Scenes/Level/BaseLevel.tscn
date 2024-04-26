@@ -26,7 +26,7 @@ texture = ExtResource("2_x6cfs")
 [node name="map" type="Sprite2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_006r0")]
-position = Vector2(36, 46)
+position = Vector2(578, 352)
 
 [node name="MoveMarkers" type="Node2D" parent="."]
 

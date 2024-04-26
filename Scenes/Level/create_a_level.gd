@@ -14,9 +14,11 @@ func _ready():
 
 func _on_blankmap_button_button_up():
 	var instance = blankCity.instantiate()
+	if $"Left Panel".get_children().size() > 0:
+		$"Left Panel".get_child(0).queue_free()
 	$"Left Panel".add_child(instance)
 	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.hide()
-	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/UserLocation.hide()
+	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/UserLocation2.hide()
 
 
 func _on_button_pressed():
@@ -77,6 +79,7 @@ func _on_button_pressed():
 func _on_load_pic_pressed():
 	var instance = PlayerImageLevel.instantiate()
 	#check if an instance exists so we dont add mulitple
+	$"Left Panel".get_child(0).queue_free()
 	if $"Left Panel".get_children().size() == 0:
 		$"Left Panel".add_child(instance)
 		Player_map = instance.get_child(1)
@@ -109,7 +112,11 @@ func _process(_delta):
 		$"Esc button".hide()
 
 func _on_files_dropped(files):
-		
+	if $"Left Panel".get_children().size() > 0:
+		$"Left Panel".get_child(0).queue_free()
+	if Player_map != null:
+		Player_map = null
+	
 	var path = files[0]
 	
 	var image =Image.new()
@@ -120,17 +127,15 @@ func _on_files_dropped(files):
 	
 	var instance = PlayerImageLevel.instantiate()
 	
-	#check if an instance exists so we dont add mulitple
-	if $"Left Panel".get_children().size() == 0:
-		$"Left Panel".add_child(instance)
-		Player_map = instance.get_child(1)
+	$"Left Panel".add_child(instance)
+	Player_map = instance.get_child(1)
 	
 	if Player_map != null:	
 		Player_map.scale.x = $"Left Panel".size.x / texture.get_width()
 		Player_map.scale.y = $"Left Panel".size.y / texture.get_height()
 		#add image to the level
 		Player_map.texture = texture
-	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/UserLocation.show()
+	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/UserLocation2.show()
 	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.show()
 
 

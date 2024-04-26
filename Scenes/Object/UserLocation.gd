@@ -12,7 +12,8 @@ func _get_drag_data(_at_position):
 		var uL = userLocation.instantiate()		
 		uL.position = _at_position
 		uL.texture = self.texture
-		uL.set_name("UserLocation")
+		uL.set_name(self.name)
+		uL.get_child(0).hide()
 		uL.size.x = Globals.selected_x_length
 		uL.size.y = Globals.selected_y_length
 		uL.scale = Globals.selected_size
@@ -20,10 +21,6 @@ func _get_drag_data(_at_position):
 		return uL 
 
 
-
-func _on_line_edit_text_submitted(new_text):
-	$".".name = new_text
-	$LineEdit.queue_free()
 
 
 func _on_gui_input(event):
@@ -39,3 +36,7 @@ func _on_gui_input(event):
 func _process(_delta):
 	if Globals.selected != self:
 		self_modulate = Color(1, 1, 1, 1)	
+
+
+func _on_line_edit_text_changed(new_text):
+	$".".name = new_text
