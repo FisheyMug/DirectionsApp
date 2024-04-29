@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2gi0hvgkrl7p"
-path="res://.godot/imported/DirectionsWeb.apple-touch-icon.png-7959b1a20a4a22007e559f0c740c2d2c.ctex"
+uid="uid://p6b4ybglkfln"
+path="res://.godot/imported/BTownV2.png-8a599019bd9cc7e4ce2498d0ea7f4757.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DirectionsWeb.apple-touch-icon.png"
-dest_files=["res://.godot/imported/DirectionsWeb.apple-touch-icon.png-7959b1a20a4a22007e559f0c740c2d2c.ctex"]
+source_file="res://Graphics/MySprites/City2.0/BTownV2.png"
+dest_files=["res://.godot/imported/BTownV2.png-8a599019bd9cc7e4ce2498d0ea7f4757.ctex"]
 
 [params]
 

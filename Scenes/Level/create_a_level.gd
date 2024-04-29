@@ -2,6 +2,7 @@ extends Node2D
 
 var PlayerImageLevel 
 var blankCity
+var bTownV2
 var finished_level 
 var levelScene
 var Player_map
@@ -10,6 +11,7 @@ func _ready():
 	levelScene = PackedScene.new()
 	blankCity = preload("res://Scenes/Level/BlankCity01.tscn")
 	PlayerImageLevel = preload("res://Scenes/Level/player_image_level.tscn")
+	bTownV2 = preload("res://Scenes/Level/BtownV2.tscn")
 	get_tree().get_root().files_dropped.connect(_on_files_dropped)
 
 func _on_blankmap_button_button_up():
@@ -177,3 +179,12 @@ func _on_location_bigger_pressed():
 		if Globals.selected.scale < Vector2(3, 3):
 			Globals.selected.scale += Vector2(increment, increment)
 			Globals.selected_size = Globals.selected.scale
+
+
+func _on_blank_v_2_pressed():
+	var instance = bTownV2.instantiate()
+	if $"Left Panel".get_children().size() > 0:
+		$"Left Panel".get_child(0).queue_free()
+	$"Left Panel".add_child(instance)
+	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.hide()
+	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/UserLocation2.hide()

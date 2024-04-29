@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://b27wsx4vp6bol"]
+[gd_scene load_steps=23 format=3 uid="uid://b27wsx4vp6bol"]
 
 [ext_resource type="Script" path="res://Scenes/Level/create_a_level.gd" id="1_c4j5u"]
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_mojmm"]
 [ext_resource type="Texture2D" uid="uid://gydek451unbl" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="2_tycgg"]
 [ext_resource type="Texture2D" uid="uid://mih7y6boqm85" path="res://Graphics/MySprites/City2.0/School.png" id="4_er70v"]
+[ext_resource type="Texture2D" uid="uid://p6b4ybglkfln" path="res://Graphics/MySprites/City2.0/BTownV2.png" id="4_l2whb"]
 [ext_resource type="Texture2D" uid="uid://bap2eeaf248i5" path="res://Graphics/MySprites/City2.0/Hospital.png" id="5_dxe0t"]
 [ext_resource type="Texture2D" uid="uid://doyqfsdrf7yc1" path="res://Graphics/MySprites/City2.0/PostOffice.png" id="6_2yg4p"]
 [ext_resource type="Texture2D" uid="uid://bd3bsfxg1s036" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="6_dp23y"]
@@ -79,6 +80,13 @@ custom_minimum_size = Vector2(310, 200)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_tycgg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BlankV2" type="TextureButton" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(310, 200)
+layout_mode = 2
+texture_normal = ExtResource("4_l2whb")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -259,6 +267,7 @@ text = "X"
 
 [connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/Load Pic" to="." method="_on_load_pic_pressed"]
 [connection signal="button_up" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/blankmapButton" to="." method="_on_blankmap_button_button_up"]
+[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/BlankV2" to="." method="_on_blank_v_2_pressed"]
 [connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/Smaller" to="." method="_on_smaller_pressed"]
 [connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/Bigger" to="." method="_on_bigger_pressed"]
