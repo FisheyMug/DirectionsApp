@@ -35,8 +35,10 @@ func _on_gui_input(event):
 
 func _process(_delta):
 	if Globals.selected != self:
-		self_modulate = Color(1, 1, 1, 1)	
-
+		self_modulate = Color(1, 1, 1, 0.3)	
+	if Globals.GameStarted:
+		self_modulate = Color(1, 1, 1, 0.3)
+		self.get_child(0).hide()
 
 func _on_line_edit_text_changed(new_text):
-	$".".name = new_text
+	$".".name = "UL" + new_text

@@ -20,7 +20,7 @@ func _on_blankmap_button_button_up():
 		$"Left Panel".get_child(0).queue_free()
 	$"Left Panel".add_child(instance)
 	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.hide()
-	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/UserLocation2.hide()
+	$"RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/Unique Location".hide()
 
 
 func _on_button_pressed():
@@ -43,16 +43,18 @@ func _on_button_pressed():
 					#mmInstance.position.x += 5
 					Mmarker.add_child(mmInstance)
 					mmInstance.set_owner(finished_level)
-				else: 
-					var l = preload("res://Scenes/Object/location.tscn")
-					var instance = l.instantiate()
-					instance.set_name(a.name)
-					#get the location scale to match the pictures scale! - not the size!
-					instance.scale = a.scale
-					instance.position = a.position + 0.5 * a.size * a.scale
-
-					Ls.add_child(instance)
-					instance.set_owner(finished_level)
+				#else: 
+				#	var l = preload("res://Scenes/Object/location.tscn")
+				#	var instance = l.instantiate()
+				#	instance.set_name(a.name)
+					
+				#	instance.get_child(0).get_shape().size.x = a.size.x * a.scale.x
+				#	instance.get_child(0).get_shape().size.y = a.size.y * a.scale.y
+					#print(instance.get_child(0).get_shape().size)
+					#instance.scale = a.scale
+				#	instance.global_position = a.global_position + 0.5 * a.size * a.scale
+				#	Ls.add_child(instance)
+				#	instance.set_owner(finished_level)
 		#Player needs to be unhidden and the owner not set to the level/map
 		if c.name == "Player":
 			c.show()
@@ -137,7 +139,7 @@ func _on_files_dropped(files):
 		Player_map.scale.y = $"Left Panel".size.y / texture.get_height()
 		#add image to the level
 		Player_map.texture = texture
-	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/UserLocation2.show()
+	$"RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/Unique Location".show()
 	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.show()
 
 
@@ -167,19 +169,17 @@ func _on_bigger_pressed():
 
 func _on_location_smaller_pressed():
 	var increment = 0.1
-	if !Globals.GameStarted and Globals.selected != null:
+	if !Globals.GameStarted and Globals.selected != null and is_instance_valid(Globals.selected):
 		if Globals.selected.scale > Vector2(0.1, 0.1):
 			Globals.selected.scale -= Vector2(increment, increment)
 			Globals.selected_size = Globals.selected.scale
 
-
 func _on_location_bigger_pressed():
 	var increment = 0.1
-	if !Globals.GameStarted and Globals.selected != null:
+	if !Globals.GameStarted and Globals.selected != null and is_instance_valid(Globals.selected):
 		if Globals.selected.scale < Vector2(3, 3):
 			Globals.selected.scale += Vector2(increment, increment)
 			Globals.selected_size = Globals.selected.scale
-
 
 func _on_blank_v_2_pressed():
 	var instance = bTownV2.instantiate()
@@ -187,4 +187,4 @@ func _on_blank_v_2_pressed():
 		$"Left Panel".get_child(0).queue_free()
 	$"Left Panel".add_child(instance)
 	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.hide()
-	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/UserLocation2.hide()
+	$"RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/Unique Location".hide()

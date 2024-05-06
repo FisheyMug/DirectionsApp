@@ -15,6 +15,10 @@ func _ready():
 	#$Control.show()
 	for node in $locations.get_children():
 		locations.append(node)
+		for pic in $"Left Panel".get_children():
+			print(pic)
+			if pic.name == node.name:
+				print(true)
 	for node in $MoveMarkers.get_children():
 		road_markers.append(node)
 	select_random_goal()

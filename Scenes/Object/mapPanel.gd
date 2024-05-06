@@ -12,13 +12,14 @@ func _can_drop_data(_at_position, _data):
 func _drop_data(_at_position, data):
 	#location = preload("res://Scenes/Object/location.tscn")
 	#var instance = location.instantiate()
-	if "UserLocation" in data.name:
+	if "UL" in data.name:
 		var userLocation = preload("res://Scenes/Object/user_location.tscn")
 		var uL = userLocation.instantiate()		
 		uL.position = _at_position
 		uL.size.x = Globals.selected_x_length
 		uL.size.y = Globals.selected_y_length
 		uL.scale = Globals.selected_size
+		uL.name = data.name
 		for node in uL.get_children():
 			node.show()
 		$".".add_child(uL)
@@ -50,6 +51,18 @@ func _drop_data(_at_position, data):
 			pic.size.x = Globals.selected_x_length
 			pic.size.y = Globals.selected_y_length
 			pic.scale = Globals.selected_size
+			
+			#var l = preload("res://Scenes/Object/location.tscn")
+			#var instance = l.instantiate()
+			#instance.set_name(pic.name)
+					
+			#instance.get_child(0).get_shape().size.x = pic.size.x * pic.scale.x
+			#instance.get_child(0).get_shape().size.y = pic.size.y * pic.scale.y
+					
+					#print(instance.get_child(0).get_shape().size)
+					#instance.scale = a.scale
+			#instance.global_position = pic.global_position + 0.5 * pic.size * pic.scale
+			#$".".add_child(instance)
 			$".".add_child(pic)
 	
 	#instance.position = pic.position + 0.5 * pic.size*2

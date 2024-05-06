@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b27wsx4vp6bol"]
+[gd_scene load_steps=19 format=3 uid="uid://b27wsx4vp6bol"]
 
 [ext_resource type="Script" path="res://Scenes/Level/create_a_level.gd" id="1_c4j5u"]
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_mojmm"]
@@ -10,17 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://bd3bsfxg1s036" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="6_dp23y"]
 [ext_resource type="Script" path="res://Scenes/Object/Draggable.gd" id="6_ignpu"]
 [ext_resource type="Texture2D" uid="uid://vxnm805cpfqa" path="res://Graphics/MySprites/City2.0/Supermarket.png" id="8_4jxp7"]
-[ext_resource type="Script" path="res://Scenes/Object/Hospital.gd" id="8_jyrf1"]
-[ext_resource type="Script" path="res://Scenes/Object/PostOffice.gd" id="10_8kk1r"]
-[ext_resource type="Script" path="res://Scenes/Object/School.gd" id="12_daeoa"]
-[ext_resource type="Script" path="res://Scenes/Object/Park.gd" id="14_alc6t"]
-[ext_resource type="Script" path="res://Scenes/Object/Supermarket.gd" id="14_ircid"]
+[ext_resource type="Texture2D" uid="uid://b35slfix1wgp1" path="res://Graphics/MySprites/UI/LocationBox.png" id="14_c5f6f"]
 [ext_resource type="Texture2D" uid="uid://c36vg45x7vsyh" path="res://Graphics/MySprites/City2.0/Park1.png" id="14_thvyl"]
+[ext_resource type="Script" path="res://Scenes/Object/Dragable UL.gd" id="15_xelxr"]
 [ext_resource type="Script" path="res://Scenes/Object/mmButton.gd" id="16_koqqs"]
 [ext_resource type="Texture2D" uid="uid://dn4ulwcc5tbpw" path="res://Graphics/MySprites/City2.0/Conbini.png" id="16_nmhk7"]
 [ext_resource type="Texture2D" uid="uid://dymdcycfv5nhu" path="res://Graphics/MySprites/UI/MoveMarkerImage.png" id="16_yjipw"]
 [ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="18_ip8dr"]
-[ext_resource type="PackedScene" uid="uid://bbasa44r81fqr" path="res://Scenes/Object/user_location.tscn" id="18_xvwsd"]
 [ext_resource type="Texture2D" uid="uid://6x3ghy3e2l5n" path="res://Graphics/CharachterSprite.png" id="20_4n7m1"]
 
 [node name="Create-a-Level" type="Node2D"]
@@ -144,35 +140,35 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("5_dxe0t")
 stretch_mode = 3
-script = ExtResource("8_jyrf1")
+script = ExtResource("6_ignpu")
 
 [node name="Post Office" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("6_2yg4p")
 stretch_mode = 3
-script = ExtResource("10_8kk1r")
+script = ExtResource("6_ignpu")
 
 [node name="School" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("4_er70v")
 stretch_mode = 3
-script = ExtResource("12_daeoa")
+script = ExtResource("6_ignpu")
 
 [node name="Supermarket" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("8_4jxp7")
 stretch_mode = 3
-script = ExtResource("14_ircid")
+script = ExtResource("6_ignpu")
 
 [node name="Park" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("14_thvyl")
 stretch_mode = 3
-script = ExtResource("14_alc6t")
+script = ExtResource("6_ignpu")
 
 [node name="Convinience Store" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -192,9 +188,10 @@ alignment = 1
 layout_mode = 2
 theme_override_constants/margin_bottom = 50
 
-[node name="UserLocation2" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer" instance=ExtResource("18_xvwsd")]
-custom_minimum_size = Vector2(75, 75)
+[node name="Unique Location" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer"]
 layout_mode = 2
+texture = ExtResource("14_c5f6f")
+script = ExtResource("15_xelxr")
 
 [node name="location Smaller" type="Button" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
