@@ -2,7 +2,19 @@ extends Base_Level
 
 
 func _ready():
-	#print(Globals.GameStarted)
+	for pic in $"Left Panel".get_children():
+		if "MoveMarker" not in pic.name:
+			var l = preload("res://Scenes/Object/location.tscn")
+			var instance = l.instantiate()
+			instance.set_name(pic.name)
+						
+			instance.get_child(0).get_shape().size.x =(pic.size.x * pic.scale.x)* 0.9
+			instance.get_child(0).get_shape().size.y =(pic.size.y * pic.scale.y)* 0.9
+						#print(instance.get_child(0).get_shape().size)
+						#instance.scale = a.scale
+			instance.global_position = pic.global_position + 0.5 * pic.size * pic.scale
+			$locations.add_child(instance)
+			instance.set_owner($".")
 	for node in $locations.get_children():
 			locations.append(node)
 	for node in $MoveMarkers.get_children():

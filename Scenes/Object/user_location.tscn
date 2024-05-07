@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbasa44r81fqr"]
+[gd_scene load_steps=3 format=3 uid="uid://bbasa44r81fqr"]
 
 [ext_resource type="Texture2D" uid="uid://b35slfix1wgp1" path="res://Graphics/MySprites/UI/LocationBox.png" id="1_jr61s"]
 [ext_resource type="Script" path="res://Scenes/Object/UserLocation.gd" id="1_tf31i"]
-[ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="3_di7np"]
 
 [node name="UserLocation" type="TextureRect"]
 offset_right = 111.0
@@ -26,9 +25,6 @@ offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 0
 placeholder_text = "Name"
-
-[node name="location" parent="." instance=ExtResource("3_di7np")]
-position = Vector2(54, 26)
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

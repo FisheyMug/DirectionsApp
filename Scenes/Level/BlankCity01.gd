@@ -7,8 +7,8 @@ func _ready():
 		var instance = l.instantiate()
 		instance.set_name(pic.name)
 					
-		instance.get_child(0).get_shape().size.x = pic.size.x * pic.scale.x
-		instance.get_child(0).get_shape().size.y = pic.size.y * pic.scale.y
+		instance.get_child(0).get_shape().size.x =(pic.size.x * pic.scale.x)* 0.9
+		instance.get_child(0).get_shape().size.y =(pic.size.y * pic.scale.y)* 0.9
 					#print(instance.get_child(0).get_shape().size)
 					#instance.scale = a.scale
 		instance.global_position = pic.global_position + 0.5 * pic.size * pic.scale
