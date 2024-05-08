@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b27wsx4vp6bol"]
+[gd_scene load_steps=22 format=3 uid="uid://b27wsx4vp6bol"]
 
 [ext_resource type="Script" path="res://Scenes/Level/create_a_level.gd" id="1_c4j5u"]
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_mojmm"]
@@ -11,10 +11,13 @@
 [ext_resource type="Script" path="res://Scenes/Object/Draggable.gd" id="6_ignpu"]
 [ext_resource type="Texture2D" uid="uid://vxnm805cpfqa" path="res://Graphics/MySprites/City2.0/Supermarket.png" id="8_4jxp7"]
 [ext_resource type="Texture2D" uid="uid://b35slfix1wgp1" path="res://Graphics/MySprites/UI/LocationBox.png" id="14_c5f6f"]
+[ext_resource type="Texture2D" uid="uid://bo15ctbibhoih" path="res://Graphics/MySprites/City2.0/Firestation.png" id="14_rjkcp"]
 [ext_resource type="Texture2D" uid="uid://c36vg45x7vsyh" path="res://Graphics/MySprites/City2.0/Park1.png" id="14_thvyl"]
+[ext_resource type="Texture2D" uid="uid://s3rn7rvvpnew" path="res://Graphics/MySprites/City2.0/Restaurant.png" id="15_irc2c"]
 [ext_resource type="Script" path="res://Scenes/Object/Dragable UL.gd" id="15_xelxr"]
 [ext_resource type="Script" path="res://Scenes/Object/mmButton.gd" id="16_koqqs"]
 [ext_resource type="Texture2D" uid="uid://dn4ulwcc5tbpw" path="res://Graphics/MySprites/City2.0/Conbini.png" id="16_nmhk7"]
+[ext_resource type="Texture2D" uid="uid://bchbj3x74iyor" path="res://Graphics/MySprites/City2.0/Stadium.png" id="16_pwwhj"]
 [ext_resource type="Texture2D" uid="uid://dymdcycfv5nhu" path="res://Graphics/MySprites/UI/MoveMarkerImage.png" id="16_yjipw"]
 [ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="18_ip8dr"]
 [ext_resource type="Texture2D" uid="uid://6x3ghy3e2l5n" path="res://Graphics/CharachterSprite.png" id="20_4n7m1"]
@@ -47,12 +50,13 @@ grow_vertical = 2
 [node name="TabContainer" type="TabContainer" parent="RightPanel/CenterContainer"]
 custom_minimum_size = Vector2(350, 760)
 layout_mode = 2
-current_tab = 0
+current_tab = 1
 clip_tabs = false
 drag_to_rearrange_enabled = true
 tab_focus_mode = 0
 
 [node name="Pick a Map" type="ScrollContainer" parent="RightPanel/CenterContainer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/TabContainer/Pick a Map"]
@@ -108,7 +112,6 @@ text = "Bigger
 "
 
 [node name="Locations" type="ScrollContainer" parent="RightPanel/CenterContainer/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Locations"]
@@ -175,6 +178,21 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("16_nmhk7")
 stretch_mode = 3
+script = ExtResource("6_ignpu")
+
+[node name="Fire Station" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("14_rjkcp")
+script = ExtResource("6_ignpu")
+
+[node name="Restaurant" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_irc2c")
+script = ExtResource("6_ignpu")
+
+[node name="Stadium" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("16_pwwhj")
 script = ExtResource("6_ignpu")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer"]

@@ -156,15 +156,14 @@ func _on_texture_button_pressed():
 func _on_smaller_pressed():
 	if $"Left Panel".get_children().size() > 0:
 		var player = $"Left Panel".get_child(0).get_child(2)
-		if player.visible:
-			if player.scale > Vector2(0.3, 0.3):
+		if player.visible and player.scale > Vector2(0.3, 0.3):
 				player.scale -= Vector2(0.1, 0.1)
 
 
 func _on_bigger_pressed():
 	if $"Left Panel".get_children().size() > 0:
 		var player = $"Left Panel".get_child(0).get_child(2)
-		if player.visible:
+		if player.visible and player.scale < Vector2(2, 2):
 			player.scale += Vector2(0.1, 0.1)
 
 
