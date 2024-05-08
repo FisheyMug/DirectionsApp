@@ -65,7 +65,7 @@ func _on_view_area_entered(area):
 
 
 func _physics_process(_delta):
-	if position.distance_to(target) > 10 and !Globals.reset:
+	if position.distance_to(target) > 5 and !Globals.reset:
 		move_and_slide()
 	if $view.get_overlapping_areas().size() > 0:
 		can_move_forward = true
@@ -74,6 +74,8 @@ func _physics_process(_delta):
 			if distance < shortest_distance and destination !=element.position:
 				shortest_distance = distance
 				destination = element.position
+				
+	#print(Globals.player_moving)
 
 func _on_body_collision_area_entered(_area):
 	$AnimationPlayer.stop()

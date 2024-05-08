@@ -157,7 +157,8 @@ func _on_smaller_pressed():
 	if $"Left Panel".get_children().size() > 0:
 		var player = $"Left Panel".get_child(0).get_child(2)
 		if player.visible:
-			player.scale -= Vector2(0.1, 0.1)
+			if player.scale > Vector2(0.3, 0.3):
+				player.scale -= Vector2(0.1, 0.1)
 
 
 func _on_bigger_pressed():

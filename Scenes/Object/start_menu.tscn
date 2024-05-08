@@ -19,7 +19,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Background" type="TextureRect" parent="Control"]
 layout_mode = 0
 offset_right = 1366.0
-offset_bottom = 768.0
+offset_bottom = 775.0
 texture = ExtResource("2_jf7i4")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
