@@ -1,17 +1,16 @@
-extends TextureRect
+extends Control
 var was_dropped = false
 
 func _get_drag_data(_at_position):
-	if !Globals.GameStarted:
-		was_dropped = true
-		var userLocation = preload("res://Scenes/Object/user_location.tscn")
-		var uL = userLocation.instantiate()		
-		uL.position = _at_position
-		uL.texture = self.texture
-		uL.set_name("UL")
-		uL.get_child(0).hide()
-		uL.size.x = Globals.selected_x_length
-		uL.size.y = Globals.selected_y_length
-		uL.scale = Globals.selected_size
-		set_drag_preview(uL)
-		return uL 
+	var preview = TextureRect.new()
+	preview.texture = $".".texture
+	preview.set_name("UL")
+	#preview.scale = Vector2(1.8, 2.3)
+	preview.size.x = Globals.selected_x_length
+	preview.size.y = Globals.selected_y_length
+	preview.scale = Globals.selected_size
+	var c = Control.new()
+	c.add_child(preview)
+	preview.position = -0.5 * preview.size * preview.scale
+	set_drag_preview(c)
+	return preview

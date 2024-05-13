@@ -43,6 +43,9 @@ func _on_button_pressed():
 					#mmInstance.position.x += 5
 					Mmarker.add_child(mmInstance)
 					mmInstance.set_owner(finished_level)
+				#if "UL" in a.name:
+				#		print(a.get_child(0).scale)
+				#		a.get_child(0).set_owner(a)
 				#else: 
 				#	var l = preload("res://Scenes/Object/location.tscn")
 				#	var instance = l.instantiate()
@@ -171,15 +174,15 @@ func _on_location_smaller_pressed():
 	var increment = 0.1
 	if !Globals.GameStarted and Globals.selected != null and is_instance_valid(Globals.selected):
 		if Globals.selected.scale > Vector2(0.1, 0.1):
-			Globals.selected.scale -= Vector2(increment, increment)
-			Globals.selected_size = Globals.selected.scale
+				Globals.selected.scale -= Vector2(increment, increment)
+				Globals.selected_size = Globals.selected.scale
 
 func _on_location_bigger_pressed():
 	var increment = 0.1
 	if !Globals.GameStarted and Globals.selected != null and is_instance_valid(Globals.selected):
 		if Globals.selected.scale < Vector2(3, 3):
-			Globals.selected.scale += Vector2(increment, increment)
-			Globals.selected_size = Globals.selected.scale
+				Globals.selected.scale += Vector2(increment, increment)
+				Globals.selected_size = Globals.selected.scale
 
 func _on_blank_v_2_pressed():
 	var instance = bTownV2.instantiate()

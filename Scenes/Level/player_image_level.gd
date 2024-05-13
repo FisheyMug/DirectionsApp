@@ -4,17 +4,28 @@ extends Base_Level
 func _ready():
 	for pic in $"Left Panel".get_children():
 		if "MoveMarker" not in pic.name:
+			#print(pic.scale)
 			var l = preload("res://Scenes/Object/location.tscn")
 			var instance = l.instantiate()
-			instance.set_name(pic.name)
-						
+			if "UL" in pic.name:
+				#print(pic.get_child(0).scale)
+				#instance.get_child(0).get_shape().size.x =(pic.get_child(0).size.x * pic.get_child(0).scale.x)* 0.9
+				#instance.get_child(0).get_shape().size.y =(pic.get_child(0).size.y * pic.get_child(0).scale.y)* 0.9
+				#instance.global_position = pic.get_child(0).global_position + 0.5 * pic.get_child(0).size * pic.get_child(0).scale
+				#pic.get_child(0).scale = pic.scale
+				instance.name = pic.name.erase(0,2)
+			else :
+				instance.set_name(pic.name)
+							
 			instance.get_child(0).get_shape().size.x =(pic.size.x * pic.scale.x)* 0.9
 			instance.get_child(0).get_shape().size.y =(pic.size.y * pic.scale.y)* 0.9
-						#print(instance.get_child(0).get_shape().size)
-						#instance.scale = a.scale
+							#print(instance.get_child(0).get_shape().size)
+							#instance.scale = a.scale
 			instance.global_position = pic.global_position + 0.5 * pic.size * pic.scale
+			
 			$locations.add_child(instance)
 			instance.set_owner($".")
+	
 	for node in $locations.get_children():
 			locations.append(node)
 	for node in $MoveMarkers.get_children():
@@ -61,6 +72,8 @@ func _on_win_message_timeout():
 
 func _process(_delta):
 	for node in $"Left Panel".get_children():
+		#if "UL" in node.name:
+		#	print(node.get_child(0).size)
 		if node.was_dropped == true:
 			node.queue_free()
 	globals_goal_changed()

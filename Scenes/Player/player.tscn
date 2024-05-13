@@ -116,8 +116,9 @@ vframes = 4
 [node name="view" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="view"]
-position = Vector2(0, 571)
+position = Vector2(0, 568)
 shape = SubResource("RectangleShape2D_npiri")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -126,12 +127,14 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7tqev")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="BodyCollision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyCollision"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ikurr")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [connection signal="area_entered" from="view" to="." method="_on_view_area_entered"]
 [connection signal="area_exited" from="view" to="." method="_on_view_area_exited"]

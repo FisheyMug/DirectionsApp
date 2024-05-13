@@ -14,15 +14,16 @@ func _drop_data(_at_position, data):
 	#var instance = location.instantiate()
 	if "UL" in data.name:
 		var userLocation = preload("res://Scenes/Object/user_location.tscn")
-		var uL = userLocation.instantiate()		
-		uL.position = _at_position
-		uL.size.x = Globals.selected_x_length
-		uL.size.y = Globals.selected_y_length
-		uL.scale = Globals.selected_size
-		uL.name = data.name
-		for node in uL.get_children():
-			node.show()
-		$".".add_child(uL)
+		var pic = userLocation.instantiate()	
+		pic.name = data.name
+		#pic.get_child(0).texture = data.texture
+		pic.size.x = data.size.x
+		pic.size.y = data.size.y
+		pic.scale = data.scale
+		pic.position = _at_position - 0.5 * pic.size * pic.scale
+		#for node in pic.get_child(1).get_children():
+		#	print(node)
+		$".".add_child(pic)
 	elif  "MoveMarker" in data.name:
 		var texture = preload("res://Scenes/Object/move_m_image.tscn")
 		var mm = texture.instantiate()
@@ -42,27 +43,12 @@ func _drop_data(_at_position, data):
 		if !exists:
 			var texture = preload("res://Scenes/Object/pic_create_a_level.tscn")
 			var pic = texture.instantiate()
-			#instance.set_name(data.name)
-			
-			pic.position = _at_position
 			pic.name = data.name
 			pic.texture = data.texture
-			#pic.scale = Vector2(1.8, 2.3)
 			pic.size.x = Globals.selected_x_length
 			pic.size.y = Globals.selected_y_length
 			pic.scale = Globals.selected_size
-			
-			#var l = preload("res://Scenes/Object/location.tscn")
-			#var instance = l.instantiate()
-			#instance.set_name(pic.name)
-					
-			#instance.get_child(0).get_shape().size.x = pic.size.x * pic.scale.x
-			#instance.get_child(0).get_shape().size.y = pic.size.y * pic.scale.y
-					
-					#print(instance.get_child(0).get_shape().size)
-					#instance.scale = a.scale
-			#instance.global_position = pic.global_position + 0.5 * pic.size * pic.scale
-			#$".".add_child(instance)
+			pic.position = _at_position - 0.5 * pic.size * pic.scale
 			$".".add_child(pic)
 	
 	#instance.position = pic.position + 0.5 * pic.size*2

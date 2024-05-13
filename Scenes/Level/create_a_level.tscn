@@ -50,13 +50,12 @@ grow_vertical = 2
 [node name="TabContainer" type="TabContainer" parent="RightPanel/CenterContainer"]
 custom_minimum_size = Vector2(350, 760)
 layout_mode = 2
-current_tab = 1
+current_tab = 0
 clip_tabs = false
 drag_to_rearrange_enabled = true
 tab_focus_mode = 0
 
 [node name="Pick a Map" type="ScrollContainer" parent="RightPanel/CenterContainer/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/TabContainer/Pick a Map"]
@@ -112,6 +111,7 @@ text = "Bigger
 "
 
 [node name="Locations" type="ScrollContainer" parent="RightPanel/CenterContainer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Locations"]
