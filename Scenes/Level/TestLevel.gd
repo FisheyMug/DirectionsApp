@@ -11,3 +11,5 @@ func globals_goal_changed():
 		Globals.changing = false
 		$"Control/VBoxContainer/Sentence Container/Label".text = "This is my favorite place"
 
+func _process(delta):
+	Globals.GameStarted = true

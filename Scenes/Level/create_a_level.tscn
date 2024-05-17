@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://mih7y6boqm85" path="res://Graphics/MySprites/City2.0/School.png" id="4_er70v"]
 [ext_resource type="Texture2D" uid="uid://p6b4ybglkfln" path="res://Graphics/MySprites/City2.0/BTownV2.png" id="4_l2whb"]
 [ext_resource type="Texture2D" uid="uid://bap2eeaf248i5" path="res://Graphics/MySprites/City2.0/Hospital.png" id="5_dxe0t"]
+[ext_resource type="Texture2D" uid="uid://c6vd6vwp4qw7y" path="res://Graphics/MySprites/Player-front.png" id="5_hoy1s"]
 [ext_resource type="Texture2D" uid="uid://doyqfsdrf7yc1" path="res://Graphics/MySprites/City2.0/PostOffice.png" id="6_2yg4p"]
 [ext_resource type="Texture2D" uid="uid://bd3bsfxg1s036" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="6_dp23y"]
 [ext_resource type="Script" path="res://Scenes/Object/Draggable.gd" id="6_ignpu"]
@@ -20,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://bchbj3x74iyor" path="res://Graphics/MySprites/City2.0/Stadium.png" id="16_pwwhj"]
 [ext_resource type="Texture2D" uid="uid://dymdcycfv5nhu" path="res://Graphics/MySprites/UI/MoveMarkerImage.png" id="16_yjipw"]
 [ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="18_ip8dr"]
-[ext_resource type="Texture2D" uid="uid://6x3ghy3e2l5n" path="res://Graphics/CharachterSprite.png" id="20_4n7m1"]
 
 [node name="Create-a-Level" type="Node2D"]
 script = ExtResource("1_c4j5u")
@@ -94,9 +94,11 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="TextureButton" type="TextureButton" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 72)
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("20_4n7m1")
+texture_normal = ExtResource("5_hoy1s")
+stretch_mode = 0
 
 [node name="Smaller" type="Button" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -254,7 +256,7 @@ mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 48
 text = "Start Level"
 
-[node name="Left Panel" type="Control" parent="."]
+[node name="mapPanel" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 15.0

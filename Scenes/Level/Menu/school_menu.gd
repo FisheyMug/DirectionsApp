@@ -11,9 +11,9 @@ func _on_new_school_pressed():
 
 func _on_menu_pressed():
 	Globals.GameStarted = false
-	get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
 
 
 func _input(event):
 	if event.is_action_pressed("Menu"):
-		get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")

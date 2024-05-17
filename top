@@ -1,0 +1,276 @@
+[33mcommit a3aba99cd2cc4f1718adcd7baf60e7b0bc103e1e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Mon May 13 15:30:37 2024 +0900
+
+    Web export for testing current build
+
+[33mcommit 5787897c93d391a55e748b977f58a64ace537b88[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Mon May 13 15:27:11 2024 +0900
+
+    Seems - fingers crossed, that I have got the image sizes for both unique locations and in game pics to match up with the area2ds spawned on game start for creatable levels. Needs more testing but it is finally lining up and the player is able to move in tested situations of varying distances of move markers
+
+[33mcommit 43715a11340aee08940ab721d55043003e2b989b[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed May 8 15:46:02 2024 +0900
+
+    Added Firestation, Stadium and Restaurant to the draggable locations
+
+[33mcommit a82fb25a2f5eedb6a2f7c016be95087d03f787c6[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed May 8 15:22:52 2024 +0900
+
+    Fixed background on main menu, Adjusted player further to help with movement at all scales, adjusted player scale on old school level so it moves correctly
+
+[33mcommit 0e2eb845165e1b3f0a97ae9853666fffaf3997df[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Tue May 7 22:14:38 2024 +0900
+
+    Added location logic to the rest of the scenes for creat a level, adjusted the player scene to work even when shrunk
+
+[33mcommit f51ff90e47295186941aba921615ebf241e8fad1[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Mon May 6 18:16:52 2024 +0900
+
+    added some new sprites, and I think I have finally sorted the area2d fitting the picture of locations properly - the key was doing it at run time for the specific level with local to scene checked for the main location scene.
+
+[33mcommit ac6c4eed419c60d4bcf0b442ffba8b87756aa2bc[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Mon Apr 29 10:31:07 2024 +0900
+
+    Added one more blank city, new web build to push - location size still needs tweaking, other than that lots of art and then we are close to usable app
+
+[33mcommit 244493c46171e18cc322f640911666006304ed26[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Fri Apr 26 11:21:40 2024 +0900
+
+    Changed the way we add names to unique locations, added ability to drop multiple pics to change the level, or pick a default map at any stage, unique location size still needs tweaking.
+
+[33mcommit 1051768ecddb512210ed479f981d75e4393dfb97[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Thu Apr 25 15:46:29 2024 +0900
+
+    Moved user location and move marker into the locations tab - some more creat a level reworking still needed
+
+[33mcommit e35ce1c6ffa74627c9e29cdec4cbd1637a590821[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Thu Apr 25 14:55:15 2024 +0900
+
+    cannot add more than one building now, have I think, fixed the issue of location size not matching and being in the right place compared to the image, added ability to scale the player
+
+[33mcommit ec8bb7d7f29a8d8ab4ebca583d762e462d5ea05f[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Mon Apr 22 15:50:16 2024 +0900
+
+    added ability to scale the player
+
+[33mcommit a2518fc9dbedae9861a17879ae80f35031346e21[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Fri Apr 19 11:18:17 2024 +0900
+
+    New web build to test
+
+[33mcommit 0b00e3fe433cc2756d49bf69d3663c5efb096f7c[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Fri Apr 19 11:15:15 2024 +0900
+
+    added menu buttons to school menu
+
+[33mcommit a322fcd44128d53ef7cbb7f14698bb3bd80d77aa[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Fri Apr 19 10:48:13 2024 +0900
+
+    added textrure rects to default levels to reenable clicking to change goal with added benefit of allowing the clickable area to be larger than the area the player walks into. Also adjusted location creation in creat a level to make it more inline with image area
+
+[33mcommit 3d4fb8170cdd4799c1231918d3901e9ed3df57e3[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Thu Apr 18 09:39:27 2024 +0900
+
+    Variable game started resets correctly when menu button is pushed, added ability to scale pics and locations using the arrow keys
+
+[33mcommit 807de1162151a3e72c85a6a5683d6b5be252f884[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Thu Apr 11 15:24:36 2024 +0900
+
+    Added drop funtion for own pick as alternative to file dialog, changed save to user instead of res in hope that the cookies on the web build will work as intended
+
+[33mcommit 2531d19a7a16d457759ea0da65331ee25e0b5dd6[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Apr 10 20:27:40 2024 +0900
+
+    Forgot to move the web build into the main folder
+
+[33mcommit 9ab24e54a7bb61256522daefe64d748827797a87[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Apr 10 15:46:29 2024 +0900
+
+    new web build export to test
+
+[33mcommit 7b35283c1efb829bc7b74c499f4f9ad9f8a13d06[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Apr 10 15:40:21 2024 +0900
+
+    Added way to get to create a level from the menue so I can test this build
+
+[33mcommit bfe0287035cc063cc9b44eab533e058f75a59b1d[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Apr 10 15:33:21 2024 +0900
+
+    New web build to check online
+
+[33mcommit be45e0ace5a1d63b0a5f7bd97c3e28140d37ad2c[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Tue Apr 9 15:55:01 2024 +0900
+
+    Heaps of added funtionality, still some bugs but we are getting close to the app I had in mind when I started
+
+[33mcommit d8b1cdb8fac8321ffa238d4d2821c172aebf08b7[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Thu Feb 29 06:43:36 2024 +0900
+
+    Fixed problem with the scale, added temp menu, made big change to movement mechanich to make more reliable, rebuilt web export
+
+[33mcommit b2c7326ec9e34ab2310d92187312e21c7e1d07c5[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Thu Feb 29 06:40:19 2024 +0900
+
+    Fixed problem with the scale, added temp menu, made big change to movement mechanich to make more reliable, rebuilt web export
+
+[33mcommit cd64823531b857640d28851cc219bb9de6046b55[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Tue Feb 13 22:22:14 2024 +0900
+
+    fixed/tweaked the movement system to work even when the markers are close together
+
+[33mcommit 15d1eb9b4c58d341bb2deb6c45ad66efa8b2307a[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Thu Feb 8 20:30:46 2024 +0900
+
+    fixed some bugs and changed some of the sizes
+
+[33mcommit f49f5e07f26a714404cf841dc1dc57cacc76edfb[m
+Author: Matthew <mattnfowler@gmail.com>
+Date:   Sun Jan 7 23:26:36 2024 +0900
+
+    Some sprites and other art added, other minor tweaks
+
+[33mcommit 99c1036c7f4cc8171d722b95f8f077502045d6c4[m
+Author: Matthew <mattnfowler@gmail.com>
+Date:   Mon Jan 1 01:13:10 2024 +0900
+
+    Added Gym sprite attempt
+
+[33mcommit 28fce39a1b10f5eaf5a362ab5488e79a443fba74[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Fri Dec 22 15:39:21 2023 +0900
+
+    added two school levels - original and new, menu screen prototype and got the sentences and movement working well
+
+[33mcommit 139b054c893000c25211551265d89ebd5cd54c64[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Sun Dec 17 21:04:34 2023 +0900
+
+    tweaking screen settings
+
+[33mcommit 38fe5fcde1bd6068edb0001959a71a27ac6cb58a[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Sun Dec 17 21:01:40 2023 +0900
+
+    tweaking screen settings
+
+[33mcommit 638d78ab5d75fdbfbc5828c26039f93cd7cc7883[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Thu Dec 14 19:42:16 2023 +0900
+
+    trying to fix errors
+
+[33mcommit 58fde6f8a6822852f12e124ec35b83663e36359a[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Thu Dec 14 19:11:16 2023 +0900
+
+    files moved
+
+[33mcommit b6fc4838130dbe39c0ab6801342ebfec7741ad01[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Dec 13 20:43:02 2023 +0900
+
+    moved web export files back into own file
+
+[33mcommit df612e85bd5fad91aa1dbe85e5023da8d30fdbd9[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Dec 13 20:25:40 2023 +0900
+
+    moved web export files into main folder
+
+[33mcommit 4d414a4308f208e354ada25fc99fa4c8252d5d85[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Dec 13 20:19:07 2023 +0900
+
+    trying to merge again
+
+[33mcommit 18a544ddcd6a46d912825bc4ab9a951e68e05ada[m
+Merge: 58c0220 5b6115c
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Dec 13 20:08:27 2023 +0900
+
+    trying to merge
+
+[33mcommit 58c02204d6527115a0e081d576ec3bff3cd499b0[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Dec 13 18:51:25 2023 +0900
+
+    changed html file name
+
+[33mcommit 5b6115c35101806cf674ac4a8281da782c89e7e4[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Dec 13 18:46:29 2023 +0900
+
+    Create main.yml
+
+[33mcommit cd06e9f29ec2526b3cc6c280aaaf9f5214c58aa8[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Dec 13 17:42:03 2023 +0900
+
+    added web export for testing
+
+[33mcommit 6a2e0d527d7fa061bfecddada5862e325c374f36[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Tue Dec 12 16:02:25 2023 +0900
+
+    Added reset mechanic for when the wrong location is entered
+
+[33mcommit 396e1a9b4d0828bd0cb88c93a8f7cf22bb345664[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Tue Dec 12 15:11:53 2023 +0900
+
+    mechanics working, still needs polishing up
+
+[33mcommit 40fa019a617a8175ada196b10b9ad4c38b944876[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Fri Dec 8 22:35:27 2023 +0900
+
+    animations working, buttons added, started implementing goal selection
+
+[33mcommit f1cba127950b1d72cf356f095133f8309628df8a[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Dec 6 11:50:07 2023 +0900
+
+    Added town sprite location move marker and collision detection
+
+[33mcommit 42ee66917ddf7eb0aba35353c5296207b68dcc1f[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Wed Dec 6 10:24:24 2023 +0900
+
+    got the movement system working with move and slide
+
+[33mcommit 5ed5ac13a809079acf8f88568d07fadb0d211b03[m
+Author: Matthew <96601521+FisheyMug@users.noreply.github.com>
+Date:   Mon Dec 4 23:01:35 2023 +0900
+
+    got the basic movement mechanic up and running
+
+[33mcommit a90dac45493aaf80893cdce41becc4b8ff99fbcc[m
+Author: Matthew <mattnfowler@gmail.com>
+Date:   Sun Dec 3 22:18:42 2023 +0900
+
+    Initial commit

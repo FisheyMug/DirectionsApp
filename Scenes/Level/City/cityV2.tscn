@@ -1,0 +1,199 @@
+[gd_scene load_steps=16 format=3 uid="uid://c72h3thwrq1gr"]
+
+[ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_ry7sm"]
+[ext_resource type="Texture2D" uid="uid://p6b4ybglkfln" path="res://Graphics/MySprites/City2.0/BTownV2.png" id="2_irw86"]
+[ext_resource type="Script" path="res://Scenes/Level/player_image_level.gd" id="2_nrenr"]
+[ext_resource type="Texture2D" uid="uid://dn4ulwcc5tbpw" path="res://Graphics/MySprites/City2.0/Conbini.png" id="4_0y2q2"]
+[ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="4_dc2vv"]
+[ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="4_xm8c0"]
+[ext_resource type="Texture2D" uid="uid://bo15ctbibhoih" path="res://Graphics/MySprites/City2.0/Firestation.png" id="7_6hdkk"]
+[ext_resource type="Texture2D" uid="uid://bchbj3x74iyor" path="res://Graphics/MySprites/City2.0/Stadium.png" id="8_dgx65"]
+[ext_resource type="Texture2D" uid="uid://s3rn7rvvpnew" path="res://Graphics/MySprites/City2.0/Restaurant.png" id="9_pc64v"]
+[ext_resource type="Texture2D" uid="uid://bd3bsfxg1s036" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="10_jeutu"]
+[ext_resource type="Texture2D" uid="uid://mih7y6boqm85" path="res://Graphics/MySprites/City2.0/School.png" id="11_27a27"]
+[ext_resource type="Texture2D" uid="uid://doyqfsdrf7yc1" path="res://Graphics/MySprites/City2.0/PostOffice.png" id="12_givx7"]
+[ext_resource type="Texture2D" uid="uid://bap2eeaf248i5" path="res://Graphics/MySprites/City2.0/Hospital.png" id="13_tnj6f"]
+[ext_resource type="Texture2D" uid="uid://c36vg45x7vsyh" path="res://Graphics/MySprites/City2.0/Park1.png" id="14_2xxuk"]
+[ext_resource type="Texture2D" uid="uid://vxnm805cpfqa" path="res://Graphics/MySprites/City2.0/Supermarket.png" id="15_vja0t"]
+
+[node name="BaseLevel" instance=ExtResource("1_ry7sm")]
+script = ExtResource("2_nrenr")
+
+[node name="map" parent="." index="1"]
+position = Vector2(4, 5)
+scale = Vector2(0.988934, 1.38069)
+texture = ExtResource("2_irw86")
+centered = false
+
+[node name="Player" parent="." index="2"]
+scale = Vector2(0.8, 0.8)
+
+[node name="MoveMarker" parent="MoveMarkers" index="0" instance=ExtResource("4_xm8c0")]
+position = Vector2(31, 45)
+
+[node name="MoveMarker2" parent="MoveMarkers" index="1" instance=ExtResource("4_xm8c0")]
+position = Vector2(170, 46)
+
+[node name="MoveMarker3" parent="MoveMarkers" index="2" instance=ExtResource("4_xm8c0")]
+position = Vector2(342, 43)
+
+[node name="MoveMarker4" parent="MoveMarkers" index="3" instance=ExtResource("4_xm8c0")]
+position = Vector2(488, 46)
+
+[node name="MoveMarker5" parent="MoveMarkers" index="4" instance=ExtResource("4_xm8c0")]
+position = Vector2(625, 45)
+
+[node name="MoveMarker6" parent="MoveMarkers" index="5" instance=ExtResource("4_xm8c0")]
+position = Vector2(768, 46)
+
+[node name="MoveMarker7" parent="MoveMarkers" index="6" instance=ExtResource("4_xm8c0")]
+position = Vector2(940, 45)
+
+[node name="MoveMarker8" parent="MoveMarkers" index="7" instance=ExtResource("4_xm8c0")]
+position = Vector2(946, 202)
+
+[node name="MoveMarker9" parent="MoveMarkers" index="8" instance=ExtResource("4_xm8c0")]
+position = Vector2(948, 363)
+
+[node name="MoveMarker10" parent="MoveMarkers" index="9" instance=ExtResource("4_xm8c0")]
+position = Vector2(823, 364)
+
+[node name="MoveMarker11" parent="MoveMarkers" index="10" instance=ExtResource("4_xm8c0")]
+position = Vector2(823, 454)
+
+[node name="MoveMarker12" parent="MoveMarkers" index="11" instance=ExtResource("4_xm8c0")]
+position = Vector2(824, 578)
+
+[node name="MoveMarker13" parent="MoveMarkers" index="12" instance=ExtResource("4_xm8c0")]
+position = Vector2(824, 698)
+
+[node name="MoveMarker14" parent="MoveMarkers" index="13" instance=ExtResource("4_xm8c0")]
+position = Vector2(728, 362)
+
+[node name="MoveMarker15" parent="MoveMarkers" index="14" instance=ExtResource("4_xm8c0")]
+position = Vector2(622, 362)
+
+[node name="MoveMarker16" parent="MoveMarkers" index="15" instance=ExtResource("4_xm8c0")]
+position = Vector2(625, 459)
+
+[node name="MoveMarker17" parent="MoveMarkers" index="16" instance=ExtResource("4_xm8c0")]
+position = Vector2(621, 561)
+
+[node name="MoveMarker18" parent="MoveMarkers" index="17" instance=ExtResource("4_xm8c0")]
+position = Vector2(620, 712)
+
+[node name="MoveMarker19" parent="MoveMarkers" index="18" instance=ExtResource("4_xm8c0")]
+position = Vector2(486, 713)
+
+[node name="MoveMarker20" parent="MoveMarkers" index="19" instance=ExtResource("4_xm8c0")]
+position = Vector2(347, 715)
+
+[node name="MoveMarker21" parent="MoveMarkers" index="20" instance=ExtResource("4_xm8c0")]
+position = Vector2(345, 553)
+
+[node name="MoveMarker22" parent="MoveMarkers" index="21" instance=ExtResource("4_xm8c0")]
+position = Vector2(346, 366)
+
+[node name="MoveMarker23" parent="MoveMarkers" index="22" instance=ExtResource("4_xm8c0")]
+position = Vector2(487, 364)
+
+[node name="MoveMarker24" parent="MoveMarkers" index="23" instance=ExtResource("4_xm8c0")]
+position = Vector2(623, 202)
+
+[node name="MoveMarker25" parent="MoveMarkers" index="24" instance=ExtResource("4_xm8c0")]
+position = Vector2(345, 198)
+
+[node name="MoveMarker26" parent="MoveMarkers" index="25" instance=ExtResource("4_xm8c0")]
+position = Vector2(25, 210)
+
+[node name="MoveMarker27" parent="MoveMarkers" index="26" instance=ExtResource("4_xm8c0")]
+position = Vector2(30, 386)
+
+[node name="MoveMarker28" parent="MoveMarkers" index="27" instance=ExtResource("4_xm8c0")]
+position = Vector2(25, 574)
+
+[node name="MoveMarker29" parent="MoveMarkers" index="28" instance=ExtResource("4_xm8c0")]
+position = Vector2(30, 711)
+
+[node name="MoveMarker30" parent="MoveMarkers" index="29" instance=ExtResource("4_xm8c0")]
+position = Vector2(181, 717)
+
+[node name="Convenience Store" parent="Left Panel" index="0" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 410.0
+offset_right = 971.0
+offset_bottom = 490.0
+texture = ExtResource("4_0y2q2")
+
+[node name="Fire Station" parent="Left Panel" index="1" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 479.0
+offset_right = 300.0
+offset_bottom = 641.0
+texture = ExtResource("7_6hdkk")
+
+[node name="Stadium" parent="Left Panel" index="2" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 654.0
+offset_top = 94.0
+offset_right = 901.0
+offset_bottom = 302.0
+texture = ExtResource("8_dgx65")
+
+[node name="Restaurant" parent="Left Panel" index="3" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 113.0
+offset_right = 295.0
+offset_bottom = 283.0
+texture = ExtResource("9_pc64v")
+
+[node name="Police Station" parent="Left Panel" index="4" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 295.0
+offset_right = 289.0
+offset_bottom = 446.0
+texture = ExtResource("10_jeutu")
+
+[node name="School" parent="Left Panel" index="5" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 439.0
+offset_right = 579.0
+offset_bottom = 605.0
+texture = ExtResource("11_27a27")
+
+[node name="Post Office" parent="Left Panel" index="6" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 642.0
+offset_right = 777.0
+offset_bottom = 756.0
+texture = ExtResource("12_givx7")
+
+[node name="Hospital" parent="Left Panel" index="7" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 107.0
+offset_right = 576.0
+offset_bottom = 290.0
+texture = ExtResource("13_tnj6f")
+
+[node name="Park" parent="Left Panel" index="8" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 657.0
+offset_right = 965.0
+offset_bottom = 729.0
+texture = ExtResource("14_2xxuk")
+
+[node name="Supermarket" parent="Left Panel" index="9" instance=ExtResource("4_dc2vv")]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 406.0
+offset_right = 781.0
+offset_bottom = 489.0
+texture = ExtResource("15_vja0t")

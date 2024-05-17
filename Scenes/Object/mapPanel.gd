@@ -4,8 +4,6 @@ var movemarkerCounter = 0
 var mouse_hover: bool = false
 signal set_goal(goal)
 
-var player;
-
 func _can_drop_data(_at_position, _data):
 	return true
 	

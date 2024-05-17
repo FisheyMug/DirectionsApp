@@ -9,8 +9,11 @@
 position = Vector2(7, 1)
 script = ExtResource("2_gedfb")
 
+[node name="Player" parent="." index="2"]
+scale = Vector2(0.5, 0.5)
+
 [node name="MoveMarker" parent="MoveMarkers" index="0" instance=ExtResource("2_cy8ee")]
-position = Vector2(248.578, 157.336)
+position = Vector2(256, 158)
 
 [node name="MoveMarker2" parent="MoveMarkers" index="1" instance=ExtResource("2_cy8ee")]
 position = Vector2(336.562, 157.336)

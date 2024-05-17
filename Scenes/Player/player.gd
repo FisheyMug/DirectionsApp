@@ -40,7 +40,7 @@ func _input(event):
 	if Globals.GameStarted:
 		if event.is_action_pressed("Menu"):
 			Globals.GameStarted = false
-			get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
 		if event.is_action_released("turn_right") and !Globals.player_moving:
 			$view.rotate(1.57)
 			rotation("right")
@@ -65,7 +65,7 @@ func _on_view_area_entered(area):
 
 
 func _physics_process(_delta):
-	if position.distance_to(target) > 5 and !Globals.reset:
+	if position.distance_to(target) > 2 and !Globals.reset:
 		move_and_slide()
 	if $view.get_overlapping_areas().size() > 0:
 		can_move_forward = true

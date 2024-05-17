@@ -8,7 +8,7 @@ func _on_button_pressed():
 
 func _on_city_pressed():
 	Globals.GameStarted = true
-	get_tree().change_scene_to_file("res://Scenes/Level/city_og.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level/Menu/city_menu.tscn")
 
 
 func _on_school_pressed():

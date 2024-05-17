@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://b46qi5brctt5j"]
+
+[ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_1cx2j"]
+[ext_resource type="Script" path="res://Scenes/Level/Menu/city_menu.gd" id="1_oomk2"]
+[ext_resource type="Texture2D" uid="uid://bnl7fr1v4ktc" path="res://Graphics/My town.png" id="2_ll2ig"]
+[ext_resource type="Texture2D" uid="uid://bgq7mvxoifb1g" path="res://Graphics/MySprites/UI/City Version 2.png" id="3_3573e"]
+
+[node name="City Menu" type="Node2D"]
+script = ExtResource("1_oomk2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_1cx2j")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1366.0
+offset_bottom = 768.0
+
+[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 50
+columns = 2
+
+[node name="City v1" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_ll2ig")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="City v2" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_3573e")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Choose a Level"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1322.0
+offset_top = 12.0
+offset_right = 1349.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/City v1" to="." method="_on_city_v_1_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/City v2" to="." method="_on_city_v_2_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

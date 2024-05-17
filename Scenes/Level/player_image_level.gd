@@ -3,16 +3,13 @@ extends Base_Level
 
 func _ready():
 	for pic in $"Left Panel".get_children():
-		if "MoveMarker" not in pic.name:
+		if "Player Image" in pic.name and !Globals.GameStarted:
+			continue
+		if "Move" not in pic.name:
 			#print(pic.scale)
 			var l = preload("res://Scenes/Object/location.tscn")
 			var instance = l.instantiate()
 			if "UL" in pic.name:
-				#print(pic.get_child(0).scale)
-				#instance.get_child(0).get_shape().size.x =(pic.get_child(0).size.x * pic.get_child(0).scale.x)* 0.9
-				#instance.get_child(0).get_shape().size.y =(pic.get_child(0).size.y * pic.get_child(0).scale.y)* 0.9
-				#instance.global_position = pic.get_child(0).global_position + 0.5 * pic.get_child(0).size * pic.get_child(0).scale
-				#pic.get_child(0).scale = pic.scale
 				instance.name = pic.name.erase(0,2)
 			else :
 				instance.set_name(pic.name)
@@ -79,3 +76,21 @@ func _process(_delta):
 	globals_goal_changed()
 	check_win()
 
+
+
+func _on_location_box_image_toggled(toggled_on):
+	for pic in $"Left Panel".get_children():
+		if "MoveMarker" not in pic.name:
+			if toggled_on:
+				pic.hide()
+			else:
+				pic.show()
+
+
+func _on_move_marker_image_toggled(toggled_on):
+	for pic in $"Left Panel".get_children():
+		if "MoveMarker" in pic.name:
+			if toggled_on:
+				pic.hide()
+			else:
+				pic.show()

@@ -46,14 +46,11 @@ texture_normal = ExtResource("3_mpknd")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="menu" type="Button" parent="."]
-offset_left = 1327.0
-offset_top = 10.0
-offset_right = 1352.0
-offset_bottom = 55.0
+[node name="menu" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 27
-text = "X"
+text = "Main Menu"
 
 [connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/OgSchool" to="." method="_on_og_school_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/New School" to="." method="_on_new_school_pressed"]
-[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/menu" to="." method="_on_menu_pressed"]

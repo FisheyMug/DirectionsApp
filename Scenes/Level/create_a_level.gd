@@ -16,16 +16,16 @@ func _ready():
 
 func _on_blankmap_button_button_up():
 	var instance = blankCity.instantiate()
-	if $"Left Panel".get_children().size() > 0:
-		$"Left Panel".get_child(0).queue_free()
-	$"Left Panel".add_child(instance)
+	if $mapPanel.get_children().size() > 0:
+		$mapPanel.get_child(0).queue_free()
+	$mapPanel.add_child(instance)
 	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.hide()
 	$"RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/Unique Location".hide()
 
 
 func _on_button_pressed():
 	#Get the "map"
-	finished_level = $"Left Panel".get_child(0)
+	finished_level = $mapPanel.get_child(0)
 	#Get the locations node in the map
 	var Ls = finished_level.get_child(4)
 	var Mmarker = finished_level.get_child(3)
@@ -108,19 +108,19 @@ func _on_file_dialog_file_selected(path):
 
 func _input(event):
 	if event.is_action_pressed("Menu"):
-		get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
 
 func _on_esc_button_pressed():
 	Globals.GameStarted = false
-	get_tree().change_scene_to_file("res://Scenes/Object/start_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
 
 func _process(_delta):
-	if $"Left Panel".get_children().size() > 0:
+	if $mapPanel.get_children().size() > 0:
 		$"Esc button".hide()
 
 func _on_files_dropped(files):
-	if $"Left Panel".get_children().size() > 0:
-		$"Left Panel".get_child(0).queue_free()
+	if $mapPanel.get_children().size() > 0:
+		$mapPanel.get_child(0).queue_free()
 	if Player_map != null:
 		Player_map = null
 	
@@ -134,12 +134,12 @@ func _on_files_dropped(files):
 	
 	var instance = PlayerImageLevel.instantiate()
 	
-	$"Left Panel".add_child(instance)
+	$mapPanel.add_child(instance)
 	Player_map = instance.get_child(1)
 	
 	if Player_map != null:	
-		Player_map.scale.x = $"Left Panel".size.x / texture.get_width()
-		Player_map.scale.y = $"Left Panel".size.y / texture.get_height()
+		Player_map.scale.x = $mapPanel.size.x / texture.get_width()
+		Player_map.scale.y = $mapPanel.size.y / texture.get_height()
 		#add image to the level
 		Player_map.texture = texture
 	$"RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/Unique Location".show()
@@ -148,8 +148,8 @@ func _on_files_dropped(files):
 
 
 func _on_texture_button_pressed():
-	if $"Left Panel".get_children().size() > 0:
-		var player = $"Left Panel".get_child(0).get_child(2)
+	if $mapPanel.get_children().size() > 0:
+		var player = $mapPanel.get_child(0).get_child(2)
 		if !player.visible:
 			player.show()
 		else:
@@ -157,15 +157,15 @@ func _on_texture_button_pressed():
 
 
 func _on_smaller_pressed():
-	if $"Left Panel".get_children().size() > 0:
-		var player = $"Left Panel".get_child(0).get_child(2)
+	if $mapPanel.get_children().size() > 0:
+		var player = $mapPanel.get_child(0).get_child(2)
 		if player.visible and player.scale > Vector2(0.3, 0.3):
 				player.scale -= Vector2(0.1, 0.1)
 
 
 func _on_bigger_pressed():
-	if $"Left Panel".get_children().size() > 0:
-		var player = $"Left Panel".get_child(0).get_child(2)
+	if $mapPanel.get_children().size() > 0:
+		var player = $mapPanel.get_child(0).get_child(2)
 		if player.visible and player.scale < Vector2(2, 2):
 			player.scale += Vector2(0.1, 0.1)
 
