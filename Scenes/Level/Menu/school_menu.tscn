@@ -46,11 +46,23 @@ texture_normal = ExtResource("3_mpknd")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="menu" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Choose a Level"
+
+[node name="menu" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 1322.0
+offset_top = 16.0
+offset_right = 1358.0
+offset_bottom = 61.0
 theme_override_font_sizes/font_size = 27
-text = "Main Menu"
+text = "X"
 
 [connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/OgSchool" to="." method="_on_og_school_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/New School" to="." method="_on_new_school_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Control/menu" to="." method="_on_menu_pressed"]

@@ -30,6 +30,11 @@ func _ready():
 	select_random_goal()
 	select_random_start_location()
 	$WinMessage.hide()
+	
+func startLocationChanged():
+	if Globals.start_location_changing:
+		$Player.position = Globals.start_location
+		Globals.start_location_changing = false
 
 func globals_goal_changed():
 	if Globals.changing:
@@ -44,10 +49,15 @@ func select_random_goal():
 		Globals.goal = current_goal
 		$"Control/VBoxContainer/Sentence Container/Label".text = "Where is the " + current_goal + "?"
 
+
 func select_random_start_location():
-	if road_markers.size() > 0:
-		start_position = road_markers[randi() % road_markers.size() - 1].position
+	if Globals.start_location != null:
+		start_position = Globals.start_location
 		$Player.position = start_position
+	else:
+		if road_markers.size() > 0:
+			start_position = road_markers[randi() % road_markers.size() - 1].position
+			$Player.position = start_position
 	
 
 func check_win():
@@ -74,6 +84,7 @@ func _process(_delta):
 		if node.was_dropped == true:
 			node.queue_free()
 	globals_goal_changed()
+	startLocationChanged()
 	check_win()
 
 
@@ -94,3 +105,8 @@ func _on_move_marker_image_toggled(toggled_on):
 				pic.hide()
 			else:
 				pic.show()
+
+func _on_menu_pressed():
+	Globals.GameStarted = false
+	Globals.start_location = null
+	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")

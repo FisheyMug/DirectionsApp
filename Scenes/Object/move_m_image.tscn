@@ -10,3 +10,5 @@ offset_bottom = 15.0
 mouse_default_cursor_shape = 2
 texture = ExtResource("1_yc7pq")
 script = ExtResource("2_qbp0r")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

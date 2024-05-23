@@ -38,9 +38,13 @@ func select_random_goal():
 		$"Control/VBoxContainer/Sentence Container/Label".text = "Where is the " + current_goal + "?"
 
 func select_random_start_location():
-	if road_markers.size() > 0:
-		start_position = road_markers[randi() % road_markers.size() - 1].position
+	if Globals.start_location != null:
+		start_position = Globals.start_location
 		$Player.position = start_position
+	else:
+		if road_markers.size() > 0:
+			start_position = road_markers[randi() % road_markers.size() - 1].position
+			$Player.position = start_position
 	
 
 func check_win():
@@ -67,6 +71,7 @@ func _process(_delta):
 
 
 
-func _on_button_pressed():
+func _on_menu_pressed():
 	Globals.GameStarted = false
+	Globals.start_location = null
 	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")

@@ -14,15 +14,6 @@ func _ready():
 	bTownV2 = preload("res://Scenes/Level/BtownV2.tscn")
 	get_tree().get_root().files_dropped.connect(_on_files_dropped)
 
-func _on_blankmap_button_button_up():
-	var instance = blankCity.instantiate()
-	if $mapPanel.get_children().size() > 0:
-		$mapPanel.get_child(0).queue_free()
-	$mapPanel.add_child(instance)
-	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.hide()
-	$"RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/Unique Location".hide()
-
-
 func _on_button_pressed():
 	#Get the "map"
 	finished_level = $mapPanel.get_child(0)
@@ -82,15 +73,15 @@ func _on_button_pressed():
 
 
 
-
-func _on_load_pic_pressed():
-	var instance = PlayerImageLevel.instantiate()
-	#check if an instance exists so we dont add mulitple
-	$"Left Panel".get_child(0).queue_free()
-	if $"Left Panel".get_children().size() == 0:
-		$"Left Panel".add_child(instance)
-		Player_map = instance.get_child(1)
-	$FileDialog.popup()
+#File dialogu - does not work atm with web exports
+#func _on_load_pic_pressed():
+#	var instance = PlayerImageLevel.instantiate()
+#	#check if an instance exists so we dont add mulitple
+#	$mapPanel.get_child(0).queue_free()
+#	if $mapPanel.get_children().size() == 0:
+#		$mapPanel.add_child(instance)
+#		Player_map = instance.get_child(1)
+#	$FileDialog.popup()
 
 
 func _on_file_dialog_file_selected(path):
@@ -101,10 +92,11 @@ func _on_file_dialog_file_selected(path):
 	var image_texture = ImageTexture.new()
 	image_texture.set_image(image)
 	#Scale image to fit the left panel
-	Player_map.scale.x = $"Left Panel".size.x / image_texture.get_width()
-	Player_map.scale.y = $"Left Panel".size.y / image_texture.get_height()
+	Player_map.scale.x = $mapPanel.size.x / image_texture.get_width()
+	Player_map.scale.y = $mapPanel.size.y / image_texture.get_height()
 	#add image to the level
 	Player_map.texture = image_texture
+	$"RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer".show()
 
 func _input(event):
 	if event.is_action_pressed("Menu"):
@@ -142,9 +134,9 @@ func _on_files_dropped(files):
 		Player_map.scale.y = $mapPanel.size.y / texture.get_height()
 		#add image to the level
 		Player_map.texture = texture
-	$"RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/Unique Location".show()
-	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.show()
-
+	$"RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/Unique Location".show()
+	$RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/mm.show()
+	$RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/Instructions.text = "Click and drag a location or move marker into the map!"
 
 
 func _on_texture_button_pressed():
@@ -184,10 +176,22 @@ func _on_location_bigger_pressed():
 				Globals.selected.scale += Vector2(increment, increment)
 				Globals.selected_size = Globals.selected.scale
 
+func _on_blankmap_button_button_up():
+	var instance = blankCity.instantiate()
+	if $mapPanel.get_children().size() > 0:
+		$mapPanel.get_child(0).queue_free()
+	$mapPanel.add_child(instance)
+	$RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/mm.hide()
+	$"RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/Unique Location".hide()
+	$RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations.show()
+	$RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/Instructions.text = "Click and drag a location into the map!"
+
 func _on_blank_v_2_pressed():
 	var instance = bTownV2.instantiate()
-	if $"Left Panel".get_children().size() > 0:
-		$"Left Panel".get_child(0).queue_free()
-	$"Left Panel".add_child(instance)
-	$RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2/mm.hide()
-	$"RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer/Unique Location".hide()
+	if $mapPanel.get_children().size() > 0:
+		$mapPanel.get_child(0).queue_free()
+	$mapPanel.add_child(instance)
+	$RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/mm.hide()
+	$"RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/Unique Location".hide()
+	$RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations.show()
+	$RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/Instructions.text = "Click and drag a location into the map!"

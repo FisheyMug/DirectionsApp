@@ -13,7 +13,7 @@ visible = false
 [node name="map" parent="." index="1"]
 centered = false
 
-[node name="Player" parent="." index="2"]
+[node name="Control" parent="." index="7"]
 visible = false
 
 [node name="buttonbox" type="VBoxContainer" parent="Control" index="1"]

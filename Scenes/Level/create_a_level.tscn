@@ -32,106 +32,122 @@ texture = ExtResource("1_mojmm")
 [node name="RightPanel" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 966.0
-offset_top = 15.0
-offset_right = 1347.0
-offset_bottom = 752.0
+offset_left = 983.0
+offset_top = 17.0
+offset_right = 1364.0
+offset_bottom = 754.0
 
 [node name="CenterContainer" type="CenterContainer" parent="RightPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -11.5
-offset_bottom = 11.5
+offset_left = -6.0
+offset_top = -11.0
+offset_right = -6.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TabContainer" type="TabContainer" parent="RightPanel/CenterContainer"]
-custom_minimum_size = Vector2(350, 760)
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TabContainer" type="TabContainer" parent="RightPanel/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(340, 650)
 layout_mode = 2
 current_tab = 0
 clip_tabs = false
 drag_to_rearrange_enabled = true
 tab_focus_mode = 0
 
-[node name="Pick a Map" type="ScrollContainer" parent="RightPanel/CenterContainer/TabContainer"]
+[node name="Pick a Map" type="ScrollContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/TabContainer/Pick a Map"]
+[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 18
 
-[node name="Load Pic" type="Button" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+[node name="Map instructions" type="Label" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
-mouse_default_cursor_shape = 2
-text = "Load your Own Map!"
+theme_override_font_sizes/font_size = 19
+text = "Pick a default map below, or drag and drop an image file onto the paper."
+autowrap_mode = 3
+clip_text = true
 
-[node name="blankmapButton" type="TextureButton" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(310, 200)
+[node name="blankmapButton" type="TextureButton" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(290, 160)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_tycgg")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BlankV2" type="TextureButton" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(310, 200)
+[node name="BlankV2" type="TextureButton" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(290, 160)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_l2whb")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+[node name="Player size instructions" type="Label" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Adjust the player size:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="TextureButton" type="TextureButton" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 72)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_hoy1s")
 stretch_mode = 0
 
-[node name="Smaller" type="Button" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Smaller" type="Button" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "Smaller
 "
 
-[node name="Bigger" type="Button" parent="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Bigger" type="Button" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "Bigger
 "
 
-[node name="Locations" type="ScrollContainer" parent="RightPanel/CenterContainer/TabContainer"]
+[node name="Locations" type="HBoxContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
+theme_override_constants/separation = -3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Locations"]
+[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations"]
 layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 35
+theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 40
+theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer"]
+[node name="Scrollbox" type="ScrollContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="Police Station" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Police Station" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -140,117 +156,116 @@ texture = ExtResource("6_dp23y")
 stretch_mode = 3
 script = ExtResource("6_ignpu")
 
-[node name="Hospital" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Hospital" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("5_dxe0t")
 stretch_mode = 3
 script = ExtResource("6_ignpu")
 
-[node name="Post Office" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Post Office" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("6_2yg4p")
 stretch_mode = 3
 script = ExtResource("6_ignpu")
 
-[node name="School" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="School" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("4_er70v")
 stretch_mode = 3
 script = ExtResource("6_ignpu")
 
-[node name="Supermarket" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Supermarket" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("8_4jxp7")
 stretch_mode = 3
 script = ExtResource("6_ignpu")
 
-[node name="Park" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Park" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("14_thvyl")
 stretch_mode = 3
 script = ExtResource("6_ignpu")
 
-[node name="Convinience Store" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Convinience Store" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("16_nmhk7")
 stretch_mode = 3
 script = ExtResource("6_ignpu")
 
-[node name="Fire Station" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Fire Station" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture = ExtResource("14_rjkcp")
 script = ExtResource("6_ignpu")
 
-[node name="Restaurant" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Restaurant" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture = ExtResource("15_irc2c")
 script = ExtResource("6_ignpu")
 
-[node name="Stadium" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Stadium" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture = ExtResource("16_pwwhj")
 script = ExtResource("6_ignpu")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 5
+theme_override_constants/separation = 10
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2"]
+[node name="Instructions" type="Label" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(130, 100)
 layout_mode = 2
-theme_override_constants/margin_bottom = 50
+text = "Click and drag a location or move marker into the map!"
+autowrap_mode = 3
 
-[node name="Unique Location" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer"]
+[node name="Unique Location" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 texture = ExtResource("14_c5f6f")
+expand_mode = 1
+stretch_mode = 5
 script = ExtResource("15_xelxr")
 
-[node name="location Smaller" type="Button" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2"]
+[node name="location Smaller" type="Button" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 25
 text = "-"
 
-[node name="location Bigger" type="Button" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2"]
+[node name="location Bigger" type="Button" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 25
 text = "+"
 
-[node name="MarginContainer2" type="MarginContainer" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-
-[node name="mm" type="TextureRect" parent="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/MarginContainer2"]
+[node name="mm" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("16_yjipw")
+expand_mode = 1
 stretch_mode = 5
 script = ExtResource("16_koqqs")
 
-[node name="Start Game" type="ScrollContainer" parent="RightPanel/CenterContainer/TabContainer"]
-visible = false
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/TabContainer/Start Game"]
-layout_mode = 2
-theme_override_constants/margin_left = 47
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 47
-
-[node name="VBoxContainer" type="VBoxContainer" parent="RightPanel/CenterContainer/TabContainer/Start Game/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Button" type="Button" parent="RightPanel/CenterContainer/TabContainer/Start Game/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="RightPanel/CenterContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 48
@@ -259,10 +274,10 @@ text = "Start Level"
 [node name="mapPanel" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 15.0
-offset_top = 12.0
-offset_right = 975.0
-offset_bottom = 753.0
+offset_left = 9.0
+offset_top = 14.0
+offset_right = 969.0
+offset_bottom = 755.0
 script = ExtResource("18_ip8dr")
 
 [node name="FileDialog" type="FileDialog" parent="."]
@@ -282,14 +297,13 @@ offset_right = 1349.0
 offset_bottom = 34.0
 text = "X"
 
-[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/Load Pic" to="." method="_on_load_pic_pressed"]
-[connection signal="button_up" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/blankmapButton" to="." method="_on_blankmap_button_button_up"]
-[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/BlankV2" to="." method="_on_blank_v_2_pressed"]
-[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/Smaller" to="." method="_on_smaller_pressed"]
-[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/Bigger" to="." method="_on_bigger_pressed"]
-[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/location Smaller" to="." method="_on_location_smaller_pressed"]
-[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Locations/HBoxContainer/VBoxContainer2/location Bigger" to="." method="_on_location_bigger_pressed"]
-[connection signal="pressed" from="RightPanel/CenterContainer/TabContainer/Start Game/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="button_up" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/blankmapButton" to="." method="_on_blankmap_button_button_up"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/BlankV2" to="." method="_on_blank_v_2_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/Smaller" to="." method="_on_smaller_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/HBoxContainer/Bigger" to="." method="_on_bigger_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/location Smaller" to="." method="_on_location_smaller_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer2/VBoxContainer2/location Bigger" to="." method="_on_location_bigger_pressed"]
+[connection signal="pressed" from="RightPanel/CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="Esc button" to="." method="_on_esc_button_pressed"]
