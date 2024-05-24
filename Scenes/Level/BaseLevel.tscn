@@ -35,7 +35,7 @@ position = Vector2(578, 352)
 [node name="Timers" type="Node2D" parent="."]
 
 [node name="WinMessage" type="Timer" parent="Timers"]
-wait_time = 3.0
+wait_time = 1.5
 one_shot = true
 
 [node name="WinMessage" type="Label" parent="."]

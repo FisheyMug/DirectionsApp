@@ -88,10 +88,10 @@ func _process(_delta):
 	check_win()
 
 
-
 func _on_location_box_image_toggled(toggled_on):
 	for pic in $"Left Panel".get_children():
-		if "MoveMarker" not in pic.name:
+		if "MoveMarker" not in pic.name and pic.get_class() =="Control":
+			print(pic.get_class())
 			if toggled_on:
 				pic.hide()
 			else:
