@@ -50,8 +50,8 @@ func _input(event):
 			rotation("left")
 			can_move_forward = false
 		if event.is_action_released("go_straight"):
-			Globals.reset = false
 			if can_move_forward and !Globals.player_moving:
+				Globals.reset = false
 				target = destination
 				velocity = position.direction_to(target) * speed
 				$AnimationPlayer.play(animationToPlay)
@@ -75,11 +75,14 @@ func _physics_process(_delta):
 				shortest_distance = distance
 				destination = element.position
 				
-	#print(Globals.player_moving)
 
-func _on_body_collision_area_entered(_area):
+func _on_body_collision_area_entered(area):
 	$AnimationPlayer.stop()
 	Globals.player_moving = false
+	
+	if "MoveMarker" not in area.name:
+		can_move_forward = false
+		Globals.reset = true
 	#can_move_forward = true
 	
 

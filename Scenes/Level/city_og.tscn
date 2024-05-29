@@ -124,24 +124,28 @@ position = Vector2(211, 223)
 position = Vector2(208, 536)
 
 [node name="Hospital" parent="Left Panel" index="0" instance=ExtResource("6_j8jl2")]
+layout_mode = 0
 offset_left = 659.0
 offset_top = 450.0
 offset_right = 880.0
 offset_bottom = 626.0
 
 [node name="Supermarket" parent="Left Panel" index="1" instance=ExtResource("6_j8jl2")]
+layout_mode = 0
 offset_left = 387.0
 offset_top = 464.0
 offset_right = 566.0
 offset_bottom = 611.0
 
 [node name="Park" parent="Left Panel" index="2" instance=ExtResource("6_j8jl2")]
+layout_mode = 0
 offset_left = 82.0
 offset_top = 424.0
 offset_right = 289.0
 offset_bottom = 639.0
 
 [node name="Police Station" parent="Left Panel" index="3" instance=ExtResource("6_j8jl2")]
+layout_mode = 0
 offset_left = 675.0
 offset_top = 121.0
 offset_right = 874.0
