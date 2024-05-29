@@ -33,8 +33,9 @@ func _ready():
 	
 func startLocationChanged():
 	if Globals.start_location_changing:
-		$Player.position = Globals.start_location
+		$Player.global_position = Globals.start_location
 		Globals.start_location_changing = false
+		get_tree().reload_current_scene()
 
 func globals_goal_changed():
 	if Globals.changing:
@@ -91,11 +92,11 @@ func _process(_delta):
 func _on_location_box_image_toggled(toggled_on):
 	for pic in $"Left Panel".get_children():
 		if "MoveMarker" not in pic.name and pic.get_class() =="Control":
-			print(pic.get_class())
 			if toggled_on:
-				pic.hide()
+				#print(pic.get_child(0).texture.self_modulate)
+				pic.get_child(0).hide()
 			else:
-				pic.show()
+				pic.get_child(0).hide()
 
 
 func _on_move_marker_image_toggled(toggled_on):

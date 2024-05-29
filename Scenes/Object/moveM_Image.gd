@@ -15,8 +15,8 @@ func _get_drag_data(_at_position):
 
 func _on_gui_input(event):
 	if event.is_action_released("click") and Globals.GameStarted:
-		if Globals.start_location == self.position:
+		if Globals.start_location == self.position + 1 * self.size * self.scale:
 			Globals.start_location = null
 		else:
-			Globals.start_location = self.position
+			Globals.start_location = self.position + 1 * self.size * self.scale
 			Globals.start_location_changing = true

@@ -65,7 +65,7 @@ func _on_view_area_entered(area):
 
 
 func _physics_process(_delta):
-	if position.distance_to(target) > 2 and !Globals.reset:
+	if position.distance_to(target) > 2 and !Globals.reset and !Globals.start_location_changing:
 		move_and_slide()
 	if $view.get_overlapping_areas().size() > 0:
 		can_move_forward = true

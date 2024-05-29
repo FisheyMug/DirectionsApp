@@ -32,7 +32,7 @@ func _process(_delta):
 	if Globals.selected != self:
 		$"Visable Box".self_modulate = Color(1, 1, 1, 0.3)	
 	if Globals.GameStarted:
-		$"Visable Box".self_modulate = Color(1, 1, 1, 0.3)
+		#$"Visable Box".self_modulate = Color(1, 1, 1, 0.3)
 		$Node/LineEdit.hide()
 
 func _on_line_edit_text_changed(new_text):
