@@ -96,7 +96,7 @@ func _on_location_box_image_toggled(toggled_on):
 				#print(pic.get_child(0).texture.self_modulate)
 				pic.get_child(0).hide()
 			else:
-				pic.get_child(0).hide()
+				pic.get_child(0).show()
 
 
 func _on_move_marker_image_toggled(toggled_on):
