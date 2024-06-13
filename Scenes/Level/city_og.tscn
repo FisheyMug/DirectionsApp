@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://k27ffs36i1rc"]
+[gd_scene load_steps=6 format=3 uid="uid://k27ffs36i1rc"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_iglq0"]
 [ext_resource type="Texture2D" uid="uid://bnl7fr1v4ktc" path="res://Graphics/My town.png" id="2_3eeci"]
 [ext_resource type="Script" path="res://Scenes/Level/city_og.gd" id="2_ttxof"]
-[ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="3_b4n51"]
-[ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="4_snd2n"]
+[ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="6_152ae"]
 [ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="6_j8jl2"]
 
 [node name="City OG" instance=ExtResource("1_iglq0")]
@@ -18,110 +17,12 @@ texture = ExtResource("2_3eeci")
 [node name="Player" parent="." index="2"]
 position = Vector2(38.4399, 41.207)
 
-[node name="MoveMarker" parent="MoveMarkers" index="0" instance=ExtResource("3_b4n51")]
-position = Vector2(46, 65)
-
-[node name="MoveMarker2" parent="MoveMarkers" index="1" instance=ExtResource("3_b4n51")]
-position = Vector2(191, 68)
-
-[node name="MoveMarker3" parent="MoveMarkers" index="2" instance=ExtResource("3_b4n51")]
-position = Vector2(356, 64)
-
-[node name="MoveMarker4" parent="MoveMarkers" index="3" instance=ExtResource("3_b4n51")]
-position = Vector2(491, 68)
-
-[node name="MoveMarker5" parent="MoveMarkers" index="4" instance=ExtResource("3_b4n51")]
-position = Vector2(623, 71)
-
-[node name="MoveMarker6" parent="MoveMarkers" index="5" instance=ExtResource("3_b4n51")]
-position = Vector2(796, 63)
-
-[node name="MoveMarker7" parent="MoveMarkers" index="6" instance=ExtResource("3_b4n51")]
-position = Vector2(946, 68)
-
-[node name="MoveMarker8" parent="MoveMarkers" index="7" instance=ExtResource("3_b4n51")]
-position = Vector2(940, 220)
-
-[node name="MoveMarker9" parent="MoveMarkers" index="8" instance=ExtResource("3_b4n51")]
-position = Vector2(940, 372)
-
-[node name="MoveMarker10" parent="MoveMarkers" index="9" instance=ExtResource("3_b4n51")]
-position = Vector2(949, 549)
-
-[node name="MoveMarker11" parent="MoveMarkers" index="10" instance=ExtResource("3_b4n51")]
-position = Vector2(940, 703)
-
-[node name="MoveMarker12" parent="MoveMarkers" index="11" instance=ExtResource("3_b4n51")]
-position = Vector2(793, 704)
-
-[node name="MoveMarker13" parent="MoveMarkers" index="12" instance=ExtResource("3_b4n51")]
-position = Vector2(636, 703)
-
-[node name="MoveMarker14" parent="MoveMarkers" index="13" instance=ExtResource("3_b4n51")]
-position = Vector2(491, 704)
-
-[node name="MoveMarker15" parent="MoveMarkers" index="14" instance=ExtResource("3_b4n51")]
-position = Vector2(354, 704)
-
-[node name="MoveMarker16" parent="MoveMarkers" index="15" instance=ExtResource("3_b4n51")]
-position = Vector2(200, 709)
-
-[node name="MoveMarker17" parent="MoveMarkers" index="16" instance=ExtResource("3_b4n51")]
-position = Vector2(58, 702)
-
-[node name="MoveMarker18" parent="MoveMarkers" index="17" instance=ExtResource("3_b4n51")]
-position = Vector2(45, 531)
-
-[node name="MoveMarker19" parent="MoveMarkers" index="18" instance=ExtResource("3_b4n51")]
-position = Vector2(51, 367)
-
-[node name="MoveMarker20" parent="MoveMarkers" index="19" instance=ExtResource("3_b4n51")]
-position = Vector2(48, 219)
-
-[node name="MoveMarker21" parent="MoveMarkers" index="20" instance=ExtResource("3_b4n51")]
-position = Vector2(360, 228)
-
-[node name="MoveMarker22" parent="MoveMarkers" index="21" instance=ExtResource("3_b4n51")]
-position = Vector2(624, 223)
-
-[node name="MoveMarker23" parent="MoveMarkers" index="22" instance=ExtResource("3_b4n51")]
-position = Vector2(626, 371)
-
-[node name="MoveMarker24" parent="MoveMarkers" index="23" instance=ExtResource("3_b4n51")]
-position = Vector2(627, 542)
-
-[node name="MoveMarker25" parent="MoveMarkers" index="24" instance=ExtResource("3_b4n51")]
-position = Vector2(356, 544)
-
-[node name="MoveMarker26" parent="MoveMarkers" index="25" instance=ExtResource("3_b4n51")]
-position = Vector2(488, 367)
-
-[node name="MoveMarker27" parent="MoveMarkers" index="26" instance=ExtResource("3_b4n51")]
-position = Vector2(202, 372)
-
-[node name="MoveMarker28" parent="MoveMarkers" index="27" instance=ExtResource("3_b4n51")]
-position = Vector2(350, 365)
-
-[node name="MoveMarker29" parent="MoveMarkers" index="28" instance=ExtResource("3_b4n51")]
-position = Vector2(782, 367)
-
-[node name="Police Station" parent="locations" index="0" instance=ExtResource("4_snd2n")]
-position = Vector2(792, 239)
-
-[node name="Hospital" parent="locations" index="1" instance=ExtResource("4_snd2n")]
-position = Vector2(779, 550)
-
-[node name="Post Office" parent="locations" index="2" instance=ExtResource("4_snd2n")]
-position = Vector2(492, 224)
-
-[node name="Supermarket" parent="locations" index="3" instance=ExtResource("4_snd2n")]
-position = Vector2(498, 542)
-
-[node name="School" parent="locations" index="4" instance=ExtResource("4_snd2n")]
-position = Vector2(211, 223)
-
-[node name="Park" parent="locations" index="5" instance=ExtResource("4_snd2n")]
-position = Vector2(208, 536)
+[node name="buttonbox" parent="Control" index="1"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 392.0
+offset_right = 388.0
+offset_bottom = 496.0
 
 [node name="Hospital" parent="Left Panel" index="0" instance=ExtResource("6_j8jl2")]
 layout_mode = 0
@@ -164,3 +65,178 @@ offset_left = 393.0
 offset_top = 139.0
 offset_right = 562.0
 offset_bottom = 302.0
+
+[node name="MoveMarker" parent="Left Panel" index="6" instance=ExtResource("6_152ae")]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 689.0
+offset_right = 934.0
+offset_bottom = 704.0
+
+[node name="MoveMarker2" parent="Left Panel" index="7" instance=ExtResource("6_152ae")]
+offset_left = 926.0
+offset_top = 537.0
+offset_right = 941.0
+offset_bottom = 552.0
+
+[node name="MoveMarker3" parent="Left Panel" index="8" instance=ExtResource("6_152ae")]
+offset_left = 925.0
+offset_top = 357.0
+offset_right = 940.0
+offset_bottom = 372.0
+
+[node name="MoveMarker4" parent="Left Panel" index="9" instance=ExtResource("6_152ae")]
+offset_left = 923.0
+offset_top = 198.0
+offset_right = 938.0
+offset_bottom = 213.0
+
+[node name="MoveMarker5" parent="Left Panel" index="10" instance=ExtResource("6_152ae")]
+offset_left = 923.0
+offset_top = 51.0
+offset_right = 938.0
+offset_bottom = 66.0
+
+[node name="MoveMarker6" parent="Left Panel" index="11" instance=ExtResource("6_152ae")]
+offset_left = 776.0
+offset_top = 51.0
+offset_right = 791.0
+offset_bottom = 66.0
+
+[node name="MoveMarker7" parent="Left Panel" index="12" instance=ExtResource("6_152ae")]
+offset_left = 608.0
+offset_top = 51.0
+offset_right = 623.0
+offset_bottom = 66.0
+
+[node name="MoveMarker8" parent="Left Panel" index="13" instance=ExtResource("6_152ae")]
+offset_left = 471.0
+offset_top = 50.0
+offset_right = 486.0
+offset_bottom = 65.0
+
+[node name="MoveMarker9" parent="Left Panel" index="14" instance=ExtResource("6_152ae")]
+offset_left = 334.0
+offset_top = 52.0
+offset_right = 349.0
+offset_bottom = 67.0
+
+[node name="MoveMarker10" parent="Left Panel" index="15" instance=ExtResource("6_152ae")]
+offset_left = 177.0
+offset_top = 50.0
+offset_right = 192.0
+offset_bottom = 65.0
+
+[node name="MoveMarker11" parent="Left Panel" index="16" instance=ExtResource("6_152ae")]
+offset_left = 22.0
+offset_top = 49.0
+offset_right = 37.0
+offset_bottom = 64.0
+
+[node name="MoveMarker12" parent="Left Panel" index="17" instance=ExtResource("6_152ae")]
+offset_left = 27.0
+offset_top = 198.0
+offset_right = 42.0
+offset_bottom = 213.0
+
+[node name="MoveMarker13" parent="Left Panel" index="18" instance=ExtResource("6_152ae")]
+offset_left = 335.0
+offset_top = 197.0
+offset_right = 350.0
+offset_bottom = 212.0
+
+[node name="MoveMarker14" parent="Left Panel" index="19" instance=ExtResource("6_152ae")]
+offset_left = 609.0
+offset_top = 202.0
+offset_right = 624.0
+offset_bottom = 217.0
+
+[node name="MoveMarker15" parent="Left Panel" index="20" instance=ExtResource("6_152ae")]
+offset_left = 28.0
+offset_top = 353.0
+offset_right = 43.0
+offset_bottom = 368.0
+
+[node name="MoveMarker16" parent="Left Panel" index="21" instance=ExtResource("6_152ae")]
+offset_left = 24.0
+offset_top = 521.0
+offset_right = 39.0
+offset_bottom = 536.0
+
+[node name="MoveMarker17" parent="Left Panel" index="22" instance=ExtResource("6_152ae")]
+offset_left = 33.0
+offset_top = 691.0
+offset_right = 48.0
+offset_bottom = 706.0
+
+[node name="MoveMarker18" parent="Left Panel" index="23" instance=ExtResource("6_152ae")]
+offset_left = 179.0
+offset_top = 696.0
+offset_right = 194.0
+offset_bottom = 711.0
+
+[node name="MoveMarker19" parent="Left Panel" index="24" instance=ExtResource("6_152ae")]
+offset_left = 332.0
+offset_top = 697.0
+offset_right = 347.0
+offset_bottom = 712.0
+
+[node name="MoveMarker20" parent="Left Panel" index="25" instance=ExtResource("6_152ae")]
+offset_left = 335.0
+offset_top = 530.0
+offset_right = 350.0
+offset_bottom = 545.0
+
+[node name="MoveMarker21" parent="Left Panel" index="26" instance=ExtResource("6_152ae")]
+offset_left = 181.0
+offset_top = 357.0
+offset_right = 196.0
+offset_bottom = 372.0
+
+[node name="MoveMarker22" parent="Left Panel" index="27" instance=ExtResource("6_152ae")]
+offset_left = 331.0
+offset_top = 354.0
+offset_right = 346.0
+offset_bottom = 369.0
+
+[node name="MoveMarker23" parent="Left Panel" index="28" instance=ExtResource("6_152ae")]
+offset_left = 469.0
+offset_top = 354.0
+offset_right = 484.0
+offset_bottom = 369.0
+
+[node name="MoveMarker24" parent="Left Panel" index="29" instance=ExtResource("6_152ae")]
+offset_left = 470.0
+offset_top = 692.0
+offset_right = 485.0
+offset_bottom = 707.0
+
+[node name="MoveMarker25" parent="Left Panel" index="30" instance=ExtResource("6_152ae")]
+offset_left = 606.0
+offset_top = 357.0
+offset_right = 621.0
+offset_bottom = 372.0
+
+[node name="MoveMarker26" parent="Left Panel" index="31" instance=ExtResource("6_152ae")]
+offset_left = 614.0
+offset_top = 695.0
+offset_right = 629.0
+offset_bottom = 710.0
+
+[node name="MoveMarker27" parent="Left Panel" index="32" instance=ExtResource("6_152ae")]
+offset_left = 605.0
+offset_top = 533.0
+offset_right = 620.0
+offset_bottom = 548.0
+
+[node name="MoveMarker28" parent="Left Panel" index="33" instance=ExtResource("6_152ae")]
+offset_left = 763.0
+offset_top = 358.0
+offset_right = 778.0
+offset_bottom = 373.0
+
+[node name="MoveMarker29" parent="Left Panel" index="34" instance=ExtResource("6_152ae")]
+offset_left = 770.0
+offset_top = 695.0
+offset_right = 785.0
+offset_bottom = 710.0

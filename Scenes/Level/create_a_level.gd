@@ -34,21 +34,7 @@ func _on_button_pressed():
 					#mmInstance.position.x += 5
 					Mmarker.add_child(mmInstance)
 					mmInstance.set_owner(finished_level)
-				#if "UL" in a.name:
-				#		print(a.get_child(0).scale)
-				#		a.get_child(0).set_owner(a)
-				#else: 
-				#	var l = preload("res://Scenes/Object/location.tscn")
-				#	var instance = l.instantiate()
-				#	instance.set_name(a.name)
 					
-				#	instance.get_child(0).get_shape().size.x = a.size.x * a.scale.x
-				#	instance.get_child(0).get_shape().size.y = a.size.y * a.scale.y
-					#print(instance.get_child(0).get_shape().size)
-					#instance.scale = a.scale
-				#	instance.global_position = a.global_position + 0.5 * a.size * a.scale
-				#	Ls.add_child(instance)
-				#	instance.set_owner(finished_level)
 		#Player needs to be unhidden and the owner not set to the level/map
 		if c.name == "Player":
 			c.show()

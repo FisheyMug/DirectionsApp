@@ -1,14 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmel7nbwqi6mo"]
+[gd_scene load_steps=13 format=3 uid="uid://dmel7nbwqi6mo"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_7udo8"]
 [ext_resource type="Script" path="res://Scenes/Level/School/this_is_my_favourite_place.gd" id="2_iwky2"]
 [ext_resource type="Texture2D" uid="uid://bmdol2p02pn53" path="res://Graphics/Interior tileset/All Assets.png" id="2_mwq5c"]
 [ext_resource type="Texture2D" uid="uid://chtp602lox2m8" path="res://Graphics/Better interior tileset/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="3_4l3mi"]
-[ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="3_e5q6e"]
 [ext_resource type="Texture2D" uid="uid://cf38caegytnkg" path="res://Graphics/Better interior tileset/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="4_fiabo"]
-[ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="4_ks0ua"]
 [ext_resource type="Texture2D" uid="uid://4d2vss72xex6" path="res://Graphics/MySprites/Gym.png" id="6_gti5f"]
 [ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="9_f87uk"]
+[ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="9_geoqn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cc0o8"]
 texture = ExtResource("3_4l3mi")
@@ -1695,93 +1694,12 @@ texture = ExtResource("6_gti5f")
 [node name="Player" parent="." index="3"]
 position = Vector2(373.294, 405.826)
 
-[node name="MoveMarker" parent="MoveMarkers" index="0" instance=ExtResource("3_e5q6e")]
-position = Vector2(446, 655)
-
-[node name="MoveMarker2" parent="MoveMarkers" index="1" instance=ExtResource("3_e5q6e")]
-position = Vector2(290, 643)
-
-[node name="MoveMarker11" parent="MoveMarkers" index="2" instance=ExtResource("3_e5q6e")]
-position = Vector2(583, 650)
-
-[node name="MoveMarker3" parent="MoveMarkers" index="3" instance=ExtResource("3_e5q6e")]
-position = Vector2(788, 479)
-
-[node name="MoveMarker4" parent="MoveMarkers" index="4" instance=ExtResource("3_e5q6e")]
-position = Vector2(805, 632)
-
-[node name="MoveMarker5" parent="MoveMarkers" index="5" instance=ExtResource("3_e5q6e")]
-position = Vector2(792, 183)
-
-[node name="MoveMarker6" parent="MoveMarkers" index="6" instance=ExtResource("3_e5q6e")]
-position = Vector2(615, 188)
-
-[node name="MoveMarker7" parent="MoveMarkers" index="7" instance=ExtResource("3_e5q6e")]
-position = Vector2(797, 307)
-
-[node name="MoveMarker8" parent="MoveMarkers" index="8" instance=ExtResource("3_e5q6e")]
-position = Vector2(459, 190)
-
-[node name="MoveMarker9" parent="MoveMarkers" index="9" instance=ExtResource("3_e5q6e")]
-position = Vector2(284, 191)
-
-[node name="MoveMarker10" parent="MoveMarkers" index="10" instance=ExtResource("3_e5q6e")]
-position = Vector2(141, 195)
-
-[node name="School Office" parent="locations" index="0" instance=ExtResource("4_ks0ua")]
-position = Vector2(939, 489)
-
-[node name="Restroom" parent="locations" index="1" instance=ExtResource("4_ks0ua")]
-position = Vector2(931, 653)
-
-[node name="Cooking Room" parent="locations" index="2" instance=ExtResource("4_ks0ua")]
-position = Vector2(132, 420)
-
-[node name="Teachers Office" parent="locations" index="3" instance=ExtResource("4_ks0ua")]
-position = Vector2(289, 556)
-scale = Vector2(0.5, 0.5)
-
-[node name="School Principal\'s Office" parent="locations" index="4" instance=ExtResource("4_ks0ua")]
-position = Vector2(575, 549)
-rotation = 1.57622
-scale = Vector2(0.5, 0.5)
-
-[node name="Lunch Room" parent="locations" index="5" instance=ExtResource("4_ks0ua")]
-position = Vector2(282, 379)
-rotation = -1.57436
-scale = Vector2(0.448961, 1.43307)
-
-[node name="School Nurse\'s Office" parent="locations" index="6" instance=ExtResource("4_ks0ua")]
-position = Vector2(935, 308)
-scale = Vector2(0.7, 0.7)
-
-[node name="Library" parent="locations" index="7" instance=ExtResource("4_ks0ua")]
-position = Vector2(654, 70)
-rotation = -1.57463
-
-[node name="Music Room" parent="locations" index="8" instance=ExtResource("4_ks0ua")]
-position = Vector2(291, 56)
-rotation = 1.57644
-
-[node name="Computer Room" parent="locations" index="9" instance=ExtResource("4_ks0ua")]
-position = Vector2(127, 60)
-rotation = 1.57068
-
-[node name="Science Room" parent="locations" index="10" instance=ExtResource("4_ks0ua")]
-position = Vector2(454, 55)
-rotation = 1.57386
-
-[node name="Classroom" parent="locations" index="11" instance=ExtResource("4_ks0ua")]
-position = Vector2(620, 378)
-rotation = -1.56249
-scale = Vector2(0.399117, 0.559767)
-
-[node name="Arts and Crafts Room" parent="locations" index="12" instance=ExtResource("4_ks0ua")]
-position = Vector2(928, 181)
-scale = Vector2(0.6, 0.6)
-
-[node name="Gym" parent="locations" index="13" instance=ExtResource("4_ks0ua")]
-position = Vector2(120, 653)
+[node name="buttonbox" parent="Control" index="1"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 395.0
+offset_right = 392.0
+offset_bottom = 499.0
 
 [node name="Computer Room" parent="Left Panel" index="0" instance=ExtResource("9_f87uk")]
 layout_mode = 0
@@ -1880,3 +1798,80 @@ offset_left = 4.0
 offset_top = 496.0
 offset_right = 156.0
 offset_bottom = 708.0
+
+[node name="MoveMarker" parent="Left Panel" index="14" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 638.0
+offset_right = 443.0
+offset_bottom = 653.0
+
+[node name="MoveMarker2" parent="Left Panel" index="15" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 634.0
+offset_right = 282.0
+offset_bottom = 649.0
+
+[node name="MoveMarker3" parent="Left Panel" index="16" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 640.0
+offset_right = 576.0
+offset_bottom = 655.0
+
+[node name="MoveMarker4" parent="Left Panel" index="17" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 761.0
+offset_top = 630.0
+offset_right = 776.0
+offset_bottom = 645.0
+
+[node name="MoveMarker5" parent="Left Panel" index="18" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 762.0
+offset_top = 473.0
+offset_right = 777.0
+offset_bottom = 488.0
+
+[node name="MoveMarker6" parent="Left Panel" index="19" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 763.0
+offset_top = 295.0
+offset_right = 778.0
+offset_bottom = 310.0
+
+[node name="MoveMarker7" parent="Left Panel" index="20" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 168.0
+offset_right = 781.0
+offset_bottom = 183.0
+
+[node name="MoveMarker8" parent="Left Panel" index="21" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 171.0
+offset_right = 601.0
+offset_bottom = 186.0
+
+[node name="MoveMarker9" parent="Left Panel" index="22" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 174.0
+offset_right = 447.0
+offset_bottom = 189.0
+
+[node name="MoveMarker10" parent="Left Panel" index="23" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 178.0
+offset_right = 279.0
+offset_bottom = 193.0
+
+[node name="MoveMarker11" parent="Left Panel" index="24" instance=ExtResource("9_geoqn")]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 179.0
+offset_right = 126.0
+offset_bottom = 194.0
