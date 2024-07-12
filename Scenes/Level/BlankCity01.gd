@@ -3,17 +3,26 @@ extends Base_Level
 
 func _ready():
 	for pic in $"Left Panel".get_children():
-		var l = preload("res://Scenes/Object/location.tscn")
-		var instance = l.instantiate()
-		instance.set_name(pic.name)
-					
-		instance.get_child(0).get_shape().size.x =(pic.size.x * pic.scale.x)* 0.9
-		instance.get_child(0).get_shape().size.y =(pic.size.y * pic.scale.y)* 0.9
-					#print(instance.get_child(0).get_shape().size)
-					#instance.scale = a.scale
-		instance.global_position = pic.global_position + 0.5 * pic.size * pic.scale
-		$locations.add_child(instance)
-		instance.set_owner($".")
+		if "Player Image" in pic.name and !Globals.GameStarted:
+			continue
+		if "Move" not in pic.name:
+			#print(pic.scale)
+			var l = preload("res://Scenes/Object/location.tscn")
+			var instance = l.instantiate()
+			if "UL" in pic.name:
+				instance.name = pic.name.erase(0,2)
+			else :
+				instance.set_name(pic.name)
+							
+			instance.get_child(0).get_shape().size.x =(pic.size.x * pic.scale.x)* 0.9
+			instance.get_child(0).get_shape().size.y =(pic.size.y * pic.scale.y)* 0.9
+							#print(instance.get_child(0).get_shape().size)
+							#instance.scale = a.scale
+			instance.global_position = pic.global_position + 0.5 * pic.size * pic.scale
+			
+			$locations.add_child(instance)
+			instance.set_owner($".")
+	
 	for node in $locations.get_children():
 			locations.append(node)
 	for node in $MoveMarkers.get_children():
@@ -22,10 +31,16 @@ func _ready():
 	select_random_start_location()
 	$WinMessage.hide()
 	
+func startLocationChanged():
+	if Globals.start_location_changing:
+		$Player.position = Globals.start_location
+		Globals.start_location_changing = false
+		get_tree().reload_current_scene()
 
 func globals_goal_changed():
 	if Globals.changing:
 		current_goal = Globals.goal	
+		#print(current_goal)
 		Globals.changing = false
 		$"Control/VBoxContainer/Sentence Container/Label".text = "Where is the _____?"
 
@@ -35,10 +50,15 @@ func select_random_goal():
 		Globals.goal = current_goal
 		$"Control/VBoxContainer/Sentence Container/Label".text = "Where is the " + current_goal + "?"
 
+
 func select_random_start_location():
-	if road_markers.size() > 0:
-		start_position = road_markers[randi() % road_markers.size() - 1].position
+	if Globals.start_location != null:
+		start_position = Globals.start_location
 		$Player.position = start_position
+	else:
+		if road_markers.size() > 0:
+			start_position = road_markers[randi() % road_markers.size() - 1].position
+			$Player.position = start_position
 	
 
 func check_win():
@@ -60,8 +80,34 @@ func _on_win_message_timeout():
 
 func _process(_delta):
 	for node in $"Left Panel".get_children():
+		#if "UL" in node.name:
+		#	print(node.get_child(0).size)
 		if node.was_dropped == true:
 			node.queue_free()
 	globals_goal_changed()
+	startLocationChanged()
 	check_win()
 
+
+func _on_location_box_image_toggled(toggled_on):
+	for pic in $"Left Panel".get_children():
+		if "MoveMarker" not in pic.name and pic.get_class() =="Control":
+			print(pic.get_class())
+			if toggled_on:
+				pic.hide()
+			else:
+				pic.show()
+
+
+func _on_move_marker_image_toggled(toggled_on):
+	for pic in $"Left Panel".get_children():
+		if "MoveMarker" in pic.name:
+			if toggled_on:
+				pic.hide()
+			else:
+				pic.show()
+
+func _on_menu_pressed():
+	Globals.GameStarted = false
+	Globals.start_location = null
+	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
