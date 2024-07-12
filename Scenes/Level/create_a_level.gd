@@ -97,6 +97,7 @@ func _process(_delta):
 		$"Esc button".hide()
 
 func _on_files_dropped(files):
+	Globals.show_marker = true
 	if $mapPanel.get_children().size() > 0:
 		$mapPanel.get_child(0).queue_free()
 	if Player_map != null:

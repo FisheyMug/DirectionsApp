@@ -21,10 +21,10 @@ visible = false
 
 [node name="buttonbox" parent="Control" index="1"]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 360.0
-offset_bottom = 104.0
+offset_left = 17.0
+offset_top = 379.0
+offset_right = 377.0
+offset_bottom = 483.0
 
 [node name="Location box image" type="CheckButton" parent="Control/buttonbox" index="1"]
 layout_mode = 2

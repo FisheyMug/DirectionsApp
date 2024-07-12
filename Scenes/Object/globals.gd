@@ -12,3 +12,5 @@ var selected_y_length = 150
 var selected_size = Vector2(1, 1)
 var start_location = null
 var start_location_changing = false
+var show_marker: bool = true
+var show_location: bool = true

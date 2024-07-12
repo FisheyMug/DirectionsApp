@@ -16,20 +16,13 @@ func _ready():
 							
 			instance.get_child(0).get_shape().size.x =(pic.size.x * pic.scale.x)* 0.9
 			instance.get_child(0).get_shape().size.y =(pic.size.y * pic.scale.y)* 0.9
+							#print(instance.get_child(0).get_shape().size)
+							#instance.scale = a.scale
 			instance.global_position = pic.global_position + 0.5 * pic.size * pic.scale
 			
 			$locations.add_child(instance)
 			instance.set_owner($".")
-		if "MoveMarker" in pic.name:
-					var m = preload("res://Scenes/Object/move_marker.tscn")
-					var mmInstance = m.instantiate()
-					mmInstance.set_name(pic.name)
-					mmInstance.global_position = pic.global_position + 0.5 * pic.size* pic.scale
-					mmInstance.get_child(0).get_shape().size.x =(pic.size.x * pic.scale.x)
-					mmInstance.get_child(0).get_shape().size.y =(pic.size.y * pic.scale.y)
-					$MoveMarkers.add_child(mmInstance)
-
-
+	
 	for node in $locations.get_children():
 			locations.append(node)
 	for node in $MoveMarkers.get_children():
@@ -40,7 +33,7 @@ func _ready():
 	
 func startLocationChanged():
 	if Globals.start_location_changing:
-		$Player.global_position = Globals.start_location
+		$Player.position = Globals.start_location
 		Globals.start_location_changing = false
 		get_tree().reload_current_scene()
 
@@ -91,30 +84,38 @@ func _process(_delta):
 		#	print(node.get_child(0).size)
 		if node.was_dropped == true:
 			node.queue_free()
+	for pic in $"Left Panel".get_children():
+		if "MoveMarker" in pic.name:
+			if Globals.show_marker == false:
+				pic.hide()
+			elif Globals.show_marker == true:
+				pic.show()
+	for pic in $"Left Panel".get_children():
+		if "MoveMarker" not in pic.name and pic.get_class() =="Control":
+			if Globals.show_location == false:
+				#print(pic.get_child(0).texture.self_modulate)
+				pic.get_child(0).hide()
+			else:
+				pic.get_child(0).show()
 	globals_goal_changed()
 	startLocationChanged()
 	check_win()
 
 
-func _on_location_box_image_toggled(toggled_on):
-	for pic in $"Left Panel".get_children():
-		if "MoveMarker" not in pic.name and pic.get_class() =="Control":
-			if toggled_on:
-				#print(pic.get_child(0).texture.self_modulate)
-				pic.get_child(0).hide()
-			else:
-				pic.get_child(0).show()
-
-
 func _on_move_marker_image_toggled(toggled_on):
-	for pic in $"Left Panel".get_children():
-		if "MoveMarker" in pic.name:
-			if toggled_on:
-				pic.hide()
-			else:
-				pic.show()
+	if Globals.show_marker == true:
+		Globals.show_marker = false
+	else: Globals.show_marker = true
 
 func _on_menu_pressed():
+	Globals.show_marker = true
 	Globals.GameStarted = false
 	Globals.start_location = null
 	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
+
+func _on_location_box_image_toggled(toggled_on):
+	if Globals.show_location == true:
+		Globals.show_location = false
+	elif Globals.show_location == false:
+		Globals.show_location = true
+

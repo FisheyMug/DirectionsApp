@@ -84,30 +84,26 @@ func _process(_delta):
 		#	print(node.get_child(0).size)
 		if node.was_dropped == true:
 			node.queue_free()
+	for pic in $"Left Panel".get_children():
+		if "MoveMarker" in pic.name:
+			if Globals.show_marker == false:
+				pic.hide()
+			elif Globals.show_marker == true:
+				pic.show()
 	globals_goal_changed()
 	startLocationChanged()
 	check_win()
 
 
-func _on_location_box_image_toggled(toggled_on):
-	for pic in $"Left Panel".get_children():
-		if "MoveMarker" not in pic.name and pic.get_class() =="Control":
-			print(pic.get_class())
-			if toggled_on:
-				pic.hide()
-			else:
-				pic.show()
 
 
 func _on_move_marker_image_toggled(toggled_on):
-	for pic in $"Left Panel".get_children():
-		if "MoveMarker" in pic.name:
-			if toggled_on:
-				pic.hide()
-			else:
-				pic.show()
+	if Globals.show_marker == true:
+		Globals.show_marker = false
+	else: Globals.show_marker = true
 
 func _on_menu_pressed():
+	Globals.show_marker = true
 	Globals.GameStarted = false
 	Globals.start_location = null
 	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
