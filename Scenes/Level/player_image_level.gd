@@ -22,7 +22,17 @@ func _ready():
 			
 			$locations.add_child(instance)
 			instance.set_owner($".")
-	
+					
+		if "MoveMarker" in pic.name:
+					var m = preload("res://Scenes/Object/move_marker.tscn")
+					var mmInstance = m.instantiate()
+					mmInstance.set_name(pic.name)
+					mmInstance.get_child(0).get_shape().size.x =(pic.size.x * pic.scale.x)
+					mmInstance.get_child(0).get_shape().size.y =(pic.size.y * pic.scale.y)
+					mmInstance.global_position = pic.global_position + 0.5 * pic.size * pic.scale
+					$MoveMarkers.add_child(mmInstance)
+					mmInstance.set_owner($".")
+
 	for node in $locations.get_children():
 			locations.append(node)
 	for node in $MoveMarkers.get_children():
