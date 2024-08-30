@@ -115,4 +115,3 @@ func _on_move_marker_image_toggled(toggled_on):
 	if Globals.show_marker == true:
 		Globals.show_marker = false
 	else: Globals.show_marker = true
-

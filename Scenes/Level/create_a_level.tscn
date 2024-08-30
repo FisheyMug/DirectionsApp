@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b27wsx4vp6bol"]
+[gd_scene load_steps=27 format=3 uid="uid://b27wsx4vp6bol"]
 
 [ext_resource type="Script" path="res://Scenes/Level/create_a_level.gd" id="1_c4j5u"]
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_mojmm"]
@@ -20,7 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://dn4ulwcc5tbpw" path="res://Graphics/MySprites/City2.0/Conbini.png" id="16_nmhk7"]
 [ext_resource type="Texture2D" uid="uid://bchbj3x74iyor" path="res://Graphics/MySprites/City2.0/Stadium.png" id="16_pwwhj"]
 [ext_resource type="Texture2D" uid="uid://dymdcycfv5nhu" path="res://Graphics/MySprites/UI/MoveMarkerImage.png" id="16_yjipw"]
+[ext_resource type="Texture2D" uid="uid://b5hp7or63ghqa" path="res://Graphics/MySprites/City2.0/Museum.png" id="17_qf0vh"]
+[ext_resource type="Texture2D" uid="uid://diqhpkq40idy3" path="res://Graphics/MySprites/City2.0/Factory.png" id="18_fsn17"]
 [ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="18_ip8dr"]
+[ext_resource type="Texture2D" uid="uid://drhyh7e1o031s" path="res://Graphics/MySprites/City2.0/Department Store.png" id="19_srqd8"]
+[ext_resource type="Texture2D" uid="uid://bae47yjxnx2eu" path="res://Graphics/MySprites/City2.0/Bookstore.png" id="20_fajrx"]
+[ext_resource type="Texture2D" uid="uid://dgq5blhu8v0gb" path="res://Graphics/MySprites/City2.0/Aquarium.png" id="21_huac5"]
 
 [node name="Create-a-Level" type="Node2D"]
 script = ExtResource("1_c4j5u")
@@ -63,6 +68,7 @@ tab_focus_mode = 0
 
 [node name="Pick a Map" type="ScrollContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map"]
 layout_mode = 2
@@ -131,6 +137,7 @@ text = "Bigger
 visible = false
 layout_mode = 2
 theme_override_constants/separation = -3
+metadata/_tab_index = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations"]
 layout_mode = 2
@@ -214,6 +221,36 @@ script = ExtResource("6_ignpu")
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("16_pwwhj")
+script = ExtResource("6_ignpu")
+
+[node name="Museum" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("17_qf0vh")
+script = ExtResource("6_ignpu")
+
+[node name="Factory" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("18_fsn17")
+script = ExtResource("6_ignpu")
+
+[node name="Department Store" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("19_srqd8")
+script = ExtResource("6_ignpu")
+
+[node name="Bookstore" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("20_fajrx")
+script = ExtResource("6_ignpu")
+
+[node name="Aquarium" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("21_huac5")
 script = ExtResource("6_ignpu")
 
 [node name="MarginContainer2" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations"]

@@ -128,4 +128,3 @@ func _on_location_box_image_toggled(toggled_on):
 		Globals.show_location = false
 	elif Globals.show_location == false:
 		Globals.show_location = true
-
