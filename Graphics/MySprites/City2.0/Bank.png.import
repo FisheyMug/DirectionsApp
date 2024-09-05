@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8ph2immimoy0"
-path="res://.godot/imported/DirectionsWeb.png-0b41cf7e72d2e7c8616472173ae5e97e.ctex"
+uid="uid://c1iq35gtvjqlp"
+path="res://.godot/imported/Bank.png-ceb5ddc18517aa84f87e2267cea90cd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DirectionsWeb.png"
-dest_files=["res://.godot/imported/DirectionsWeb.png-0b41cf7e72d2e7c8616472173ae5e97e.ctex"]
+source_file="res://Graphics/MySprites/City2.0/Bank.png"
+dest_files=["res://.godot/imported/Bank.png-ceb5ddc18517aa84f87e2267cea90cd6.ctex"]
 
 [params]
 

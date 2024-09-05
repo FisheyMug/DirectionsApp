@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b27wsx4vp6bol"]
+[gd_scene load_steps=35 format=3 uid="uid://b27wsx4vp6bol"]
 
 [ext_resource type="Script" path="res://Scenes/Level/create_a_level.gd" id="1_c4j5u"]
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_mojmm"]
@@ -26,6 +26,14 @@
 [ext_resource type="Texture2D" uid="uid://drhyh7e1o031s" path="res://Graphics/MySprites/City2.0/Department Store.png" id="19_srqd8"]
 [ext_resource type="Texture2D" uid="uid://bae47yjxnx2eu" path="res://Graphics/MySprites/City2.0/Bookstore.png" id="20_fajrx"]
 [ext_resource type="Texture2D" uid="uid://dgq5blhu8v0gb" path="res://Graphics/MySprites/City2.0/Aquarium.png" id="21_huac5"]
+[ext_resource type="Texture2D" uid="uid://c1iq35gtvjqlp" path="res://Graphics/MySprites/City2.0/Bank.png" id="22_wh8ew"]
+[ext_resource type="Texture2D" uid="uid://mqb5rk48cyig" path="res://Graphics/MySprites/City2.0/Gym.png" id="23_48vd7"]
+[ext_resource type="Texture2D" uid="uid://dmv4vf85i5tub" path="res://Graphics/MySprites/City2.0/Hotel.png" id="24_gi2th"]
+[ext_resource type="Texture2D" uid="uid://bys1hdsihecvk" path="res://Graphics/MySprites/City2.0/Library.png" id="25_2mbwq"]
+[ext_resource type="Texture2D" uid="uid://d2i0thev47lfc" path="res://Graphics/MySprites/City2.0/Pet Store.png" id="26_ew4tc"]
+[ext_resource type="Texture2D" uid="uid://bdha2lttjkdt0" path="res://Graphics/MySprites/City2.0/Petrol Station.png" id="27_niuka"]
+[ext_resource type="Texture2D" uid="uid://droolwshid4ld" path="res://Graphics/MySprites/City2.0/Shrine.png" id="28_mvk6o"]
+[ext_resource type="Texture2D" uid="uid://c4uky7yd2ur33" path="res://Graphics/MySprites/City2.0/Vet.png" id="29_i563g"]
 
 [node name="Create-a-Level" type="Node2D"]
 script = ExtResource("1_c4j5u")
@@ -251,6 +259,54 @@ script = ExtResource("6_ignpu")
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("21_huac5")
+script = ExtResource("6_ignpu")
+
+[node name="Bank" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("22_wh8ew")
+script = ExtResource("6_ignpu")
+
+[node name="Gym" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("23_48vd7")
+script = ExtResource("6_ignpu")
+
+[node name="Hotel" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("24_gi2th")
+script = ExtResource("6_ignpu")
+
+[node name="Library" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("25_2mbwq")
+script = ExtResource("6_ignpu")
+
+[node name="Pet Store" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("26_ew4tc")
+script = ExtResource("6_ignpu")
+
+[node name="Gas Station" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("27_niuka")
+script = ExtResource("6_ignpu")
+
+[node name="Shrine" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("28_mvk6o")
+script = ExtResource("6_ignpu")
+
+[node name="Vet" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("29_i563g")
 script = ExtResource("6_ignpu")
 
 [node name="MarginContainer2" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations"]

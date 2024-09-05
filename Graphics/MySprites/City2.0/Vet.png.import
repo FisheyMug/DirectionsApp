@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8ph2immimoy0"
-path="res://.godot/imported/DirectionsWeb.png-0b41cf7e72d2e7c8616472173ae5e97e.ctex"
+uid="uid://c4uky7yd2ur33"
+path="res://.godot/imported/Vet.png-145c766abde622e4cf1247b4050d9aaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DirectionsWeb.png"
-dest_files=["res://.godot/imported/DirectionsWeb.png-0b41cf7e72d2e7c8616472173ae5e97e.ctex"]
+source_file="res://Graphics/MySprites/City2.0/Vet.png"
+dest_files=["res://.godot/imported/Vet.png-145c766abde622e4cf1247b4050d9aaf.ctex"]
 
 [params]
 
