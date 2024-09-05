@@ -111,7 +111,7 @@ func _on_menu_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
 
 
-func _on_move_marker_image_toggled(toggled_on):
+func _on_move_marker_image_toggled(_toggled_on):
 	if Globals.show_marker == true:
 		Globals.show_marker = false
 	else: Globals.show_marker = true

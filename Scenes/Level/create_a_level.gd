@@ -18,7 +18,7 @@ func _on_button_pressed():
 	#Get the "map"
 	finished_level = $mapPanel.get_child(0)
 	#Get the locations node in the map
-	var Ls = finished_level.get_child(4)
+	#var Ls = finished_level.get_child(4)
 	var Mmarker = finished_level.get_child(3)
 	#loop through the maps children in order to set the owner for saving
 	for c in finished_level.get_children():

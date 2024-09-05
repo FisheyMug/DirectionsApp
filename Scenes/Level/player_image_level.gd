@@ -112,7 +112,7 @@ func _process(_delta):
 	check_win()
 
 
-func _on_move_marker_image_toggled(toggled_on):
+func _on_move_marker_image_toggled(_toggled_on):
 	if Globals.show_marker == true:
 		Globals.show_marker = false
 	else: Globals.show_marker = true
@@ -123,7 +123,7 @@ func _on_menu_pressed():
 	Globals.start_location = null
 	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
 
-func _on_location_box_image_toggled(toggled_on):
+func _on_location_box_image_toggled(_toggled_on):
 	if Globals.show_location == true:
 		Globals.show_location = false
 	elif Globals.show_location == false:
