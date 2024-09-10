@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b27wsx4vp6bol"]
+[gd_scene load_steps=39 format=3 uid="uid://b27wsx4vp6bol"]
 
 [ext_resource type="Script" path="res://Scenes/Level/create_a_level.gd" id="1_c4j5u"]
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_mojmm"]
@@ -34,6 +34,10 @@
 [ext_resource type="Texture2D" uid="uid://bdha2lttjkdt0" path="res://Graphics/MySprites/City2.0/Petrol Station.png" id="27_niuka"]
 [ext_resource type="Texture2D" uid="uid://droolwshid4ld" path="res://Graphics/MySprites/City2.0/Shrine.png" id="28_mvk6o"]
 [ext_resource type="Texture2D" uid="uid://c4uky7yd2ur33" path="res://Graphics/MySprites/City2.0/Vet.png" id="29_i563g"]
+[ext_resource type="Texture2D" uid="uid://deg0scvpl625u" path="res://Graphics/MySprites/City2.0/Temple.png" id="30_bijfu"]
+[ext_resource type="Texture2D" uid="uid://bc5e3rlix6jjl" path="res://Graphics/MySprites/City2.0/Station.png" id="31_l6467"]
+[ext_resource type="Texture2D" uid="uid://m0g52tnqqm2c" path="res://Graphics/MySprites/City2.0/Amusement Park.png" id="32_rj6ha"]
+[ext_resource type="Texture2D" uid="uid://skclxbw4iq4a" path="res://Graphics/MySprites/City2.0/Zoo.png" id="33_w22li"]
 
 [node name="Create-a-Level" type="Node2D"]
 script = ExtResource("1_c4j5u")
@@ -307,6 +311,30 @@ script = ExtResource("6_ignpu")
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("29_i563g")
+script = ExtResource("6_ignpu")
+
+[node name="Temple" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("30_bijfu")
+script = ExtResource("6_ignpu")
+
+[node name="Station" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("31_l6467")
+script = ExtResource("6_ignpu")
+
+[node name="Amusement Park" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("32_rj6ha")
+script = ExtResource("6_ignpu")
+
+[node name="Zoo" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("33_w22li")
 script = ExtResource("6_ignpu")
 
 [node name="MarginContainer2" type="MarginContainer" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations"]

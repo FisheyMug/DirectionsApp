@@ -1,24 +1,23 @@
-[gd_scene load_steps=22 format=3]
+[gd_scene load_steps=21 format=3]
 
-[ext_resource type="Script" path="res://Scenes/Level/BlankCity01.gd" id="1_ghf05"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_pwad1"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="3_jqbss"]
-[ext_resource type="PackedScene" path="res://Scenes/Player/player.tscn" id="4_g7ct1"]
-[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="5_0pi0u"]
-[ext_resource type="PackedScene" path="res://Scenes/Object/move_marker.tscn" id="6_i7jr7"]
-[ext_resource type="Script" path="res://Scenes/Object/move_marker.gd" id="7_vew7a"]
-[ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="8_3m4wg"]
-[ext_resource type="PackedScene" path="res://Scenes/Object/move_m_image.tscn" id="9_xho8l"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/UI/MoveMarkerImage.png" id="10_mfrmu"]
-[ext_resource type="Script" path="res://Scenes/Object/moveM_Image.gd" id="11_418hp"]
-[ext_resource type="PackedScene" path="res://Scenes/Object/pic_create_a_level.tscn" id="12_8h5i4"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Vet.png" id="13_xnqbx"]
-[ext_resource type="Script" path="res://Scenes/Object/Pic_Create-a-Level.gd" id="14_ctltk"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Hotel.png" id="15_n17n5"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Gym.png" id="16_63vo5"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Bank.png" id="17_bhg75"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Petrol Station.png" id="18_llbls"]
-[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Shrine.png" id="19_udh4k"]
+[ext_resource type="Script" path="res://Scenes/Level/BlankCity01.gd" id="1_boyhi"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_reqmo"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="3_yi5np"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/player.tscn" id="4_ugkv5"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="5_2gjws"]
+[ext_resource type="PackedScene" path="res://Scenes/Object/move_marker.tscn" id="6_b0il5"]
+[ext_resource type="Script" path="res://Scenes/Object/move_marker.gd" id="7_cghie"]
+[ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="8_cuvyt"]
+[ext_resource type="PackedScene" path="res://Scenes/Object/move_m_image.tscn" id="9_mf5d6"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/UI/MoveMarkerImage.png" id="10_x4rcy"]
+[ext_resource type="Script" path="res://Scenes/Object/moveM_Image.gd" id="11_qjix6"]
+[ext_resource type="PackedScene" path="res://Scenes/Object/pic_create_a_level.tscn" id="12_e0qw1"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Bank.png" id="13_7ackk"]
+[ext_resource type="Script" path="res://Scenes/Object/Pic_Create-a-Level.gd" id="14_exiho"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Gym.png" id="15_jc6wf"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Hotel.png" id="16_74oec"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Temple.png" id="17_bon0k"]
+[ext_resource type="Texture2D" path="res://Graphics/MySprites/City2.0/Amusement Park.png" id="18_t0q24"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bar5a"]
 line_spacing = 10.0
@@ -33,141 +32,141 @@ font_size = 50
 font_color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [node name="BlankCity01" type="Node2D"]
-script = ExtResource("1_ghf05")
+script = ExtResource("1_boyhi")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(683, 384)
-texture = ExtResource("2_pwad1")
+texture = ExtResource("2_reqmo")
 
 [node name="map" type="Sprite2D" parent="."]
 position = Vector2(492.776, 381.916)
 scale = Vector2(0.972282, 1.37007)
-texture = ExtResource("3_jqbss")
+texture = ExtResource("3_yi5np")
 
-[node name="Player" type="CharacterBody2D" parent="." instance=ExtResource("4_g7ct1")]
+[node name="Player" type="CharacterBody2D" parent="." instance=ExtResource("4_ugkv5")]
 position = Vector2(578, 352)
 rotation = Callable()
 scale = Vector2(0.7, 0.7)
-script = ExtResource("5_0pi0u")
+script = ExtResource("5_2gjws")
 speed = 200
 
 [node name="MoveMarkers" type="Node2D" parent="."]
 
-[node name="MoveMarker" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(934, 704)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker2" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker2" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(941, 552)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker3" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker3" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(940, 372)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker4" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker4" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(938, 213)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker5" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker5" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(938, 66)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker6" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker6" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(791, 66)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker7" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker7" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(623, 66)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker8" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker8" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(486, 65)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker9" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker9" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(349, 67)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker10" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker10" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(192, 65)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker11" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker11" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(37, 64)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker12" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker12" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(42, 213)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker13" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker13" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(350, 212)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker14" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker14" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(624, 217)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker15" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker15" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(43, 368)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker16" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker16" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(39, 536)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker17" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker17" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(48, 706)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker18" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker18" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(194, 711)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker19" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker19" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(347, 712)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker20" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker20" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(350, 545)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker21" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker21" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(196, 372)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker22" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker22" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(346, 369)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker23" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker23" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(484, 369)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker24" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker24" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(485, 707)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker25" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker25" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(621, 372)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker26" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker26" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(629, 710)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker27" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker27" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(620, 548)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker28" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker28" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(778, 373)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
-[node name="MoveMarker29" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_i7jr7")]
+[node name="MoveMarker29" type="Area2D" parent="MoveMarkers" instance=ExtResource("6_b0il5")]
 position = Vector2(785, 710)
-script = ExtResource("7_vew7a")
+script = ExtResource("7_cghie")
 
 [node name="locations" type="Node2D" parent="."]
 
@@ -294,9 +293,9 @@ offset_left = 14.0
 offset_top = 7.0
 offset_right = 979.0
 offset_bottom = 756.0
-script = ExtResource("8_3m4wg")
+script = ExtResource("8_cuvyt")
 
-[node name="MoveMarker" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 919.0
@@ -304,10 +303,10 @@ offset_top = 689.0
 offset_right = 934.0
 offset_bottom = 704.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker2" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker2" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 926.0
@@ -315,10 +314,10 @@ offset_top = 537.0
 offset_right = 941.0
 offset_bottom = 552.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker3" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker3" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 925.0
@@ -326,10 +325,10 @@ offset_top = 357.0
 offset_right = 940.0
 offset_bottom = 372.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker4" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker4" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 923.0
@@ -337,10 +336,10 @@ offset_top = 198.0
 offset_right = 938.0
 offset_bottom = 213.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker5" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker5" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 923.0
@@ -348,10 +347,10 @@ offset_top = 51.0
 offset_right = 938.0
 offset_bottom = 66.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker6" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker6" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 776.0
@@ -359,10 +358,10 @@ offset_top = 51.0
 offset_right = 791.0
 offset_bottom = 66.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker7" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker7" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 608.0
@@ -370,10 +369,10 @@ offset_top = 51.0
 offset_right = 623.0
 offset_bottom = 66.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker8" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker8" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 471.0
@@ -381,10 +380,10 @@ offset_top = 50.0
 offset_right = 486.0
 offset_bottom = 65.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker9" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker9" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 334.0
@@ -392,10 +391,10 @@ offset_top = 52.0
 offset_right = 349.0
 offset_bottom = 67.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker10" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker10" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 177.0
@@ -403,10 +402,10 @@ offset_top = 50.0
 offset_right = 192.0
 offset_bottom = 65.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker11" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker11" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 22.0
@@ -414,10 +413,10 @@ offset_top = 49.0
 offset_right = 37.0
 offset_bottom = 64.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker12" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker12" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 27.0
@@ -425,10 +424,10 @@ offset_top = 198.0
 offset_right = 42.0
 offset_bottom = 213.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker13" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker13" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 335.0
@@ -436,10 +435,10 @@ offset_top = 197.0
 offset_right = 350.0
 offset_bottom = 212.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker14" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker14" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 609.0
@@ -447,10 +446,10 @@ offset_top = 202.0
 offset_right = 624.0
 offset_bottom = 217.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker15" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker15" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 28.0
@@ -458,10 +457,10 @@ offset_top = 353.0
 offset_right = 43.0
 offset_bottom = 368.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker16" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker16" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 24.0
@@ -469,10 +468,10 @@ offset_top = 521.0
 offset_right = 39.0
 offset_bottom = 536.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker17" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker17" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 33.0
@@ -480,10 +479,10 @@ offset_top = 691.0
 offset_right = 48.0
 offset_bottom = 706.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker18" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker18" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 179.0
@@ -491,10 +490,10 @@ offset_top = 696.0
 offset_right = 194.0
 offset_bottom = 711.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker19" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker19" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 332.0
@@ -502,10 +501,10 @@ offset_top = 697.0
 offset_right = 347.0
 offset_bottom = 712.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker20" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker20" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 335.0
@@ -513,10 +512,10 @@ offset_top = 530.0
 offset_right = 350.0
 offset_bottom = 545.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker21" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker21" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 181.0
@@ -524,10 +523,10 @@ offset_top = 357.0
 offset_right = 196.0
 offset_bottom = 372.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker22" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker22" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 331.0
@@ -535,10 +534,10 @@ offset_top = 354.0
 offset_right = 346.0
 offset_bottom = 369.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker23" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker23" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 469.0
@@ -546,10 +545,10 @@ offset_top = 354.0
 offset_right = 484.0
 offset_bottom = 369.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker24" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker24" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 470.0
@@ -557,10 +556,10 @@ offset_top = 692.0
 offset_right = 485.0
 offset_bottom = 707.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker25" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker25" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 606.0
@@ -568,10 +567,10 @@ offset_top = 357.0
 offset_right = 621.0
 offset_bottom = 372.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker26" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker26" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 614.0
@@ -579,10 +578,10 @@ offset_top = 695.0
 offset_right = 629.0
 offset_bottom = 710.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker27" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker27" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 605.0
@@ -590,10 +589,10 @@ offset_top = 533.0
 offset_right = 620.0
 offset_bottom = 548.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker28" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker28" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 763.0
@@ -601,10 +600,10 @@ offset_top = 358.0
 offset_right = 778.0
 offset_bottom = 373.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="MoveMarker29" type="TextureRect" parent="Left Panel" instance=ExtResource("9_xho8l")]
+[node name="MoveMarker29" type="TextureRect" parent="Left Panel" instance=ExtResource("9_mf5d6")]
 self_modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 0
 offset_left = 770.0
@@ -612,80 +611,80 @@ offset_top = 695.0
 offset_right = 785.0
 offset_bottom = 710.0
 mouse_default_cursor_shape = 2
-texture = ExtResource("10_mfrmu")
-script = ExtResource("11_418hp")
+texture = ExtResource("10_x4rcy")
+script = ExtResource("11_qjix6")
 
-[node name="Vet" type="TextureRect" parent="Left Panel" instance=ExtResource("12_8h5i4")]
+[node name="Bank" type="TextureRect" parent="Left Panel" instance=ExtResource("12_e0qw1")]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 0
-offset_left = 85.4756
-offset_top = 118.41
-offset_right = 285.476
-offset_bottom = 268.41
+offset_left = 98.8083
+offset_top = 122.044
+offset_right = 298.808
+offset_bottom = 272.044
 mouse_default_cursor_shape = 2
-texture = ExtResource("13_xnqbx")
+texture = ExtResource("13_7ackk")
 expand_mode = 1
-script = ExtResource("14_ctltk")
+script = ExtResource("14_exiho")
 
-[node name="Hotel" type="TextureRect" parent="Left Panel" instance=ExtResource("12_8h5i4")]
+[node name="Gym" type="TextureRect" parent="Left Panel" instance=ExtResource("12_e0qw1")]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 0
-offset_left = 372.736
-offset_top = 115.987
-offset_right = 572.736
-offset_bottom = 265.987
+offset_left = 373.948
+offset_top = 112.353
+offset_right = 573.948
+offset_bottom = 262.353
 mouse_default_cursor_shape = 2
-texture = ExtResource("15_n17n5")
+texture = ExtResource("15_jc6wf")
 expand_mode = 1
-script = ExtResource("14_ctltk")
+script = ExtResource("14_exiho")
 
-[node name="Gym" type="TextureRect" parent="Left Panel" instance=ExtResource("12_8h5i4")]
+[node name="Hotel" type="TextureRect" parent="Left Panel" instance=ExtResource("12_e0qw1")]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 0
-offset_left = 669.692
-offset_top = 106.297
-offset_right = 869.692
-offset_bottom = 256.297
+offset_left = 681.813
+offset_top = 126.89
+offset_right = 881.813
+offset_bottom = 276.89
 mouse_default_cursor_shape = 2
-texture = ExtResource("16_63vo5")
+texture = ExtResource("16_74oec")
 expand_mode = 1
-script = ExtResource("14_ctltk")
+script = ExtResource("14_exiho")
 
-[node name="Bank" type="TextureRect" parent="Left Panel" instance=ExtResource("12_8h5i4")]
+[node name="Temple" type="TextureRect" parent="Left Panel" instance=ExtResource("12_e0qw1")]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 0
-offset_left = 80.6273
+offset_left = 76.9911
+offset_top = 435.785
+offset_right = 276.991
+offset_bottom = 585.785
+mouse_default_cursor_shape = 2
+texture = ExtResource("17_bon0k")
+expand_mode = 1
+script = ExtResource("14_exiho")
+
+[node name="Amusement Park" type="TextureRect" parent="Left Panel" instance=ExtResource("12_e0qw1")]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 373.948
+offset_top = 439.42
+offset_right = 573.948
+offset_bottom = 589.42
+mouse_default_cursor_shape = 2
+texture = ExtResource("18_t0q24")
+expand_mode = 1
+script = ExtResource("14_exiho")
+
+[node name="Zoo" type="TextureRect" parent="Left Panel" instance=ExtResource("12_e0qw1")]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 687.873
 offset_top = 434.574
-offset_right = 280.627
+offset_right = 887.873
 offset_bottom = 584.574
 mouse_default_cursor_shape = 2
-texture = ExtResource("17_bhg75")
+texture = ExtResource("18_t0q24")
 expand_mode = 1
-script = ExtResource("14_ctltk")
-
-[node name="Gas Station" type="TextureRect" parent="Left Panel" instance=ExtResource("12_8h5i4")]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 0
-offset_left = 358.191
-offset_top = 446.688
-offset_right = 558.191
-offset_bottom = 596.688
-mouse_default_cursor_shape = 2
-texture = ExtResource("18_llbls")
-expand_mode = 1
-script = ExtResource("14_ctltk")
-
-[node name="Shrine" type="TextureRect" parent="Left Panel" instance=ExtResource("12_8h5i4")]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 0
-offset_left = 670.904
-offset_top = 447.899
-offset_right = 870.904
-offset_bottom = 597.899
-mouse_default_cursor_shape = 2
-texture = ExtResource("19_udh4k")
-expand_mode = 1
-script = ExtResource("14_ctltk")
+script = ExtResource("14_exiho")
 
 [node name="menu" type="Button" parent="."]
 offset_left = 1327.0
@@ -729,10 +728,10 @@ text = "X"
 [connection signal="gui_input" from="Left Panel/MoveMarker27" to="Left Panel/MoveMarker27" method="_on_gui_input"]
 [connection signal="gui_input" from="Left Panel/MoveMarker28" to="Left Panel/MoveMarker28" method="_on_gui_input"]
 [connection signal="gui_input" from="Left Panel/MoveMarker29" to="Left Panel/MoveMarker29" method="_on_gui_input"]
-[connection signal="gui_input" from="Left Panel/Vet" to="Left Panel/Vet" method="_on_gui_input"]
-[connection signal="gui_input" from="Left Panel/Hotel" to="Left Panel/Hotel" method="_on_gui_input"]
-[connection signal="gui_input" from="Left Panel/Gym" to="Left Panel/Gym" method="_on_gui_input"]
 [connection signal="gui_input" from="Left Panel/Bank" to="Left Panel/Bank" method="_on_gui_input"]
-[connection signal="gui_input" from="Left Panel/Gas Station" to="Left Panel/Gas Station" method="_on_gui_input"]
-[connection signal="gui_input" from="Left Panel/Shrine" to="Left Panel/Shrine" method="_on_gui_input"]
+[connection signal="gui_input" from="Left Panel/Gym" to="Left Panel/Gym" method="_on_gui_input"]
+[connection signal="gui_input" from="Left Panel/Hotel" to="Left Panel/Hotel" method="_on_gui_input"]
+[connection signal="gui_input" from="Left Panel/Temple" to="Left Panel/Temple" method="_on_gui_input"]
+[connection signal="gui_input" from="Left Panel/Amusement Park" to="Left Panel/Amusement Park" method="_on_gui_input"]
+[connection signal="gui_input" from="Left Panel/Zoo" to="Left Panel/Zoo" method="_on_gui_input"]
 [connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
