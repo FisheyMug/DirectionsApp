@@ -319,7 +319,7 @@ mouse_default_cursor_shape = 2
 texture = ExtResource("30_bijfu")
 script = ExtResource("6_ignpu")
 
-[node name="Station" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+[node name="Train Station" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("31_l6467")
