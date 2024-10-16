@@ -325,7 +325,7 @@ mouse_default_cursor_shape = 2
 texture = ExtResource("31_l6467")
 script = ExtResource("6_ignpu")
 
-[node name="Amusement Park" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
+[node name="Amusement park" type="TextureRect" parent="RightPanel/CenterContainer/VBoxContainer/TabContainer/Locations/MarginContainer/Scrollbox/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("32_rj6ha")

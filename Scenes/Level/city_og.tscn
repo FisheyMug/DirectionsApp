@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://k27ffs36i1rc"]
+[gd_scene load_steps=5 format=3 uid="uid://k27ffs36i1rc"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_iglq0"]
 [ext_resource type="Texture2D" uid="uid://bnl7fr1v4ktc" path="res://Graphics/My town.png" id="2_3eeci"]
-[ext_resource type="Script" path="res://Scenes/Level/city_og.gd" id="2_ttxof"]
 [ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="6_152ae"]
 [ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="6_j8jl2"]
 
 [node name="City OG" instance=ExtResource("1_iglq0")]
-script = ExtResource("2_ttxof")
 
 [node name="map" parent="." index="1"]
 position = Vector2(496, 388)
