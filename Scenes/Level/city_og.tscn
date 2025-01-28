@@ -1,16 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://k27ffs36i1rc"]
+[gd_scene load_steps=11 format=3 uid="uid://k27ffs36i1rc"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_iglq0"]
-[ext_resource type="Texture2D" uid="uid://bnl7fr1v4ktc" path="res://Graphics/My town.png" id="2_3eeci"]
+[ext_resource type="Texture2D" uid="uid://gydek451unbl" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="2_in4fq"]
+[ext_resource type="Texture2D" uid="uid://bap2eeaf248i5" path="res://Graphics/MySprites/City2.0/Hospital.png" id="4_trnql"]
+[ext_resource type="Texture2D" uid="uid://vxnm805cpfqa" path="res://Graphics/MySprites/City2.0/Supermarket.png" id="5_3d284"]
 [ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="6_152ae"]
 [ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="6_j8jl2"]
+[ext_resource type="Texture2D" uid="uid://bo15ctbibhoih" path="res://Graphics/MySprites/City2.0/Firestation.png" id="6_v7dpt"]
+[ext_resource type="Texture2D" uid="uid://bd3bsfxg1s036" path="res://Graphics/MySprites/City2.0/PoliceStation.png" id="7_x4vgk"]
+[ext_resource type="Texture2D" uid="uid://mih7y6boqm85" path="res://Graphics/MySprites/City2.0/School.png" id="8_g4t4t"]
+[ext_resource type="Texture2D" uid="uid://doyqfsdrf7yc1" path="res://Graphics/MySprites/City2.0/PostOffice.png" id="9_gm1n0"]
 
 [node name="City OG" instance=ExtResource("1_iglq0")]
 
 [node name="map" parent="." index="1"]
 position = Vector2(496, 388)
 scale = Vector2(0.969819, 1.33698)
-texture = ExtResource("2_3eeci")
+texture = ExtResource("2_in4fq")
 
 [node name="Player" parent="." index="2"]
 position = Vector2(38.4399, 41.207)
@@ -28,6 +34,7 @@ offset_left = 659.0
 offset_top = 450.0
 offset_right = 880.0
 offset_bottom = 626.0
+texture = ExtResource("4_trnql")
 
 [node name="Supermarket" parent="Left Panel" index="1" instance=ExtResource("6_j8jl2")]
 layout_mode = 0
@@ -35,13 +42,15 @@ offset_left = 387.0
 offset_top = 464.0
 offset_right = 566.0
 offset_bottom = 611.0
+texture = ExtResource("5_3d284")
 
-[node name="Park" parent="Left Panel" index="2" instance=ExtResource("6_j8jl2")]
+[node name="Fire Station" parent="Left Panel" index="2" instance=ExtResource("6_j8jl2")]
 layout_mode = 0
 offset_left = 82.0
 offset_top = 424.0
 offset_right = 289.0
 offset_bottom = 639.0
+texture = ExtResource("6_v7dpt")
 
 [node name="Police Station" parent="Left Panel" index="3" instance=ExtResource("6_j8jl2")]
 layout_mode = 0
@@ -49,6 +58,7 @@ offset_left = 675.0
 offset_top = 121.0
 offset_right = 874.0
 offset_bottom = 302.0
+texture = ExtResource("7_x4vgk")
 
 [node name="School" parent="Left Panel" index="4" instance=ExtResource("6_j8jl2")]
 layout_mode = 0
@@ -56,6 +66,7 @@ offset_left = 83.0
 offset_top = 116.0
 offset_right = 289.0
 offset_bottom = 310.0
+texture = ExtResource("8_g4t4t")
 
 [node name="Post Office" parent="Left Panel" index="5" instance=ExtResource("6_j8jl2")]
 layout_mode = 0
@@ -63,6 +74,7 @@ offset_left = 393.0
 offset_top = 139.0
 offset_right = 562.0
 offset_bottom = 302.0
+texture = ExtResource("9_gm1n0")
 
 [node name="MoveMarker" parent="Left Panel" index="6" instance=ExtResource("6_152ae")]
 layout_mode = 0

@@ -1,6 +1,6 @@
 extends Area2D
 
-signal set_goal(goal)
+signal set_goal(_goal)
 var was_dropped = false
 
 func _on_body_entered(_body):

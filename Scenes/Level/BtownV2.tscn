@@ -229,3 +229,10 @@ offset_left = 605.0
 offset_top = 697.0
 offset_right = 620.0
 offset_bottom = 712.0
+
+[node name="menu" parent="." index="9"]
+offset_left = 1322.0
+offset_top = -8.0
+offset_right = 1340.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 15

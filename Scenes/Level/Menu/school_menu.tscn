@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_2np4o"]
 [ext_resource type="Script" path="res://Scenes/Level/Menu/school_menu.gd" id="1_yq2eu"]
 [ext_resource type="Texture2D" uid="uid://d53wmvqf1tdi" path="res://Graphics/modified_school.png" id="2_p8lte"]
-[ext_resource type="Texture2D" uid="uid://crxv58iaecy5a" path="res://Graphics/My Fav Place.png" id="3_mpknd"]
+[ext_resource type="Texture2D" uid="uid://dvepa0ygyi0xa" path="res://Graphics/MySprites/UI/Updated new School.png" id="4_4840k"]
 
 [node name="School Menu" type="Node2D"]
 script = ExtResource("1_yq2eu")
@@ -44,7 +44,7 @@ stretch_mode = 0
 custom_minimum_size = Vector2(500, 250)
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("3_mpknd")
+texture_normal = ExtResource("4_4840k")
 ignore_texture_size = true
 stretch_mode = 0
 

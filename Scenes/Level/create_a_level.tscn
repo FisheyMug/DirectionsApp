@@ -416,6 +416,7 @@ offset_left = 1331.0
 offset_top = 3.0
 offset_right = 1349.0
 offset_bottom = 34.0
+mouse_default_cursor_shape = 2
 text = "X"
 
 [connection signal="button_up" from="RightPanel/CenterContainer/VBoxContainer/TabContainer/Pick a Map/MarginContainer/VBoxContainer/blankmapButton" to="." method="_on_blankmap_button_button_up"]
