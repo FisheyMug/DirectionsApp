@@ -17,3 +17,7 @@ func _on_menu_pressed():
 func _input(event):
 	if event.is_action_pressed("Menu"):
 		get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
+
+
+func _on_lets_try_map_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Level/School/new_school.tscn")

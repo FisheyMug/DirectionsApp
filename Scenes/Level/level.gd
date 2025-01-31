@@ -49,9 +49,10 @@ func _ready():
 
 func startLocationChanged():
 	if Globals.start_location_changing:
-		$Player.global_position = Globals.start_location
+		start_position = Globals.start_location
+		$Player.global_position = start_position
 		Globals.start_location_changing = false
-		get_tree().reload_current_scene()
+		#get_tree().reload_current_scene()
 
 func globals_goal_changed():
 	if Globals.changing:

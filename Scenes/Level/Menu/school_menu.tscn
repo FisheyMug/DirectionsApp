@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://drostjga7rkwr"]
+[gd_scene load_steps=6 format=3 uid="uid://drostjga7rkwr"]
 
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_2np4o"]
 [ext_resource type="Script" path="res://Scenes/Level/Menu/school_menu.gd" id="1_yq2eu"]
 [ext_resource type="Texture2D" uid="uid://d53wmvqf1tdi" path="res://Graphics/modified_school.png" id="2_p8lte"]
 [ext_resource type="Texture2D" uid="uid://dvepa0ygyi0xa" path="res://Graphics/MySprites/UI/Updated new School.png" id="4_4840k"]
+[ext_resource type="Texture2D" uid="uid://2j7k8h4xh5gc" path="res://Graphics/MySprites/School/My School.png" id="5_kipae"]
 
 [node name="School Menu" type="Node2D"]
 script = ExtResource("1_yq2eu")
@@ -28,11 +29,15 @@ offset_bottom = 760.0
 [node name="CenterContainer" type="CenterContainer" parent="Control/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/CenterContainer"]
+[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/CenterContainer"]
+custom_minimum_size = Vector2(250, 125)
+layout_direction = 1
 layout_mode = 2
-theme_override_constants/separation = 35
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 2
 
-[node name="OgSchool" type="TextureButton" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="OgSchool" type="TextureButton" parent="Control/MarginContainer/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(500, 250)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -40,11 +45,18 @@ texture_normal = ExtResource("2_p8lte")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="New School" type="TextureButton" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="New School" type="TextureButton" parent="Control/MarginContainer/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(500, 250)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_4840k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Lets Try map" type="TextureButton" parent="Control/MarginContainer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+texture_normal = ExtResource("5_kipae")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -66,6 +78,7 @@ mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 27
 text = "X"
 
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/OgSchool" to="." method="_on_og_school_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/New School" to="." method="_on_new_school_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/GridContainer/OgSchool" to="." method="_on_og_school_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/GridContainer/New School" to="." method="_on_new_school_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/GridContainer/Lets Try map" to="." method="_on_lets_try_map_pressed"]
 [connection signal="pressed" from="Control/menu" to="." method="_on_menu_pressed"]
