@@ -32,22 +32,29 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 25
 alignment = 1
 
 [node name="Creat-A-Level" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 tooltip_text = "Create your own map!"
 mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 75
 text = "Create-A-Level!"
+
+[node name="Player Made" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "The last player made level."
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 75
+text = "Player Made"
 
 [node name="City" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 tooltip_text = "Where is the post office?
 Some default city maps."
 mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 75
 text = "City Maps"
 
 [node name="School" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
@@ -55,15 +62,14 @@ layout_mode = 2
 tooltip_text = "This is my favourite place.
 Some default school maps."
 mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 75
 text = "School Maps"
 
-[node name="Player Made" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="Single Player" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-tooltip_text = "The last player made level."
 mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 80
-text = "Player Made"
+theme_override_font_sizes/font_size = 75
+text = "Single Player"
 
 [node name="Full Screen" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -71,7 +77,8 @@ mouse_default_cursor_shape = 2
 text = "Full Screen mode"
 
 [connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/Creat-A-Level" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/Player Made" to="." method="_on_player_made_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/City" to="." method="_on_city_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/School" to="." method="_on_school_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/Player Made" to="." method="_on_player_made_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/Single Player" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/Full Screen" to="." method="_on_full_screen_pressed"]

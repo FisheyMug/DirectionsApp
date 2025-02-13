@@ -42,7 +42,7 @@ func _input(event):
 			Globals.GameStarted = false
 			Globals.single_player = false
 			get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
-		if Globals.single_player and  Globals.command != null and event.is_action_released(Globals.command):
+		if Globals.single_player and  Globals.command != null and event.is_action_released(Globals.command) and !Globals.player_moving:
 			if event.is_action_released("turn_right") and !Globals.player_moving:
 				$view.rotate(1.57)
 				rotation("right")

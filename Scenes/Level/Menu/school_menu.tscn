@@ -29,7 +29,12 @@ offset_bottom = 760.0
 [node name="CenterContainer" type="CenterContainer" parent="Control/MarginContainer"]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/CenterContainer"]
+[node name="FlowContainer" type="FlowContainer" parent="Control/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 25
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer/CenterContainer/FlowContainer"]
 custom_minimum_size = Vector2(250, 125)
 layout_direction = 1
 layout_mode = 2
@@ -37,7 +42,7 @@ theme_override_constants/h_separation = 25
 theme_override_constants/v_separation = 25
 columns = 2
 
-[node name="OgSchool" type="TextureButton" parent="Control/MarginContainer/CenterContainer/GridContainer"]
+[node name="OgSchool" type="TextureButton" parent="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer"]
 custom_minimum_size = Vector2(500, 250)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -45,7 +50,7 @@ texture_normal = ExtResource("2_p8lte")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="New School" type="TextureButton" parent="Control/MarginContainer/CenterContainer/GridContainer"]
+[node name="New School" type="TextureButton" parent="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer"]
 custom_minimum_size = Vector2(500, 250)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -53,9 +58,10 @@ texture_normal = ExtResource("4_4840k")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Lets Try map" type="TextureButton" parent="Control/MarginContainer/CenterContainer/GridContainer"]
+[node name="Lets Try map" type="TextureButton" parent="Control/MarginContainer/CenterContainer/FlowContainer"]
 custom_minimum_size = Vector2(500, 250)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_kipae")
 ignore_texture_size = true
 stretch_mode = 0
@@ -78,7 +84,7 @@ mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 27
 text = "X"
 
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/GridContainer/OgSchool" to="." method="_on_og_school_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/GridContainer/New School" to="." method="_on_new_school_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/GridContainer/Lets Try map" to="." method="_on_lets_try_map_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer/OgSchool" to="." method="_on_og_school_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/FlowContainer/GridContainer/New School" to="." method="_on_new_school_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/CenterContainer/FlowContainer/Lets Try map" to="." method="_on_lets_try_map_pressed"]
 [connection signal="pressed" from="Control/menu" to="." method="_on_menu_pressed"]

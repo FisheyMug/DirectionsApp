@@ -263,6 +263,7 @@ func instructions():
 		await get_tree().create_timer(3.0).timeout
 		direction = "Turn left"
 		sentence_box.text = direction
+		await get_tree().create_timer(1.0).timeout
 	if Globals.step == 61:
 		direction = "Go straight"
 		sentence_box.text = direction

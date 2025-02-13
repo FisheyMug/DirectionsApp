@@ -29,3 +29,8 @@ func _on_full_screen_pressed():
 	if full_screen == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else : DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_single_player_pressed() -> void:
+	Globals.GameStarted = true
+	get_tree().change_scene_to_file("res://Scenes/Level/Single Player/new_to_school.tscn")
