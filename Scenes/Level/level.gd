@@ -109,6 +109,7 @@ func _on_menu_pressed():
 	Globals.show_marker = true
 	Globals.GameStarted = false
 	Globals.start_location = null
+	Globals.single_player = false
 	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
 
 

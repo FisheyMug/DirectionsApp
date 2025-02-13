@@ -46,7 +46,7 @@ offset_top = 576.0
 offset_right = 961.0
 offset_bottom = 750.0
 
-[node name="Pic_Create-a-Level" parent="Left Panel" index="4" instance=ExtResource("3_xj62k")]
+[node name="English room" parent="Left Panel" index="4" instance=ExtResource("3_xj62k")]
 layout_mode = 0
 offset_left = 598.0
 offset_top = 365.0

@@ -40,23 +40,43 @@ func _input(event):
 	if Globals.GameStarted:
 		if event.is_action_pressed("Menu"):
 			Globals.GameStarted = false
+			Globals.single_player = false
 			get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
-		if event.is_action_released("turn_right") and !Globals.player_moving:
-			$view.rotate(1.57)
-			rotation("right")
-			can_move_forward = false
-		if event.is_action_released("turn_left") and !Globals.player_moving:
-			$view.rotate(-1.57)
-			rotation("left")
-			can_move_forward = false
-		if event.is_action_released("go_straight"):
-			if can_move_forward and !Globals.player_moving:
-				Globals.reset = false
-				target = destination
-				velocity = position.direction_to(target) * speed
-				$AnimationPlayer.play(animationToPlay)
-				Globals.player_moving = true
-			
+		if Globals.single_player and  Globals.command != null and event.is_action_released(Globals.command):
+			if event.is_action_released("turn_right") and !Globals.player_moving:
+				$view.rotate(1.57)
+				rotation("right")
+				can_move_forward = false
+			if event.is_action_released("turn_left") and !Globals.player_moving:
+				$view.rotate(-1.57)
+				rotation("left")
+				can_move_forward = false
+			if event.is_action_released("go_straight"):
+				if can_move_forward and !Globals.player_moving:
+					Globals.reset = false
+					target = destination
+					velocity = position.direction_to(target) * speed
+					$AnimationPlayer.play(animationToPlay)
+					Globals.player_moving = true
+			Globals.step += 1
+			print(Globals.step)
+			#print(Globals.command)
+		elif !Globals.single_player:
+			if event.is_action_released("turn_right") and !Globals.player_moving:
+				$view.rotate(1.57)
+				rotation("right")
+				can_move_forward = false
+			if event.is_action_released("turn_left") and !Globals.player_moving:
+				$view.rotate(-1.57)
+				rotation("left")
+				can_move_forward = false
+			if event.is_action_released("go_straight"):
+				if can_move_forward and !Globals.player_moving:
+					Globals.reset = false
+					target = destination
+					velocity = position.direction_to(target) * speed
+					$AnimationPlayer.play(animationToPlay)
+					Globals.player_moving = true
 
 func _on_view_area_entered(area):
 	destination = area.position
@@ -89,6 +109,7 @@ func _on_body_collision_area_entered(area):
 #region Buttons
 
 func _on_go_straight_pressed():
+	print("fireing")
 	var goStraight = InputEventAction.new()
 	goStraight.action = "go_straight"
 	Input.parse_input_event(goStraight)

@@ -14,3 +14,8 @@ var start_location = null
 var start_location_changing = false
 var show_marker: bool = true
 var show_location: bool = true
+
+
+var command = null
+var step = 0
+var single_player: bool = false
