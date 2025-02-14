@@ -13,6 +13,7 @@ func _ready() -> void:
 	current_goal = $"Left Panel/Classroom".name
 	Globals.goal = current_goal
 	sentence_box.text = "Where is the classroom?"
+	$"where is the classroom".play()
 	
 	for pic in $"Left Panel".get_children():
 		if "Player Image" in pic.name and !Globals.GameStarted:
@@ -48,21 +49,39 @@ func instructions():
 		await get_tree().create_timer(3.0).timeout
 		direction = "Turn right"
 		sentence_box.text = "Turn Right"
+		if !$"turn right".playing and Globals.step == 0:
+			await get_tree().create_timer(1.0).timeout
+			$"turn right".play()
 	if Globals.step == 1:
 		direction = "Go straight"
 		sentence_box.text = direction
+		if !$"go straight".playing and Globals.step == 1:
+			await get_tree().create_timer(1.0).timeout
+			$"go straight".play()
 	if Globals.step == 2:
 		direction = "Go straight"
 		sentence_box.text = direction
+		if !$"go straight".playing and Globals.step == 2:
+			await get_tree().create_timer(1.0).timeout
+			$"go straight".play()
 	if Globals.step == 3:
 		direction = "Turn right"
 		sentence_box.text = direction
+		if !$"turn right".playing and Globals.step == 3:
+			await get_tree().create_timer(1.0).timeout
+			$"turn right".play()
 	if Globals.step == 4:
 		direction = "Go straight"
 		sentence_box.text = direction
+		if !$"go straight".playing and Globals.step == 4:
+			await get_tree().create_timer(1.0).timeout
+			$"go straight".play()
 	if Globals.step == 5:
 		direction = "Turn right"
 		sentence_box.text = direction
+		if !$"turn right".playing and Globals.step == 5:
+			await get_tree().create_timer(1.0).timeout
+			$"turn right".play()
 	if Globals.step == 6:
 		direction = null
 		sentence_box.text = "Here is the classroom!"
@@ -260,10 +279,10 @@ func instructions():
 		await get_tree().create_timer(1.0).timeout
 		Globals.step = 60
 	if Globals.step == 60:
+		direction = null
 		await get_tree().create_timer(3.0).timeout
 		direction = "Turn left"
 		sentence_box.text = direction
-		await get_tree().create_timer(1.0).timeout
 	if Globals.step == 61:
 		direction = "Go straight"
 		sentence_box.text = direction
@@ -459,12 +478,7 @@ func check_direction():
 		"Go straight": Globals.command = "go_straight"
 		null: Globals.command = null
 
-
-
 func _process(_delta: float) -> void:
 	check_direction()
 	instructions()
 	
-func _physics_process(delta: float) -> void:
-	check_direction()
-	instructions()

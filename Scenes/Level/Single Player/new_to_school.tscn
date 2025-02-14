@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c3qj35mhyyweu"]
+[gd_scene load_steps=25 format=3 uid="uid://c3qj35mhyyweu"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_3tu1v"]
 [ext_resource type="Texture2D" uid="uid://bq4ih36w1vtb2" path="res://Graphics/MySprites/School/blank school.png" id="2_8mloe"]
@@ -20,6 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://bnbsu01perlc4" path="res://Graphics/MySprites/School/Lunch room.png" id="16_6bwsw"]
 [ext_resource type="Texture2D" uid="uid://c8jhppwd2n8qr" path="res://Graphics/MySprites/School/Teachers office.png" id="16_35nf2"]
 [ext_resource type="Texture2D" uid="uid://c031erp4hfud2" path="res://Graphics/MySprites/School/Playground.png" id="19_wbdby"]
+[ext_resource type="AudioStream" uid="uid://brfrw1t74mvw8" path="res://Audio/School/Where is the classroom.mp3" id="21_7jtrb"]
+[ext_resource type="AudioStream" uid="uid://d3vwxk6el6l7b" path="res://Audio/School/Go straight.mp3" id="22_fuqru"]
+[ext_resource type="AudioStream" uid="uid://cc3bsefahuhp" path="res://Audio/School/Turn left.mp3" id="23_ihoj1"]
+[ext_resource type="AudioStream" uid="uid://d3y7e376ihoy" path="res://Audio/School/Turn RIght.mp3" id="24_i7euu"]
 
 [node name="SP_New to school" instance=ExtResource("1_3tu1v")]
 script = ExtResource("2_ftx23")
@@ -243,3 +247,15 @@ offset_left = 167.0
 offset_top = 649.0
 offset_right = 182.0
 offset_bottom = 664.0
+
+[node name="where is the classroom" type="AudioStreamPlayer" parent="." index="10"]
+stream = ExtResource("21_7jtrb")
+
+[node name="go straight" type="AudioStreamPlayer" parent="." index="11"]
+stream = ExtResource("22_fuqru")
+
+[node name="turn left" type="AudioStreamPlayer" parent="." index="12"]
+stream = ExtResource("23_ihoj1")
+
+[node name="turn right" type="AudioStreamPlayer" parent="." index="13"]
+stream = ExtResource("24_i7euu")
