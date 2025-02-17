@@ -49,39 +49,23 @@ func instructions():
 		await get_tree().create_timer(3.0).timeout
 		direction = "Turn right"
 		sentence_box.text = "Turn Right"
-		if !$"turn right".playing and Globals.step == 0:
-			await get_tree().create_timer(1.0).timeout
-			$"turn right".play()
+	
 	if Globals.step == 1:
 		direction = "Go straight"
 		sentence_box.text = direction
-		if !$"go straight".playing and Globals.step == 1:
-			await get_tree().create_timer(1.0).timeout
-			$"go straight".play()
 	if Globals.step == 2:
 		direction = "Go straight"
 		sentence_box.text = direction
-		if !$"go straight".playing and Globals.step == 2:
-			await get_tree().create_timer(1.0).timeout
-			$"go straight".play()
 	if Globals.step == 3:
 		direction = "Turn right"
 		sentence_box.text = direction
-		if !$"turn right".playing and Globals.step == 3:
-			await get_tree().create_timer(1.0).timeout
-			$"turn right".play()
 	if Globals.step == 4:
 		direction = "Go straight"
 		sentence_box.text = direction
-		if !$"go straight".playing and Globals.step == 4:
-			await get_tree().create_timer(1.0).timeout
-			$"go straight".play()
 	if Globals.step == 5:
 		direction = "Turn right"
 		sentence_box.text = direction
-		if !$"turn right".playing and Globals.step == 5:
-			await get_tree().create_timer(1.0).timeout
-			$"turn right".play()
+		
 	if Globals.step == 6:
 		direction = null
 		sentence_box.text = "Here is the classroom!"
@@ -471,6 +455,25 @@ func instructions():
 	if Globals.step == 110:
 		sentence_box.text = "The playground is my favorite place!"
 
+func audio():
+	var time = 0.5
+	if direction == "Go straight":
+		if !$"go straight".playing:
+			$"go straight".play()
+			await get_tree().create_timer(time).timeout
+	if direction == "Turn left":
+		if !$"turn left".playing:
+			$"turn left".play()
+			await get_tree().create_timer(time).timeout
+	if direction == "Turn right":
+		if !$"turn right".playing:
+			$"turn right".play()
+			await get_tree().create_timer(time).timeout
+	if sentence_box.text == "Where is the gym?":
+		if !$"Where is the gym".playing:
+			$"Where is the gym".play()
+			await get_tree().create_timer(time).timeout
+
 func check_direction():
 	match direction:
 		"Turn right": Globals.command = "turn_right"
@@ -481,4 +484,5 @@ func check_direction():
 func _process(_delta: float) -> void:
 	check_direction()
 	instructions()
+	audio()
 	

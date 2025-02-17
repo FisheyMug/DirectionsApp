@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c3qj35mhyyweu"]
+[gd_scene load_steps=26 format=3 uid="uid://c3qj35mhyyweu"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_3tu1v"]
 [ext_resource type="Texture2D" uid="uid://bq4ih36w1vtb2" path="res://Graphics/MySprites/School/blank school.png" id="2_8mloe"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://d3vwxk6el6l7b" path="res://Audio/School/Go straight.mp3" id="22_fuqru"]
 [ext_resource type="AudioStream" uid="uid://cc3bsefahuhp" path="res://Audio/School/Turn left.mp3" id="23_ihoj1"]
 [ext_resource type="AudioStream" uid="uid://d3y7e376ihoy" path="res://Audio/School/Turn RIght.mp3" id="24_i7euu"]
+[ext_resource type="AudioStream" uid="uid://dat51u6ymr5nv" path="res://Audio/School/Where is the gym.mp3" id="25_ek048"]
 
 [node name="SP_New to school" instance=ExtResource("1_3tu1v")]
 script = ExtResource("2_ftx23")
@@ -259,3 +260,6 @@ stream = ExtResource("23_ihoj1")
 
 [node name="turn right" type="AudioStreamPlayer" parent="." index="13"]
 stream = ExtResource("24_i7euu")
+
+[node name="Where is the gym" type="AudioStreamPlayer" parent="." index="14"]
+stream = ExtResource("25_ek048")
