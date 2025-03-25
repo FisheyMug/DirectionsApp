@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://v02upfldb2cj"]
 
-[ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_iesg3"]
+[ext_resource type="Script" uid="uid://bfyy8w57a57yo" path="res://Scenes/Level/level.gd" id="1_iesg3"]
 [ext_resource type="PackedScene" uid="uid://bwnmaok0huh34" path="res://Scenes/Player/player.tscn" id="2_006r0"]
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="2_x6cfs"]
 
@@ -95,10 +95,10 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Move Marker"
 

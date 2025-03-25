@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://drostjga7rkwr"]
 
 [ext_resource type="Texture2D" uid="uid://b1oftsji72ml0" path="res://Graphics/MySprites/UI/MyPaper.png" id="1_2np4o"]
-[ext_resource type="Script" path="res://Scenes/Level/Menu/school_menu.gd" id="1_yq2eu"]
+[ext_resource type="Script" uid="uid://yqba3x48v80b" path="res://Scenes/Level/Menu/school_menu.gd" id="1_yq2eu"]
 [ext_resource type="Texture2D" uid="uid://d53wmvqf1tdi" path="res://Graphics/modified_school.png" id="2_p8lte"]
 [ext_resource type="Texture2D" uid="uid://dvepa0ygyi0xa" path="res://Graphics/MySprites/UI/Updated new School.png" id="4_4840k"]
 [ext_resource type="Texture2D" uid="uid://2j7k8h4xh5gc" path="res://Graphics/MySprites/School/My School.png" id="5_kipae"]

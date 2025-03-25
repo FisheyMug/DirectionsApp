@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://dmel7nbwqi6mo"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_7udo8"]
-[ext_resource type="Script" path="res://Scenes/Level/School/this_is_my_favourite_place.gd" id="2_iwky2"]
+[ext_resource type="Script" uid="uid://igbh1y1asvok" path="res://Scenes/Level/School/this_is_my_favourite_place.gd" id="2_iwky2"]
 [ext_resource type="Texture2D" uid="uid://bmdol2p02pn53" path="res://Graphics/Interior tileset/All Assets.png" id="2_mwq5c"]
 [ext_resource type="Texture2D" uid="uid://chtp602lox2m8" path="res://Graphics/Better interior tileset/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="3_4l3mi"]
 [ext_resource type="Texture2D" uid="uid://cf38caegytnkg" path="res://Graphics/Better interior tileset/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="4_fiabo"]
@@ -1721,10 +1721,10 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Room Image"
 

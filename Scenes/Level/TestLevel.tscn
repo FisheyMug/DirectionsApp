@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_wrptw"]
 [ext_resource type="PackedScene" uid="uid://bhsnap3g2nlqe" path="res://Scenes/Object/move_marker.tscn" id="2_cy8ee"]
-[ext_resource type="Script" path="res://Scenes/Level/TestLevel.gd" id="2_gedfb"]
+[ext_resource type="Script" uid="uid://bbnychk81mmaa" path="res://Scenes/Level/TestLevel.gd" id="2_gedfb"]
 [ext_resource type="PackedScene" uid="uid://couad5h3svcls" path="res://Scenes/Object/location.tscn" id="3_juc0v"]
 
 [node name="BaseLevel" instance=ExtResource("1_wrptw")]

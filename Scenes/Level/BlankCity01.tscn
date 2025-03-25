@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_qcjh3"]
 [ext_resource type="Texture2D" uid="uid://gydek451unbl" path="res://Graphics/MySprites/City2.0/BlankTown.png" id="2_di2pr"]
-[ext_resource type="Script" path="res://Scenes/Level/BlankCity01.gd" id="2_ma0y2"]
+[ext_resource type="Script" uid="uid://btqj26s6ntw5y" path="res://Scenes/Level/BlankCity01.gd" id="2_ma0y2"]
 [ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="5_7s4ac"]
-[ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="5_m3wou"]
+[ext_resource type="Script" uid="uid://cjead35g74hmp" path="res://Scenes/Object/mapPanel.gd" id="5_m3wou"]
 
 [node name="BlankCity01" instance=ExtResource("1_qcjh3")]
 script = ExtResource("2_ma0y2")

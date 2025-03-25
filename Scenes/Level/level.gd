@@ -113,6 +113,7 @@ func _on_menu_pressed():
 	Globals.step = 0
 	Globals.command = null
 	get_tree().change_scene_to_file("res://Scenes/Level/Menu/start_menu.tscn")
+	Globals.hide = false
 
 
 func _on_move_marker_image_toggled(_toggled_on):

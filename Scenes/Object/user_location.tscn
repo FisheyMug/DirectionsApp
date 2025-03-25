@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yiupra2nvghg"]
 
-[ext_resource type="Script" path="res://Scenes/Object/UserLocation.gd" id="1_nnqip"]
+[ext_resource type="Script" uid="uid://lcd6dm3g7g0x" path="res://Scenes/Object/UserLocation.gd" id="1_nnqip"]
 [ext_resource type="Texture2D" uid="uid://b35slfix1wgp1" path="res://Graphics/MySprites/UI/LocationBox.png" id="2_ps20f"]
 
 [node name="User Location" type="Control"]

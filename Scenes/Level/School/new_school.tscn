@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0i6fu7yuajmx"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_ph07c"]
-[ext_resource type="Script" path="res://Scenes/Level/School/new_school.gd" id="2_cgpyn"]
+[ext_resource type="Script" uid="uid://dk3wpfjn5vc16" path="res://Scenes/Level/School/new_school.gd" id="2_cgpyn"]
 [ext_resource type="Texture2D" uid="uid://2j7k8h4xh5gc" path="res://Graphics/MySprites/School/My School.png" id="2_y0ik7"]
 [ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="3_xj62k"]
 [ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="4_i6n7a"]

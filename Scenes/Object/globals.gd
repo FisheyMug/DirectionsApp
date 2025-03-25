@@ -14,6 +14,7 @@ var start_location = null
 var start_location_changing = false
 var show_marker: bool = true
 var show_location: bool = true
+var hide = false
 
 
 var command = null

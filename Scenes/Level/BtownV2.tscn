@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6onw3owiwqqy"]
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_pnboq"]
-[ext_resource type="Script" path="res://Scenes/Level/BtownV2.gd" id="2_f5mh0"]
+[ext_resource type="Script" uid="uid://dhloyaomtfb31" path="res://Scenes/Level/BtownV2.gd" id="2_f5mh0"]
 [ext_resource type="Texture2D" uid="uid://p6b4ybglkfln" path="res://Graphics/MySprites/City2.0/BTownV2.png" id="2_oj3c4"]
-[ext_resource type="Script" path="res://Scenes/Object/mapPanel.gd" id="5_ttvjr"]
+[ext_resource type="Script" uid="uid://cjead35g74hmp" path="res://Scenes/Object/mapPanel.gd" id="5_ttvjr"]
 [ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="6_nojlo"]
 
 [node name="BaseLevel" instance=ExtResource("1_pnboq")]

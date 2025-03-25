@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bwnmaok0huh34"]
 
-[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_ki7sc"]
+[ext_resource type="Script" uid="uid://bj6rp3jrca052" path="res://Scenes/Player/player.gd" id="1_ki7sc"]
 [ext_resource type="Texture2D" uid="uid://6x3ghy3e2l5n" path="res://Graphics/CharachterSprite.png" id="2_dbbyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npiri"]
@@ -91,11 +91,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6jg8e"]
 _data = {
-"RESET": SubResource("Animation_ui2ar"),
-"WalkDown": SubResource("Animation_1mdfv"),
-"Walk_Left": SubResource("Animation_e6jh2"),
-"Walk_Up": SubResource("Animation_6vwau"),
-"Walk_right": SubResource("Animation_6asmn")
+&"RESET": SubResource("Animation_ui2ar"),
+&"WalkDown": SubResource("Animation_1mdfv"),
+&"Walk_Left": SubResource("Animation_e6jh2"),
+&"Walk_Up": SubResource("Animation_6vwau"),
+&"Walk_right": SubResource("Animation_6asmn")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tqev"]
@@ -122,7 +122,7 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_6jg8e")
+&"": SubResource("AnimationLibrary_6jg8e")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

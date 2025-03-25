@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://v02upfldb2cj" path="res://Scenes/Level/BaseLevel.tscn" id="1_3tu1v"]
 [ext_resource type="Texture2D" uid="uid://bq4ih36w1vtb2" path="res://Graphics/MySprites/School/blank school.png" id="2_8mloe"]
-[ext_resource type="Script" path="res://Scenes/Level/Single Player/new_to_school.gd" id="2_ftx23"]
+[ext_resource type="Script" uid="uid://dgrnqmc8rpvy4" path="res://Scenes/Level/Single Player/new_to_school.gd" id="2_ftx23"]
 [ext_resource type="PackedScene" uid="uid://d01bedihw8m7t" path="res://Scenes/Object/pic_create_a_level.tscn" id="3_empho"]
 [ext_resource type="PackedScene" uid="uid://dc832o2pihxmn" path="res://Scenes/Object/move_m_image.tscn" id="4_25t68"]
 [ext_resource type="Texture2D" uid="uid://cx0ylhrkuh6qy" path="res://Graphics/MySprites/School/Gym.png" id="5_1mj08"]

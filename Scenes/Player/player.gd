@@ -109,7 +109,6 @@ func _on_body_collision_area_entered(area):
 #region Buttons
 
 func _on_go_straight_pressed():
-	print("fireing")
 	var goStraight = InputEventAction.new()
 	goStraight.action = "go_straight"
 	Input.parse_input_event(goStraight)
