@@ -8,6 +8,7 @@ func _on_gui_input(event):
 	if event.is_action_released("click") and Globals.GameStarted:
 		Globals.changing = true
 		Globals.goal = self.name
+		#print(self.name)
 		set_goal.emit(Globals.goal)
 
 	if event.is_action_released("click") and !Globals.GameStarted:

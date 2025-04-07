@@ -36,6 +36,7 @@ texture = ExtResource("2_8mloe")
 
 [node name="Player" parent="." index="2"]
 position = Vector2(316, 177)
+scale = Vector2(0.7, 0.7)
 
 [node name="Library" parent="Left Panel" index="0" instance=ExtResource("3_empho")]
 visible = false
